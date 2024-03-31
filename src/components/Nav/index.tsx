@@ -7,7 +7,7 @@ const Nav = () => {
 
   return (
     <div>
-      <Logo
+      {/* <Logo
         onClick={() => {
           navigate("/");
         }}
@@ -22,7 +22,7 @@ const Nav = () => {
         >
           후원사 목록
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
