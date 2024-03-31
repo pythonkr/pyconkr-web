@@ -1,0 +1,44 @@
+name: prod-CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  cd:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          aws-region: ap-northeast-2
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache node modules
+        uses: actions/cache@v4.0.1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Deploy
+        run: |
+          aws s3 sync --delete ./build s3://pyconkr-web-2024 --region ap-northeast-2
+          aws cloudfront create-invalidation --distribution-id E3SSIRH09FRJAY --paths "/index.html" --region ap-northeast-2
