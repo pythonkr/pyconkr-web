@@ -1,0 +1,7 @@
+{
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  }
+}
