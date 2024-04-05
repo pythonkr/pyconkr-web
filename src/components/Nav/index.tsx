@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { RootState } from "store";
 import { setLanguage } from "store/Core";
 import styled from "styled-components";
+import "./style.scss";
 
 const Nav = () => {
   const navigate = useNavigate();
