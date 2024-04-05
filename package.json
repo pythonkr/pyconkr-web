@@ -18,9 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:prod": "react-scripts build",
+    "prestart": "./scripts/set_dev.sh",
+    "prestart:prod": "./scripts/set_prod.sh",
+    "prebuild": "./scripts/set_dev.sh",
+    "prebuild:prod": "./scripts/set_prod.sh"
   },
   "eslintConfig": {
     "extends": [

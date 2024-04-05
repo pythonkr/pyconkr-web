@@ -1,0 +1,1 @@
+cp ./.env.prod ./.env || copy .\\env.prod .\\.env
