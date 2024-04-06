@@ -8,7 +8,6 @@ import styled from "styled-components";
 import "./style.scss";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
-import GitHubIcon from "/assets/icons/GitHub.svg";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -17,7 +16,6 @@ const Nav = () => {
     (state) => state.core.language
   );
   const t = useTranslation();
-  console.log(GitHubIcon);
 
   return (
     <Container>
@@ -50,7 +48,6 @@ const Nav = () => {
       <RightMenus>
         <Menu>
           {t("언어 변경")} (현재: {language})
-          <GitHubIcon />
           <SubMenus>
             <SubMenu
               onClick={() => {
