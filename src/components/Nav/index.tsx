@@ -8,6 +8,7 @@ import styled from "styled-components";
 import "./style.scss";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
+import GitHubIcon from "/assets/icons/GitHub.svg";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const Nav = () => {
     (state) => state.core.language
   );
   const t = useTranslation();
+  console.log(GitHubIcon);
 
   return (
     <Container>
@@ -44,28 +46,11 @@ const Nav = () => {
             </SubMenus>
           </Menu>
         ))}
-        <Menu>
-          기여하기
-          <SubMenus>
-            <SubMenu>발표안 작성 가이드</SubMenu>
-            <SubMenu>발표 제안하기</SubMenu>
-            <SubMenu>발표 제안 검토하기</SubMenu>
-            <SubMenu>라이트닝 토크 신청하기</SubMenu>
-            <SubMenu>키노트 연사 추천하기</SubMenu>
-            <SubMenu>영상 자막</SubMenu>
-          </SubMenus>
-        </Menu>
-        <Menu
-          onClick={() => {
-            navigate("/sponsor");
-          }}
-        >
-          후원사
-        </Menu>
       </LeftMenus>
       <RightMenus>
         <Menu>
           {t("언어 변경")} (현재: {language})
+          <GitHubIcon />
           <SubMenus>
             <SubMenu
               onClick={() => {

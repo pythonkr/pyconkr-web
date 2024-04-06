@@ -7,10 +7,6 @@ const Menus = {
         path: "pyconkr2024",
       },
       {
-        name: "개인 후원자",
-        path: "patron",
-      },
-      {
         name: "파이콘 한국 행동 강령",
         path: "coc",
       },
@@ -42,6 +38,56 @@ const Menus = {
       {
         name: "튜토리얼",
         path: "tutorial",
+      },
+    ],
+  },
+  contribution: {
+    name: "기여하기",
+    sub: [
+      {
+        name: "발표 제안하기",
+        path: "cfp",
+      },
+      {
+        name: "발표안 작성 가이드",
+        path: "cfp/guide",
+      },
+      {
+        name: "키노트 연사 추천하기",
+        path: "recommending-keynote",
+      },
+      {
+        name: "영상 자막",
+        path: "video-subtitle",
+      },
+    ],
+  },
+  sponsoring: {
+    name: "후원하기",
+    sub: [
+      {
+        name: "후원사 안내",
+        path: "sponsor/prospectus",
+      },
+      {
+        name: "개인 후원자",
+        path: "patron",
+      },
+      {
+        name: "후원사 혜택 안내",
+        path: "sponsor/benefit",
+      },
+      {
+        name: "후원사로 참여하기",
+        path: "sponsor/join",
+      },
+      {
+        name: "후원사 FAQ",
+        path: "sponsor/faq",
+      },
+      {
+        name: "후원사 약관",
+        path: "sponsor/terms",
       },
     ],
   },
