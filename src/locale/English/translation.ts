@@ -11,5 +11,6 @@ const EnglishTranslation: Translation = {
   },
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
+  "언어 변경": "Change language",
 };
 export default EnglishTranslation;
