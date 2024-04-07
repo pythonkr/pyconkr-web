@@ -81,7 +81,7 @@ const Container = styled.div`
   align-items: center;
 
   /////////////////////////
-  border: 1px solid black;
+  background-color: bisque;
   /////////////////////////
 `;
 

@@ -1,3 +1,4 @@
+import Footer from "components/Footer";
 import Nav from "components/Nav";
 import Home from "pages/Home";
 import SponsorList from "pages/Sponsor";
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/404" />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
