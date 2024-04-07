@@ -21,7 +21,10 @@ import { ReactComponent as CheckIconDark } from "./CheckIconDark.svg";
 import { ReactComponent as CheckIconLight } from "./CheckIconLight.svg";
 import { ReactComponent as HamburgerIcon } from "./HamburgerIcon.svg";
 import { ReactComponent as Twitter } from "./Twitter.svg";
+import { ReactComponent as TwitterX } from "./X_Twitter.svg";
 import { ReactComponent as Youtube } from "./Youtube.svg";
+import { ReactComponent as Blog } from "./Blog.svg";
+import { ReactComponent as Flickr } from "./Flickr.svg";
 
 export {
   ArrowForward,
@@ -47,5 +50,8 @@ export {
   CheckIconLight,
   HamburgerIcon,
   Twitter,
+  TwitterX,
   Youtube,
+  Blog,
+  Flickr,
 };
