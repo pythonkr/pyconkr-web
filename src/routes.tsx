@@ -1,5 +1,6 @@
 import Footer from "components/Footer";
 import Nav from "components/Nav";
+import NotFound from "components/NotFound";
 import Home from "pages/Home";
 import SponsorList from "pages/Sponsor";
 import React from "react";
@@ -12,7 +13,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sponsor" element={<SponsorList />} />
-        <Route path="/404" />
+        <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>
       <Footer />
