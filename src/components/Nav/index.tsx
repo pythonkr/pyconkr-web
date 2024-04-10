@@ -26,6 +26,7 @@ const Nav = () => {
         }}
       >
         <LogoSvg />
+        {/* TODO 올해 로고로 바꿔야 */}
       </Logo>
       <LeftMenus>
         {Object.entries(MenuRoutes).map(([path, menu]) => (
