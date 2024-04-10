@@ -3,7 +3,17 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { SponsorAPI } from "api";
-import { Blog, Email, Facebook, Flickr, GitHub, TwitterX, Youtube } from "assets/icons";
+import {
+  Blog,
+  Email,
+  Facebook,
+  Flickr,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  TwitterX,
+  Youtube,
+} from "assets/icons";
 
 const Footer = () => {
   const [sponsors, setSponsors] = useState<Sponsor[] | undefined>([]);
@@ -69,13 +79,37 @@ const Footer = () => {
       <Fixed>
         <section className="left">파이콘 한국 행동 강령 (CoC)</section>
         <section className="right">
-          <Email />
-          <Facebook />
-          <Youtube />
-          <TwitterX />
-          <GitHub />
-          <Blog />
-          <Flickr />
+          <a href="mailto:pyconkr@pycon.kr">
+            <Email />
+          </a>
+          <a href="https://www.facebook.com/pyconkorea/" target="_blank" rel="noreferrer">
+            <Facebook />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UC26x6D5xpKx6io4ShfXa_Ow"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Youtube />
+          </a>
+          <a href="https://twitter.com/PyConKR" target="_blank" rel="noreferrer">
+            <TwitterX />
+          </a>
+          <a href="https://github.com/pythonkr" target="_blank" rel="noreferrer">
+            <GitHub />
+          </a>
+          <a href="https://www.instagram.com/pycon_korea/" target="_blank" rel="noreferrer">
+            <Instagram />
+          </a>
+          <a href="https://www.linkedin.com/company/pyconkorea/" target="_blank" rel="noreferrer">
+            <LinkedIn />
+          </a>
+          <a href="https://blog.pycon.kr/" target="_blank" rel="noreferrer">
+            <Blog />
+          </a>
+          <a href="https://www.flickr.com/photos/126829363@N08/" target="_blank" rel="noreferrer">
+            <Flickr />
+          </a>
         </section>
       </Fixed>
     </Container>
@@ -166,11 +200,11 @@ const Fixed = styled.div`
   & > section.right {
     padding-top: 4px;
 
-    & > svg {
+    svg {
       color: black;
       width: 1.4rem;
     }
-    & > svg + svg {
+    a + a {
       margin-left: 1.1rem;
     }
   }

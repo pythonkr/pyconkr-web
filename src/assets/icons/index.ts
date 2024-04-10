@@ -25,6 +25,8 @@ import { ReactComponent as TwitterX } from "./X_Twitter.svg";
 import { ReactComponent as Youtube } from "./Youtube.svg";
 import { ReactComponent as Blog } from "./Blog.svg";
 import { ReactComponent as Flickr } from "./Flickr.svg";
+import { ReactComponent as Instagram } from "./Instagram.svg";
+import { ReactComponent as LinkedIn } from "./LinkedIn.svg";
 
 export {
   ArrowForward,
@@ -54,4 +56,6 @@ export {
   Youtube,
   Blog,
   Flickr,
+  Instagram,
+  LinkedIn,
 };
