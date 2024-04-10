@@ -15,17 +15,48 @@ import {
   Youtube,
 } from "assets/icons";
 import useTranslation from "utils/hooks/useTranslation";
+import SponsorLevels, { SponsorLevel, SponsorLevelCode } from "enums/sponsorLevels";
 
 const Footer = () => {
-  const [sponsors, setSponsors] = useState<Sponsor[] | undefined>([]);
+  const [sponsors, setSponsors] = useState<
+    | {
+        level: SponsorLevel;
+        sponsors: Sponsor[];
+      }[]
+    | undefined
+  >([]);
   const t = useTranslation();
 
   useEffect(() => {
     SponsorAPI.listSponsors()
       .then((res) => {
-        setSponsors(res);
+        setSponsors(
+          Object.entries(
+            res.reduce(
+              (acc, cur) => {
+                if (cur.level.code === "unknown") return acc;
+                if (acc[cur.level.code] === undefined) acc[cur.level.code] = [cur];
+                else acc[cur.level.code].push(cur);
+                return acc;
+              },
+              {} as { [l: string]: Sponsor[] }
+            )
+          )
+            .reduce(
+              (acc, [levelCode, sponsorList]) => {
+                acc.push({
+                  level: SponsorLevels[levelCode as SponsorLevelCode],
+                  sponsors: sponsorList,
+                });
+                return acc;
+              },
+              [] as NonNullable<typeof sponsors>
+            )
+            .sort((a, b) => a.level.priority - b.level.priority)
+        );
       })
-      .catch(() => {
+      .catch((e) => {
+        console.error(e);
         setSponsors(undefined);
       });
   }, []);
@@ -36,7 +67,14 @@ const Footer = () => {
         {sponsors === undefined ? (
           <span>후원사 목록을 가져오는데 실패했습니다.</span>
         ) : (
-          sponsors.map((sponsor) => <span key={sponsor.name}>{sponsor.name}</span>)
+          sponsors.map((s) => (
+            <div key={s.level.code}>
+              <div>{s.level.name}</div>
+              {s.sponsors.map((sponsor) => (
+                <div key={sponsor.name}>{sponsor.name}</div>
+              ))}
+            </div>
+          ))
         )}
       </Sponsors>
       <About>
