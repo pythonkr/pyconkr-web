@@ -101,18 +101,15 @@ const Logo = styled.div`
 const SubMenus = styled.div`
   display: none;
   position: absolute;
-  top: 100%;
+  top: 85%;
   left: -10%;
 
   padding: 0.2rem 0.5rem;
 
   background-color: #fff;
 
-  font-size: 1rem;
-
-  /////////////////////////
-  border: 1px solid red;
-  /////////////////////////
+  font-size: initial;
+  font-weight: initial;
 `;
 
 const SubMenu = styled.div`
@@ -138,11 +135,12 @@ const Menus = styled.div`
   align-items: center;
 
   height: 100%;
-
-  font-size: 1.2rem;
 `;
 
-const LeftMenus = styled(Menus)``;
+const LeftMenus = styled(Menus)`
+  font-weight: bold;
+  font-size: 1.25rem;
+`;
 
 const RightMenus = styled(Menus)``;
 
@@ -152,10 +150,6 @@ const Menu = styled.div`
   user-select: none;
 
   padding: 2vh 1vw;
-
-  /////////////////////////
-  border: 1px solid blue;
-  /////////////////////////
 
   &:hover {
     & > ${SubMenus} {

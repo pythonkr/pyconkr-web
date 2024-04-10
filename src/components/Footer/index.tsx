@@ -99,6 +99,8 @@ const About = styled.div`
   height: 9rem;
   margin-bottom: 2.5rem;
 
+  border-top: 1px solid black;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,10 +144,6 @@ const About = styled.div`
     width: 29%;
     padding-right: 1%;
   }
-
-  //////////////////////////
-  background-color: gray;
-  //////////////////////////
 `;
 
 const Fixed = styled.div`
