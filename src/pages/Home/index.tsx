@@ -20,7 +20,7 @@ const Page = styled.div`
   padding: 0 2.5vw;
 
   width: 90vw;
-  height: 90vh;
+  height: 66vh;
 
   border: 1px solid #f87c56;
   background: linear-gradient(to right, #fbb9a4, #fde3db);
@@ -30,15 +30,15 @@ const Header = styled.div`
   color: #852305;
 
   h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin: 5vh 0;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 3vh 0;
   }
   h3 {
-    font-size: 3.3rem;
+    font-size: 3rem;
     margin: 2vh 0;
   }
 `;

@@ -210,6 +210,6 @@ const Fixed = styled.div`
   }
 
   //////////////////////////
-  background-color: skyblue;
+  background-color: #fbb9a4;
   //////////////////////////
 `;

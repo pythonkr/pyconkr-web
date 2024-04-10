@@ -83,7 +83,7 @@ const Container = styled.div`
   align-items: center;
 
   /////////////////////////
-  background-color: bisque;
+  background-color: #fde3db;
   /////////////////////////
 `;
 
