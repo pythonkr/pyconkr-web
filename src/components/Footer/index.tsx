@@ -24,7 +24,7 @@ const Footer = () => {
         {sponsors === undefined ? (
           <span>후원사 목록을 가져오는데 실패했습니다.</span>
         ) : (
-          sponsors.map((sponsor) => <span>{sponsor.name}</span>)
+          sponsors.map((sponsor) => <span key={sponsor.name}>{sponsor.name}</span>)
         )}
       </Sponsors>
       <About>
