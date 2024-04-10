@@ -1,16 +1,38 @@
-import { Translation } from "../types";
-
-const EnglishTranslation: Translation = {
-  CATEGORY: {
-    web: "Web",
-    social: "Social",
-    unknown: "Unknown",
-  },
-  MENU: {
-    "재정 지원": "Financial Aid",
-  },
+const EnglishTranslation = {
+  web: "Web",
+  social: "Social",
+  unknown: "Unknown",
+  "재정 지원": "Financial Aid",
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
   "언어 변경": "Change language",
+  프로그램: "Program",
+  기여하기: "Contribution",
+  후원하기: "Sponsoring",
+  "파이콘 한국 2024": "PyCon Korea 2024",
+  "파이콘 한국 준비위원회": "Organizing Team",
+  "파이콘 한국 행동 강령": "Code of Conduct",
+  "지난 파이콘 한국": "Previous PyCon Korea",
+  키노트: "Keynote",
+  발표: "Session",
+  스프린트: "Sprint",
+  튜토리얼: "Tutorial",
+  "발표안 작성 가이드": "How to Submit a Proposal",
+  "발표 제안하기": "Proposing a Talk",
+  "키노트 연사 추천하기": "Recommending Keynote",
+  "영상 자막": "Video Subtitle",
+  "후원사 안내": "Prospectus",
+  "후원사 혜택 안내": "Benefit",
+  "후원사로 참여하기": "Join as Sponsor",
+  "후원사 FAQ": "FAQ",
+  "후원사 약관": "Terms of Sponsor",
+  "개인 후원자": "Patrons",
+  "파이콘 한국 2024는 파이콘 한국 준비위원회가 만들고 있습니다.":
+    "PyCon Korea 2024 is being made by PyCon Korea Organizing Team.",
+  "파이썬 웹 프레임워크 ": "Powered by ",
+  "로 만들었습니다.": "",
+  "서비스 이용 약관": "Terms of Service",
+  "개인정보 처리 방침": "Privacy Protection Policy",
 };
+
 export default EnglishTranslation;

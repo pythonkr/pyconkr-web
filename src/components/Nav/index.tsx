@@ -31,7 +31,7 @@ const Nav = () => {
       <LeftMenus>
         {Object.entries(MenuRoutes).map(([path, menu]) => (
           <Menu key={path}>
-            {menu.name}
+            {t(menu.name)}
             <SubMenus>
               {menu.sub.map((subMenu) => (
                 <SubMenu
@@ -40,7 +40,7 @@ const Nav = () => {
                     navigate(`/${path}/${subMenu.path}`);
                   }}
                 >
-                  {subMenu.name}
+                  {t(subMenu.name)}
                 </SubMenu>
               ))}
             </SubMenus>
@@ -49,7 +49,7 @@ const Nav = () => {
       </LeftMenus>
       <RightMenus>
         <Menu>
-          {t("언어 변경")} (현재: {language})
+          Language
           <SubMenus>
             <SubMenu
               onClick={() => {

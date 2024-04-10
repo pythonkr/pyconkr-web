@@ -14,9 +14,11 @@ import {
   TwitterX,
   Youtube,
 } from "assets/icons";
+import useTranslation from "utils/hooks/useTranslation";
 
 const Footer = () => {
   const [sponsors, setSponsors] = useState<Sponsor[] | undefined>([]);
+  const t = useTranslation();
 
   useEffect(() => {
     SponsorAPI.listSponsors()
@@ -61,23 +63,25 @@ const Footer = () => {
           </table>
         </section>
         <section className="center">
-          <div className="slogan">슬로건, 파이콘 한국 2024</div>
+          <div className="slogan">슬로건, {t("파이콘 한국 2024")}</div>
           <div className="content">
-            파이콘 한국 2024는 파이콘 한국 준비위원회가 만들고 있습니다.
+            {t("파이콘 한국 2024는 파이콘 한국 준비위원회가 만들고 있습니다.")}
           </div>
           <div className="content">
-            파이썬 웹 프레임워크{" "}
+            {t("파이썬 웹 프레임워크 ")}
             <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
               Django
             </a>
-            로 만들었습니다.
+            {t("로 만들었습니다.")}
           </div>
-          <div className="terms">서비스 이용 약관 | 개인정보 처리 방침</div>
+          <div className="terms">
+            {t("서비스 이용 약관")} | {t("개인정보 처리 방침")}
+          </div>
         </section>
         <section className="right"></section>
       </About>
       <Fixed>
-        <section className="left">파이콘 한국 행동 강령 (CoC)</section>
+        <section className="left">{t("파이콘 한국 행동 강령")} (CoC)</section>
         <section className="right">
           <a href="mailto:pyconkr@pycon.kr">
             <Email />
