@@ -1,6 +1,6 @@
 import Footer from "components/Footer";
 import Nav from "components/Nav";
-import NotFound from "components/NotFound";
+import NotFound from "pages/NotFound";
 import Home from "pages/Home";
 import SponsorList from "pages/Sponsor";
 import React from "react";
