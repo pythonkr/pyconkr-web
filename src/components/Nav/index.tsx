@@ -8,6 +8,7 @@ import styled from "styled-components";
 import "./style.scss";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
+import { Logo as LogoSvg } from "assets/icons";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Nav = () => {
           navigate("/");
         }}
       >
-        로고
+        <LogoSvg />
       </Logo>
       <LeftMenus>
         {Object.entries(MenuRoutes).map(([path, menu]) => (
@@ -87,15 +88,13 @@ const Container = styled.div`
 
 const Logo = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 10%;
   height: 100%;
 
   cursor: pointer;
-
-  /////////////////////////
-  border: 1px solid black;
-  /////////////////////////
 `;
 
 const SubMenus = styled.div`
