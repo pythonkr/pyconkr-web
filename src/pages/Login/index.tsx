@@ -65,7 +65,7 @@ const Login = () => {
               />
             </div>
           </ID_PW_ROW>
-          <div className="alert">{alertMessage}</div>
+          {alertMessage && <div className="alert">{alertMessage}</div>}
         </ID_PW>
         <SubmitBtn
           onClick={() => {
