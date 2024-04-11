@@ -34,6 +34,7 @@ const EnglishTranslation = {
   "서비스 이용 약관": "Terms of Service",
   "개인정보 처리 방침": "Privacy Protection Policy",
   "페이지를 찾을 수 없습니다.": "Page not found.",
+  로그인: "Login",
 };
 
 export default EnglishTranslation;

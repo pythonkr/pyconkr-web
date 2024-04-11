@@ -48,6 +48,13 @@ const Nav = () => {
         ))}
       </LeftMenus>
       <RightMenus>
+        <Menu
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          로그인
+        </Menu>
         <Menu>
           Language
           <SubMenus>
@@ -137,13 +144,6 @@ const Menus = styled.div`
   height: 100%;
 `;
 
-const LeftMenus = styled(Menus)`
-  font-weight: bold;
-  font-size: 1.25rem;
-`;
-
-const RightMenus = styled(Menus)``;
-
 const Menu = styled.div`
   position: relative;
   cursor: pointer;
@@ -159,5 +159,16 @@ const Menu = styled.div`
 
   & + & {
     margin-left: 3vw;
+  }
+`;
+
+const LeftMenus = styled(Menus)`
+  font-weight: bold;
+  font-size: 1.25rem;
+`;
+
+const RightMenus = styled(Menus)`
+  ${Menu} + ${Menu} {
+    margin-left: 1vw;
   }
 `;
