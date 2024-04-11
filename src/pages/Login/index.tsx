@@ -11,9 +11,23 @@ const Login = () => {
   const t = useTranslation();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
 
   const signIn = async () => {
-    if (!id) await UserAPI.signIn(id, password);
+    if (!id) {
+      setAlertMessage(t("아이디를 입력해주세요."));
+      return;
+    }
+    if (!password) {
+      setAlertMessage(t("비밀 번호를 입력해주세요."));
+      return;
+    }
+
+    await UserAPI.signIn(id, password)
+      .then(() => {})
+      .catch((e) => {
+        setAlertMessage(t("로그인 실패. 잠시 후 다시 시도해주세요."));
+      });
   };
 
   return (
@@ -51,6 +65,7 @@ const Login = () => {
               />
             </div>
           </ID_PW_ROW>
+          <div className="alert">{alertMessage}</div>
         </ID_PW>
         <SubmitBtn
           onClick={() => {
@@ -82,6 +97,13 @@ const ID_PW = styled.div`
   width: 20%;
 
   background-color: #fde3db;
+
+  & > div.alert {
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1vh;
+  }
 `;
 
 const ID_PW_ROW = styled.div`
