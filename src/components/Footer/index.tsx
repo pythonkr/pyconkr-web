@@ -127,11 +127,7 @@ const Footer = () => {
           <a href="https://www.facebook.com/pyconkorea/" target="_blank" rel="noreferrer">
             <Facebook />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UC26x6D5xpKx6io4ShfXa_Ow"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.youtube.com/c/PyConKRtube" target="_blank" rel="noreferrer">
             <Youtube />
           </a>
           <a href="https://twitter.com/PyConKR" target="_blank" rel="noreferrer">
