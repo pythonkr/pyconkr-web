@@ -7,7 +7,7 @@ const PaymentResult = () => {
     TicketAPI.listPayments();
   }, []);
 
-  return <Page>구매가 완료되었습니다. 감사합니다.</Page>;
+  return <Page title="티켓 구매">구매가 완료되었습니다. 감사합니다.</Page>;
 };
 
 export default PaymentResult;

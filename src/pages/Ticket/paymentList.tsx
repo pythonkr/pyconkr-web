@@ -8,7 +8,7 @@ const PaymentList = () => {
   }, []);
 
   return (
-    <Page>
+    <Page title="티켓 구매">
       <h1>구매 내역</h1>
     </Page>
   );

@@ -1,7 +1,6 @@
 import Page from "components/common/Page";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
 import { tickets } from "./tickets";
 import Dialog from "components/common/Dialog";
 import { Link } from "react-router-dom";
@@ -51,8 +50,7 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
   };
 
   return (
-    <Page>
-      <Helmet title="티켓 구매" />
+    <Page title="티켓 구매">
       <Container>
         <Dialog
           header={dialogHeader}

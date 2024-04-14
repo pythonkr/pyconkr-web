@@ -12,7 +12,7 @@ const TermsOfService = () => {
 
   if (language === "KOR")
     return (
-      <Page>
+      <Page title="이용 약관">
         <h1>이용 약관</h1>
         <h2>0. 목적</h2>
         <p>
@@ -157,7 +157,7 @@ const TermsOfService = () => {
     );
   else
     return (
-      <Page>
+      <Page title="Terms of Service">
         <h1>Terms of Service</h1>
         <h2>0. Purpose</h2>
         <p>

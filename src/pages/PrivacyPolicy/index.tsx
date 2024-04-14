@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
 
   if (language === "KOR")
     return (
-      <Page>
+      <Page title="개인 정보 처리 방침">
         <h1>개인 정보 처리 방침</h1>
         <h2>0. 개인 정보 처리 방침이란?</h2>
         <p>
@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
     );
   else
     return (
-      <Page>
+      <Page title="Privacy Policy">
         <h1>Privacy Protection Policy</h1>
         <h2>0. What is Privacy Protection Policy?</h2>
         <p>
