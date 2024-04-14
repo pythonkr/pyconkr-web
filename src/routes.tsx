@@ -6,6 +6,8 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "pages/Login";
 import BuyTicket from "pages/Ticket/buy";
+import TermsOfService from "pages/TermsOfService";
+import PrivacyPolicy from "pages/PrivacyPolicy";
 
 const Router = () => {
   return (
@@ -15,6 +17,8 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/ticket/buy" element={<BuyTicket />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>

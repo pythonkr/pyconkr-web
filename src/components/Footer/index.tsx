@@ -16,6 +16,7 @@ import {
 } from "assets/icons";
 import useTranslation from "utils/hooks/useTranslation";
 import SponsorLevels, { SponsorLevel, SponsorLevelCode } from "enums/sponsorLevels";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [sponsors, setSponsors] = useState<
@@ -113,7 +114,8 @@ const Footer = () => {
             {t("로 만들었습니다.")}
           </div>
           <div className="terms">
-            {t("서비스 이용 약관")} | {t("개인정보 처리 방침")}
+            <Link to="/terms-of-service">{t("서비스 이용 약관")}</Link> |{" "}
+            <Link to="/privacy-policy">{t("개인 정보 처리 방침")}</Link>
           </div>
         </section>
         <section className="right"></section>
