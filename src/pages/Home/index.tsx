@@ -1,26 +1,28 @@
+import Page from "components/common/Page";
 import React from "react";
 import styled from "styled-components";
 
 const Home = () => {
   return (
     <Page>
-      <Header>
-        <h1>파이콘 한국 2024</h1>
-        <h2>PyCon Korea 2024</h2>
-        <h3>Coming Soon</h3>
-      </Header>
+      <Container>
+        <Header>
+          <h1>파이콘 한국 2024</h1>
+          <h2>PyCon Korea 2024</h2>
+          <h3>Coming Soon</h3>
+        </Header>
+      </Container>
     </Page>
   );
 };
 
 export default Home;
 
-const Page = styled.div`
-  margin: 5vh auto;
+const Container = styled.div`
   padding: 0 2.5vw;
 
-  width: 90vw;
-  height: 66vh;
+  width: 90%;
+  height: 77vh;
 
   border: 1px solid #f87c56;
   background: linear-gradient(to right, #fbb9a4, #fde3db);
