@@ -56,6 +56,7 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
           header={dialogHeader}
           isOpened={isDialogOpened}
           confirmLabel={t("구매하기")}
+          cancelLabel={t("취소")}
           onConfirmed={onDialogConfirmed}
           onCanceled={() => {
             setIsDialogOpened(false);
@@ -63,16 +64,19 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
         >
           {dialogContent}
         </Dialog>
-        <h1>티켓 구매하기</h1>
+        <h1>{t("티켓 구매하기")}</h1>
         {Object.entries(tickets).map(([k, v]) => (
           <div key={k}>
-            <h2>{v.name}</h2>
+            <h2>{t(v.name)}</h2>
             <table>
               <tbody>
                 {v.tickets.map((ticket) => (
                   <tr key={ticket.name}>
-                    <td>{ticket.name}</td>
-                    <td>{ticket.price.toLocaleString()}원</td>
+                    <td>{t(ticket.name)}</td>
+                    <td>
+                      {ticket.price.toLocaleString()}
+                      {t("원")}
+                    </td>
                     <td>
                       <button
                         onClick={() => {

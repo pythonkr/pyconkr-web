@@ -35,6 +35,14 @@ const EnglishTranslation = {
   "개인 정보 처리 방침": "Privacy Protection Policy",
   "페이지를 찾을 수 없습니다.": "Page not found.",
   로그인: "Login",
+  티켓: "Ticket",
+  구매하기: "Buy",
+  "티켓 구매하기": "Buy ticket",
+  원: " KRW",
+  "컨퍼런스 티켓": "Conference ticket",
+  "튜토리얼 티켓": "Tutorial ticket",
+  "스프린트 티켓": "Sprint ticket",
+  취소: "Cancel",
 };
 
 export default EnglishTranslation;

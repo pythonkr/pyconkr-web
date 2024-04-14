@@ -52,7 +52,7 @@ const Nav = () => {
             navigate("/login");
           }}
         >
-          로그인
+          {t("로그인")}
         </Menu>
         <Menu>
           Language

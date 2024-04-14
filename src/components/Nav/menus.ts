@@ -45,7 +45,7 @@ const Menus = {
     name: "티켓",
     sub: [
       {
-        name: "구매하기",
+        name: "티켓 구매하기",
         path: "buy",
       },
     ],
