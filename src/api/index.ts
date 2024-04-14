@@ -27,3 +27,4 @@ export function getErrorMessage(error: AxiosError | Error): string {
 
 export * as SponsorAPI from "./sponsor";
 export * as UserAPI from "./user";
+export * as TicketAPI from "./ticket";
