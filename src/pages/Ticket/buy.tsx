@@ -7,7 +7,11 @@ import Dialog from "components/common/Dialog";
 import { Link } from "react-router-dom";
 import useTranslation from "utils/hooks/useTranslation";
 
-const BuyTicket = () => {
+type Props = {
+  onPaymentCompleted: () => void;
+};
+
+const BuyTicket = ({ onPaymentCompleted }: Props) => {
   const t = useTranslation();
   const [isDialogOpened, setIsDialogOpened] = useState<boolean>(false);
   const [dialogHeader, setDialogHeader] = useState<string>("");
@@ -31,6 +35,14 @@ const BuyTicket = () => {
     setIsDialogOpened(true);
   };
 
+  const onDialogConfirmed = () => {
+    // 결제 모듈 띄우기
+    // 결제 다 되면 dialog 닫고
+    setIsDialogOpened(false);
+    // 페이지 넘기기
+    onPaymentCompleted();
+  };
+
   return (
     <Page>
       <Helmet title="티켓 구매" />
@@ -38,8 +50,8 @@ const BuyTicket = () => {
         <Dialog
           header={dialogHeader}
           isOpened={isDialogOpened}
-          confirmLabel="구매하기"
-          onConfirmed={() => {}}
+          confirmLabel={t("구매하기")}
+          onConfirmed={onDialogConfirmed}
           onCanceled={() => {
             setIsDialogOpened(false);
           }}
@@ -52,17 +64,17 @@ const BuyTicket = () => {
             <h2>{v.name}</h2>
             <table>
               <tbody>
-                {v.tickets.map((t) => (
-                  <tr key={t.name}>
-                    <td>{t.name}</td>
-                    <td>{t.price.toLocaleString()}원</td>
+                {v.tickets.map((ticket) => (
+                  <tr key={ticket.name}>
+                    <td>{ticket.name}</td>
+                    <td>{ticket.price.toLocaleString()}원</td>
                     <td>
                       <button
                         onClick={() => {
-                          openDialog(`${v.name} 구매`, t.description);
+                          openDialog(`${v.name} 구매`, ticket.description);
                         }}
                       >
-                        구매하기
+                        {t("구매하기")}
                       </button>
                     </td>
                   </tr>
