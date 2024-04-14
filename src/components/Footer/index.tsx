@@ -110,7 +110,7 @@ const Footer = () => {
           </table>
         </section>
         <section className="center">
-          <div className="slogan">슬로건, {t("파이콘 한국 2024")}</div>
+          <div className="slogan">Pythonic Moments, {t("파이콘 한국 2024")}</div>
           <div className="content">
             {t("파이콘 한국 2024는 파이콘 한국 준비위원회가 만들고 있습니다.")}
           </div>
