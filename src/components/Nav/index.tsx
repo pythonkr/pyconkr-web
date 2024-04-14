@@ -81,8 +81,10 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
-  width: 100%;
+  width: 99vw;
   height: 8vh;
+
+  padding-right: 1vw;
 
   display: flex;
   justify-content: space-between;

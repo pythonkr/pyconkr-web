@@ -157,7 +157,7 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.div`
-  width: 100%;
+  width: 100vw;
 `;
 
 const Sponsors = styled.div`
@@ -167,7 +167,6 @@ const Sponsors = styled.div`
 `;
 
 const About = styled.div`
-  width: 100%;
   height: 9rem;
   margin-bottom: 2.5rem;
 
@@ -222,14 +221,14 @@ const Fixed = styled.div`
   position: fixed;
   bottom: 0;
 
-  width: calc(100% - 2vw);
+  width: 97vw;
   height: 2.5rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 1vw;
+  padding: 0 2vw 0 1vw;
 
   & > section.left {
     font-weight: bold;
