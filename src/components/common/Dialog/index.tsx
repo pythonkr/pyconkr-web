@@ -1,12 +1,16 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import "./style.scss";
 import { isEscKeyPressed } from "utils";
+import "./style.scss";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   isOpened: boolean;
   header: string;
+  confirmLabel?: string;
+  cancelLabel?: string;
+  isLoading?: boolean;
 
-  onClose: () => void;
+  onConfirmed: () => void;
+  onCanceled: () => void;
 };
 
 type State = {
@@ -14,28 +18,31 @@ type State = {
   ref: ReturnType<typeof React.createRef<HTMLDivElement>>;
 };
 
-const Modal = ({
+const Dialog = ({
   isOpened,
-  className,
-  onClose,
-  onKeyDown,
-  onClick,
+  onConfirmed,
+  onCanceled,
+  confirmLabel,
+  cancelLabel,
   header,
+  isLoading,
+  className,
+  onKeyDown,
   children,
   ...rest
 }: Props) => {
   const [willNotShow, setWillNotShow] = useState<State["willNotShow"]>(false);
   const ref = useRef<HTMLDivElement>(null);
   const className_ =
-    `cm-modal ${className ?? ""} ${isOpened ? "opened" : ""} ${willNotShow ? "closing" : ""}`
+    `cm-dialog ${className ?? ""} ${isOpened ? "opened" : ""} ${willNotShow ? "closing" : ""}`
       .replace(/\s\s+/g, " ")
       .trim();
 
   const close = useCallback(async () => {
     setWillNotShow(true);
     await new Promise((r) => setTimeout(r, 0.3 * 1000)); // animation
-    onClose();
-  }, [onClose]);
+    onCanceled();
+  }, [onCanceled]);
 
   useEffect(() => {
     if (isOpened) {
@@ -53,10 +60,6 @@ const Modal = ({
       className={className_}
       ref={ref}
       tabIndex={0}
-      onClick={(e) => {
-        close();
-        onClick && onClick(e);
-      }}
       onKeyDown={(e) => {
         if (isEscKeyPressed(e)) {
           close();
@@ -72,16 +75,14 @@ const Modal = ({
             e.stopPropagation();
           }}
         >
-          <div className="header">
-            {header}
-            <button className="closeBtn" onClick={close}>
-              &times;
-            </button>
-          </div>
+          <div className="header">{header}</div>
           <div className="content">{children}</div>
           <div className="footer">
-            <button className="closeBtn" onClick={close}>
-              닫기
+            <button className="confirmBtn" onClick={onConfirmed}>
+              {confirmLabel ?? "확인"}
+            </button>
+            <button className="closeBtn" onClick={onCanceled}>
+              {cancelLabel ?? "취소"}
             </button>
           </div>
         </div>
@@ -90,4 +91,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default Dialog;

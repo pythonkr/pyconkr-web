@@ -6,6 +6,7 @@ import SponsorList from "pages/Sponsor";
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "pages/Login";
+import BuyTicket from "pages/Ticket/buy";
 
 const Router = () => {
   return (
@@ -13,8 +14,9 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sponsor" element={<SponsorList />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/sponsor" element={<SponsorList />} />
+        <Route path="/ticket/buy" element={<BuyTicket />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>

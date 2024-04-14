@@ -41,6 +41,15 @@ const Menus = {
       },
     ],
   },
+  ticket: {
+    name: "티켓",
+    sub: [
+      {
+        name: "구매하기",
+        path: "buy",
+      },
+    ],
+  },
   contribution: {
     name: "기여하기",
     sub: [
