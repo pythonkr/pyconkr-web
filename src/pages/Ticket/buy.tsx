@@ -6,6 +6,7 @@ import { tickets } from "./tickets";
 import Dialog from "components/common/Dialog";
 import { Link } from "react-router-dom";
 import useTranslation from "utils/hooks/useTranslation";
+import { TicketAPI } from "api";
 
 type Props = {
   onPaymentCompleted: () => void;
@@ -35,9 +36,15 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
     setIsDialogOpened(true);
   };
 
-  const onDialogConfirmed = () => {
+  const onDialogConfirmed = async () => {
+    // 결제 번호 생성
+    await TicketAPI.makePaymentId();
+
     // 결제 모듈 띄우기
-    // 결제 다 되면 dialog 닫고
+    // 결제 다 되면
+    // 결과 보내고
+    await TicketAPI.completePayment("1");
+    // dialog 닫고
     setIsDialogOpened(false);
     // 페이지 넘기기
     onPaymentCompleted();
