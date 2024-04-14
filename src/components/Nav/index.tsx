@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 import { RootState } from "store";
 import { setLanguage } from "store/Core";
 import styled from "styled-components";
-import "./style.scss";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
 import { Logo as LogoSvg } from "assets/icons";
