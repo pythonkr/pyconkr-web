@@ -32,8 +32,8 @@
     "build:prod": "react-scripts build",
     "prestart": "./scripts/set_dev.sh",
     "prestart:prod": "./scripts/set_prod.sh",
-    "prebuild": "chmod +x ./scripts/set_dev.sh && ./scripts/set_dev.sh",
-    "prebuild:prod": "chmod +x ./scripts/set_prod.sh && ./scripts/set_prod.sh"
+    "prebuild": "chmod +x ./scripts/set_dev.sh || ./scripts/set_dev.sh",
+    "prebuild:prod": "chmod +x ./scripts/set_prod.sh || ./scripts/set_prod.sh"
   },
   "eslintConfig": {
     "extends": [
