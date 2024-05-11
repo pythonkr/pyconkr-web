@@ -6,14 +6,18 @@ import { Payment } from "models/ticket";
 /** 결제 번호 발급 */
 export function makePaymentId(): Promise<string> {
   return new Promise((resolve, reject) => {
-    resolve("1");
-    return;
-
-    // eslint-disable-next-line no-unreachable
     axios
-      .post<string>("/ticket/purchase")
-      .then((response) => {
-        resolve("1");
+      .post<string>("/payments/", {
+        "price": 2000
+      }, {
+        headers: {
+          "Authorization": "Basic dGVzdDpweWNvbmtyNCQ="
+        },
+      })
+      .then((response: any) => {
+        // get merchant_id from response(json response.data)
+        console.log(response.data);
+        resolve(response.data.merchant_id);
       })
       .catch((error) => {
         console.error(error);

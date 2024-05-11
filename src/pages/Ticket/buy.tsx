@@ -1,5 +1,5 @@
 import Page from "components/common/Page";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { tickets } from "./tickets";
 import Dialog from "components/common/Dialog";
@@ -7,11 +7,26 @@ import { Link } from "react-router-dom";
 import useTranslation from "utils/hooks/useTranslation";
 import { TicketAPI } from "api";
 
+// IMP 모듈을 전역으로 선언
+declare global {
+  interface Window {
+    IMP: any;
+  }
+}
+
 type Props = {
   onPaymentCompleted: () => void;
 };
 
 const BuyTicket = ({ onPaymentCompleted }: Props) => {
+  // load IMP module
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://cdn.iamport.kr/v1/iamport.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const t = useTranslation();
   const [isDialogOpened, setIsDialogOpened] = useState<boolean>(false);
   const [dialogHeader, setDialogHeader] = useState<string>("");
@@ -36,17 +51,40 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
   };
 
   const onDialogConfirmed = async () => {
-    // 결제 번호 생성
-    await TicketAPI.makePaymentId();
+    // 결제 번호 생성 - merchant_id 받아와 변수(merchant_id)에 저장 
+    const merchant_id = await TicketAPI.makePaymentId();
+
+    console.log(merchant_id);
+
+    const IMP = window.IMP;
+    console.log(IMP);
+    IMP.init("imp80859147");
 
     // 결제 모듈 띄우기
-    // 결제 다 되면
-    // 결과 보내고
-    await TicketAPI.completePayment("1");
+    IMP.request_pay(
+      {
+        pg: "kcp",
+        pay_method: "card",
+        merchant_uid: merchant_id,
+        name: "티켓 구매",
+        amount: 2000,
+      },
+      async (rsp: any) => {
+        if (rsp.success) {
+          // 결제 성공 시
+          // 결제 완료 처리
+
+          // 완료 결과 보내기
+          // await TicketAPI.completePayment(merchant_id);
     // dialog 닫고
     setIsDialogOpened(false);
-    // 페이지 넘기기
+          // 페이지 이동
     onPaymentCompleted();
+        } else {
+          alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
+        }
+      }
+    );
   };
 
   return (
