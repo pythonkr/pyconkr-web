@@ -27,38 +27,38 @@ export const tickets: {
       },
     ],
   },
-  tutorial: {
-    name: "튜토리얼 티켓",
-    tickets: [
-      {
-        name: "Django로 웹사이트 만들기",
-        price: 20000,
-        description: (
-          <p>
-            금요일에 진행되는 튜토리얼 (Django로 웹사이트 만들기) 티켓입니다.
-            <br />
-            <br />
-            2024.09.30.까지 환불 가능합니다.
-          </p>
-        ),
-      },
-    ],
-  },
-  sprint: {
-    name: "스프린트 티켓",
-    tickets: [
-      {
-        name: "django",
-        price: 20000,
-        description: (
-          <p>
-            금요일에 진행되는 스프린트 (django) 티켓입니다.
-            <br />
-            <br />
-            2024.09.30.까지 환불 가능합니다.
-          </p>
-        ),
-      },
-    ],
-  },
+  // tutorial: {
+  //   name: "튜토리얼 티켓",
+  //   tickets: [
+  //     {
+  //       name: "Django로 웹사이트 만들기",
+  //       price: 20000,
+  //       description: (
+  //         <p>
+  //           금요일에 진행되는 튜토리얼 (Django로 웹사이트 만들기) 티켓입니다.
+  //           <br />
+  //           <br />
+  //           2024.09.30.까지 환불 가능합니다.
+  //         </p>
+  //       ),
+  //     },
+  //   ],
+  // },
+  // sprint: {
+  //   name: "스프린트 티켓",
+  //   tickets: [
+  //     {
+  //       name: "django",
+  //       price: 20000,
+  //       description: (
+  //         <p>
+  //           금요일에 진행되는 스프린트 (django) 티켓입니다.
+  //           <br />
+  //           <br />
+  //           2024.09.30.까지 환불 가능합니다.
+  //         </p>
+  //       ),
+  //     },
+  //   ],
+  // },
 };
