@@ -48,6 +48,10 @@ const Menus = {
         name: "티켓 구매하기",
         path: "buy",
       },
+      {
+        name: "구매 내역",
+        path: "payment-list",
+      },
     ],
   },
   contribution: {

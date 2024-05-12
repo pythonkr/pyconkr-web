@@ -8,6 +8,7 @@ import Login from "pages/Login";
 import TermsOfService from "pages/TermsOfService";
 import PrivacyPolicy from "pages/PrivacyPolicy";
 import TicketPage from "pages/Ticket";
+import PaymentList from "pages/Ticket/paymentList";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/ticket/buy" element={<TicketPage />} />
+        <Route path="/ticket/payment-list" element={<PaymentList />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/404" element={<NotFound />} />
