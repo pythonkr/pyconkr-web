@@ -89,10 +89,10 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
 
           // 완료 결과 보내기
           // await TicketAPI.completePayment(merchant_id);
-    // dialog 닫고
-    setIsDialogOpened(false);
+          // dialog 닫고
+          setIsDialogOpened(false);
           // 페이지 이동
-    onPaymentCompleted();
+          onPaymentCompleted();
         } else {
           alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
         }

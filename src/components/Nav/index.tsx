@@ -65,11 +65,11 @@ const Nav = () => {
             </SubMenu>
           ) : (
             <SubMenu
-          onClick={() => {
-            navigate("/login");
-          }}
-        >
-          {t("로그인")}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              {t("로그인")}
             </SubMenu>
           )}
         </Menu>
