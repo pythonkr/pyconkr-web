@@ -17,6 +17,12 @@ const Nav = () => {
   );
   const t = useTranslation();
 
+  // 로그인 여부 확인
+  // localStorage에 id가 있으면 로그인 상태로 간주
+  // 로그인 상태면 로그인 버튼 대신 로그아웃 버튼이 나타남
+  // 로그아웃 버튼 클릭 시 localStorage에서 id 삭제 후 메인 페이지로 이동
+  const isLogin = localStorage.getItem("id");
+
   return (
     <Container>
       <Logo
@@ -47,12 +53,25 @@ const Nav = () => {
         ))}
       </LeftMenus>
       <RightMenus>
-        <Menu
+        <Menu>
+          {isLogin ? (
+            <SubMenu
+              onClick={() => {
+                localStorage.removeItem("id");
+                navigate("/");
+              }}
+            >
+              {t("로그아웃")}
+            </SubMenu>
+          ) : (
+            <SubMenu
           onClick={() => {
             navigate("/login");
           }}
         >
           {t("로그인")}
+            </SubMenu>
+          )}
         </Menu>
         <Menu>
           Language
