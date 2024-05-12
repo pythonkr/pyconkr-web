@@ -64,7 +64,7 @@ const Footer = () => {
 
   return (
     <Container>
-      <Sponsors>
+      {/* <Sponsors>
         {sponsors === undefined ? (
           <span>후원사 목록을 가져오는데 실패했습니다.</span>
         ) : (
@@ -77,14 +77,14 @@ const Footer = () => {
             </div>
           ))
         )}
-      </Sponsors>
+      </Sponsors> */}
       <About>
         <section className="left">
           <table>
             <tbody>
               <tr>
                 <td>상호명</td>
-                <td>사단법인 파이썬 사용자모임</td>
+                <td>사단법인 파이썬사용자모임</td>
               </tr>
               <tr>
                 <td>사업자 등록 번호</td>
@@ -96,11 +96,11 @@ const Footer = () => {
               </tr>
               <tr>
                 <td>대표 전화 번호</td>
-                <td>010-2077-4788</td>
+                <td>031-261-2203</td>
               </tr>
               <tr>
                 <td>사업장 주소</td>
-                <td>서울시 강남구 강남대로84길 24-4</td>
+                <td>서울특별시 강남구 강남대로84길 24-4</td>
               </tr>
               <tr>
                 <td>통신판매번호</td>
