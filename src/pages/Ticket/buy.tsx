@@ -54,6 +54,14 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
   };
 
   const onDialogConfirmed = async () => {
+    // 로그인이 되지 않은 상태에서 진행할 수 없도록 막음
+    // 임시 - localStorage에 id가 저장되어 있는 경우 로그인 상태로 간주
+    if (!localStorage.getItem("id")) {
+      alert("로그인이 필요합니다.");
+      return;
+    }
+
+
     // 결제 번호 생성 - merchant_id 받아와 변수(merchant_id)에 저장 
     const merchant_id = await TicketAPI.makePaymentId(selectedTicket || 0);
 
