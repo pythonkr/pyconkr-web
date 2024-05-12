@@ -27,6 +27,9 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
     document.body.appendChild(script);
   }, []);
 
+  // 선택한 티켓 가격을 저장하는 변수
+  const [selectedTicket, setSelectedTicket] = useState<number>();
+
   const t = useTranslation();
   const [isDialogOpened, setIsDialogOpened] = useState<boolean>(false);
   const [dialogHeader, setDialogHeader] = useState<string>("");
@@ -52,7 +55,9 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
 
   const onDialogConfirmed = async () => {
     // 결제 번호 생성 - merchant_id 받아와 변수(merchant_id)에 저장 
-    const merchant_id = await TicketAPI.makePaymentId();
+    const merchant_id = await TicketAPI.makePaymentId(selectedTicket || 0);
+
+    const price = selectedTicket || 0;
 
     console.log(merchant_id);
 
@@ -67,7 +72,7 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
         pay_method: "card",
         merchant_uid: merchant_id,
         name: "티켓 구매",
-        amount: 2000,
+        amount: price,
       },
       async (rsp: any) => {
         if (rsp.success) {
@@ -119,6 +124,7 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
                       <button
                         onClick={() => {
                           openDialog(`${v.name} 구매`, ticket.description);
+                          setSelectedTicket(ticket.price);
                         }}
                       >
                         {t("구매하기")}

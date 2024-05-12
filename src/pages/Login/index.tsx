@@ -24,7 +24,13 @@ const Login = () => {
     }
 
     await UserAPI.signIn(id, password)
-      .then(() => {})
+      .then(() => {
+        // save id, password to local storage
+        localStorage.setItem("id", id);
+        localStorage.setItem("password", password);
+
+        alert("로그인 성공");
+      })
       .catch((e) => {
         setAlertMessage(t("로그인 실패. 잠시 후 다시 시도해주세요."));
       });

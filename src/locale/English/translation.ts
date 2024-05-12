@@ -43,6 +43,15 @@ const EnglishTranslation = {
   "튜토리얼 티켓": "Tutorial ticket",
   "스프린트 티켓": "Sprint ticket",
   취소: "Cancel",
+  "결제 내역": "Payment list",
+  환불: "Refund",
+  "환불하기": "Refund",
+  "환불 성공": "Refund success",
+  "환불 실패": "Refund failed",
+  "결제 번호": "Payment ID",
+  "결제 일시": "Payment date",
+  금액: "Price",
+  변경일: "Updated at",
 };
 
 export default EnglishTranslation;
