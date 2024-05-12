@@ -50,7 +50,7 @@ const PaymentList = () => {
         <table>
           <thead>
             <tr>
-              <th>{t("결제 번호")}</th>
+              {/* <th>{t("결제 번호")}</th> */}
               <th>{t("결제 상태")}</th>
               <th>{t("금액")}</th>
               <th>{t("변경일")}</th>
@@ -60,10 +60,12 @@ const PaymentList = () => {
           <tbody>
             {listOfPayments.map((payment) => (
               <tr key={payment.id}>
-                <td>{payment.id}</td>
-                <td>{payment.status.code}</td>
+                {/* <td>{payment.id}</td> */}
+                <td>{payment.status.name}</td>
                 <td>{payment.price} {t("원")}</td>
-                <td>{payment.modifiedAt?.toDateString()}</td>
+                <td>{
+                  payment.modifiedAt ? new Date(payment.modifiedAt).toLocaleString() : ""
+                }</td>
                 <td>
                   {payment.status.code === "PAYMENT_SUCCEED" && (
                     <button onClick={() => refundPayment(payment.id)}>{t("환불하기")}</button>
