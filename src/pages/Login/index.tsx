@@ -30,6 +30,10 @@ const Login = () => {
         localStorage.setItem("password", password);
 
         alert("로그인 성공");
+        // redirect to ticket page
+        // <Route path="/ticket/buy" element={<TicketPage />} />
+        document.location.href = "/ticket/buy";
+
       })
       .catch((e) => {
         setAlertMessage(t("로그인 실패. 잠시 후 다시 시도해주세요."));
