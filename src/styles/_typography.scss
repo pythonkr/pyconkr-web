@@ -1,0 +1,44 @@
+@import 'colors';
+
+.h2 {
+  font-weight: 600;
+  font-size: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.body1 {
+  font-weight: 400;
+  font-size: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.body2 {
+  font-weight: 400;
+  font-size: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.text-peach-fuzz {
+  color: $peach-fuzz;
+}
+
+.text-purple {
+  color: $purple;
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.text-black {
+  color: $black;
+}
