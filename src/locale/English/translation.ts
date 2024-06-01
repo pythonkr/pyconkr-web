@@ -56,6 +56,7 @@ const EnglishTranslation = {
   "수원 컨벤션 센터": "Suwon Convention Center",
   "2024.10.25": "October 25, 2024",
   "2024.10.27": "October 27, 2024",
+  "10번째 파이콘 한국에 여러분을 초대합니다.": "Join us for the 10th PyCon in Korea.",
   // Tutorial Page translations
   "PyCon Korea 2024 튜토리얼 진행자 모집": "Recruitment of Tutorial Instructors for PyCon Korea 2024",
   "PyCon Korea 2024 참가자 분들께 새로운 기술, 라이브러리를 전수해주실 진행자 분들을 모집합니다.": "We are looking for instructors to teach new technologies and libraries to participants at PyCon Korea 2024.",
@@ -77,6 +78,7 @@ const EnglishTranslation = {
   "대한민국 실정법에 위반이 없어야 합니다.": "There must be no violations of South Korean laws.",
   "PyCon Korea 2024 컨퍼런스 티켓을 구매하지 않더라도 튜토리얼 진행이 가능합니다.": "You can conduct a tutorial even if you do not purchase a PyCon Korea 2024 conference ticket.",
   "문의": "Contact",
+  // About Page translations
   "파이콘 한국이란": "About PyCon Korea",
   "파이콘은 세계 각국의 파이썬 프로그래밍 언어 커뮤니티에서 주관하는 비영리 컨퍼런스입니다. 한국에서는 처음으로 열린 파이콘 한국 2014를 시작으로 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다.":
     "PyCon is a non-commercial conference held by Python Programming Communities over the world. PyCon Korea has been successfully held in several years with a group of volunteers called ‘PyCon Korea Organizing Team’, who support the local Korean Python community.",

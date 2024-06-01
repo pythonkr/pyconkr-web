@@ -12,15 +12,15 @@ const Home = () => {
       </Container>
       <Container>
         <Block className="vertical">
-          <span className="vertical-item peach-puzz">
-            10번째 파이콘 한국에<br /> 여러분을 초대합니다.
-          </span>
+          <MediumText className="vertical-item peach-puzz">
+            {t("10번째 파이콘 한국에 여러분을 초대합니다.")}
+          </MediumText>
           <img className="vertical-item" src="images/logo.png" alt="logo.png" />
         </Block>
       </Container>
       <Container className="vertical">
-        <span className="purple">{t("2024.10.25")} - {t("2024.10.27")}</span>
-        <span className="yellow">{t("수원 컨벤션 센터")}</span>
+        <BigText className="purple">{t("2024.10.25")} - {t("2024.10.27")}</BigText>
+        <BigText className="yellow">{t("수원 컨벤션 센터")}</BigText>
       </Container>
     </Page>
   );
@@ -39,4 +39,13 @@ const Block = styled.div`
   border-radius: 16px;
   background-color: #141414;
   padding: 2rem 10rem;
+  align-items: center;
 `;
+
+const BigText = styled.span`
+  font-size: xx-large;
+`
+
+const MediumText = styled.span`
+  font-size: larger;
+`
