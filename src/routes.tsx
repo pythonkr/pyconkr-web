@@ -22,6 +22,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/ticket/buy" element={<TicketPage />} />
         <Route path="/ticket/payment-list" element={<PaymentList />} />
+        <Route path="/contribution/cfp" element={<Cfp />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/404" element={<NotFound />} />
