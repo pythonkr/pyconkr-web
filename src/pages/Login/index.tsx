@@ -104,7 +104,7 @@ const ID_PW = styled.div`
   padding: 2vh 1vw;
   border-radius: 0.5rem;
 
-  width: 20%;
+  width: 50%;
 
   background-color: #fde3db;
 
@@ -129,7 +129,7 @@ const ID_PW_ROW = styled.div`
     text-align: center;
   }
   & > div:last-of-type {
-    width: 60%;
+    width: 80%;
     height: 80%;
 
     & > input {
@@ -151,7 +151,9 @@ const SubmitBtn = styled.button`
 
   font-size: 1rem;
 
-  background-color: #fbb9a4;
+  background-color: #B0A8FE;
+  color: #141414;
+  padding: 0;
   border: none;
   border-radius: 4px;
 
