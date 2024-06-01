@@ -1,15 +1,17 @@
 import Page from "components/common/Page";
 import React from "react";
 import styled from "styled-components";
+import useTranslation from "utils/hooks/useTranslation";
 
 const Home = () => {
+  const t = useTranslation();
   return (
     <Page>
       <Container>
         <Header>
-          <h1>파이콘 한국 2024</h1>
-          <h2>PyCon Korea 2024</h2>
-          <h3>Coming Soon</h3>
+          <h1>Pythonic Moments</h1>
+          <h3>{t("2024.10.25")} - {t("2024.10.27")}</h3>
+          <h2>{t("수원 컨벤션 센터")}</h2>
         </Header>
       </Container>
     </Page>
