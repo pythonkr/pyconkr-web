@@ -127,7 +127,8 @@ const SubMenus = styled.div`
 
   padding: 0.2rem 0.5rem;
 
-  background-color: #fff;
+  background-color: #141414;
+  border: 1px solid;
 
   font-size: initial;
   font-weight: initial;
@@ -140,7 +141,7 @@ const SubMenu = styled.div`
 
   padding: 0.1rem 0.2rem;
 
-  color: gray;
+  color: #FEBD99;
 
   & + & {
     margin-top: 0.2rem;
