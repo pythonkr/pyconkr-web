@@ -36,6 +36,14 @@ span {
 	color: #C2C7D0;
 }
 
+ul {
+	margin-left: 2rem;
+}
+
+li > a, span > a {
+	color: $purple;
+}
+
 .purple {
 	color: $purple;
 }

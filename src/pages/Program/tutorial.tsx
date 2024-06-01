@@ -41,8 +41,8 @@ const TutorialPage = () => {
         </ul>
         <br/><br/>
         <h2>{t("문의")}</h2>
-        <span>program@pycon.kr</span>
+        <span><a href="mailto:program@pycon.kr">program@pycon.kr</a></span>
     </Page>;
 }
 
-export default TutorialPage
+export default TutorialPage;
