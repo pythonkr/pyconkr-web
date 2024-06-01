@@ -129,6 +129,7 @@ const SubMenus = styled.div`
 
   background-color: #141414;
   border: 1px solid;
+  border-color: #FEBD99;
 
   font-size: initial;
   font-weight: initial;
@@ -148,7 +149,7 @@ const SubMenu = styled.div`
   }
 
   &:hover {
-    color: black;
+    color: #B0A8FE;
   }
 `;
 
@@ -167,6 +168,7 @@ const Menu = styled.div`
   padding: 2vh 1vw;
 
   &:hover {
+    color: #B0A8FE;
     & > ${SubMenus} {
       display: initial;
     }
