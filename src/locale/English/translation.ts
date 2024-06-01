@@ -52,6 +52,9 @@ const EnglishTranslation = {
   "결제 일시": "Payment date",
   금액: "Price",
   변경일: "Updated at",
+  "수원 컨벤션 센터": "Suwon Convention Center",
+  "2024.10.25": "October 25, 2024",
+  "2024.10.27": "October 27, 2024"
 };
 
 export default EnglishTranslation;
