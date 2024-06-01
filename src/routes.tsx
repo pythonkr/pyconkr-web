@@ -10,6 +10,7 @@ import PrivacyPolicy from "pages/PrivacyPolicy";
 import TicketPage from "pages/Ticket";
 import PaymentList from "pages/Ticket/paymentList";
 import SponsorPage from "pages/Sponsor";
+import TutorialPage from "pages/Program/tutorial";
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/program/tutorial" element={<TutorialPage />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>
