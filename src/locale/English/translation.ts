@@ -77,6 +77,7 @@ const EnglishTranslation = {
   "대한민국 실정법에 위반이 없어야 합니다.": "There must be no violations of South Korean laws.",
   "PyCon Korea 2024 컨퍼런스 티켓을 구매하지 않더라도 튜토리얼 진행이 가능합니다.": "You can conduct a tutorial even if you do not purchase a PyCon Korea 2024 conference ticket.",
   "문의": "Contact",
+  "파이콘 한국이란": "About PyCon Korea",
   "파이콘은 세계 각국의 파이썬 프로그래밍 언어 커뮤니티에서 주관하는 비영리 컨퍼런스입니다. 한국에서는 처음으로 열린 파이콘 한국 2014를 시작으로 파이콘 한국 준비위원회는 건강한 국내 파이썬 생태계에 지속적인 보탬이 되고자, 커뮤니티 멤버들의 자발적인 봉사로 운영되고 있습니다.":
     "PyCon is a non-commercial conference held by Python Programming Communities over the world. PyCon Korea has been successfully held in several years with a group of volunteers called ‘PyCon Korea Organizing Team’, who support the local Korean Python community.",
   "2014년, 한국에서 첫 파이콘이 열린 이후로":
@@ -88,8 +89,11 @@ const EnglishTranslation = {
   "파이썬과 행복했던 순간들, 파이썬이기에 가능했던 순간들 여러분이 소중한 순간순간들을 가지고 모여 함께 새로운 순간들을 만들어 내길 바랍니다.":
     "Happy moments with Python, moments made possible by Python I hope you will gather with your precious moments and create new moments together.",
   "2024년 10월 파이콘에서 만나요!": "See you at PyCon October 2024!",
+  "파이콘은 다른 개발자 행사와 무엇이 다른가요?":
+    "What's the difference between PyCon and other developer's conferences?",
   "파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 개발자 대상 행사로, 타 기업 및 기관에서 개최하는 개발자 행사와는 성격이 다릅니다. 발표자와 튜토리얼 진행자를 포함하여, 자원봉사자와 준비위원회 담당자 등 모든 인원이 금전적 이득 없이 순수히 오픈소스 프로그래밍 언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.":
     "PyCon Korea is a non-profitable, developer-oriented event organized by community members, and has different characteristics from conferences organized companies or organizations. All attendees, including speakers, tutorial hosts, voluntary workers, and organizers, participate in PyCon Korea without any profitable purpose, and only to broaden the usage of Python, an open source programming language, and activate its community.",
+  "후원사 목록": "Sponsors",
 };
 
 export default EnglishTranslation;
