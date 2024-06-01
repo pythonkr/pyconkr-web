@@ -55,7 +55,28 @@ const EnglishTranslation = {
   변경일: "Updated at",
   "수원 컨벤션 센터": "Suwon Convention Center",
   "2024.10.25": "October 25, 2024",
-  "2024.10.27": "October 27, 2024"
+  "2024.10.27": "October 27, 2024",
+  // Tutorial Page translations
+  "PyCon Korea 2024 튜토리얼 진행자 모집": "Recruitment of Tutorial Instructors for PyCon Korea 2024",
+  "PyCon Korea 2024 참가자 분들께 새로운 기술, 라이브러리를 전수해주실 진행자 분들을 모집합니다.": "We are looking for instructors to teach new technologies and libraries to participants at PyCon Korea 2024.",
+  "지원하기": "Apply Now",
+  "튜토리얼이란?": "What is a Tutorial?",
+  "PyCon Korea의 튜토리얼은 파이썬에 대한 새로운 기술이나 라이브러리를 먼저 경험하신 분들로부터 직접 배울 수 있는 프로그램입니다. 이 곳에서는 현장에서 질문하고 해결하는 과정을 통해 해당 기술에 대해 깊이 있는 지식을 습득하게 됩니다.": "The tutorials at PyCon Korea are programs where you can learn new technologies or libraries related to Python directly from those who have experienced them first. In this setting, you will gain in-depth knowledge of the technology through a process of asking and solving questions on-site.",
+  "튜토리얼을 처음 진행하시나요?": "Is this your first time leading a tutorial?",
+  "이 튜토리얼 예시": "This document",
+  "를 참고해보시는 것은 어떨까요?": "might be helpful.",
+  "진행일정 및 장소": "Schedule and Venue",
+  "일자: 2024년 10월 25일 금요일": "Date: Friday, October 25, 2024",
+  "장소: 수원 컨벤션센터 3층": "Venue: 3rd Floor, Suwon Convention Center",
+  "진행자 모집 일정": "Recruitment Schedule for Instructors",
+  "~ 2024년 07월 31일 수요일 23:59:59 (KST)": "~ Wednesday, July 31, 2024, 23:59:59 (KST)",
+  "지난 튜토리얼": "Previous Tutorials",
+  "참고사항": "Important Notes",
+  "Python을 이용하여야 합니다.": "Python must be used.",
+  "진행자는 파이콘 기간 동안 파이콘 한국 행동강령을 지켜야 합니다.": "Instructors must adhere to the PyCon Korea Code of Conduct throughout the PyCon period.",
+  "대한민국 실정법에 위반이 없어야 합니다.": "There must be no violations of South Korean laws.",
+  "PyCon Korea 2024 컨퍼런스 티켓을 구매하지 않더라도 튜토리얼 진행이 가능합니다.": "You can conduct a tutorial even if you do not purchase a PyCon Korea 2024 conference ticket.",
+  "문의": "Contact",
 };
 
 export default EnglishTranslation;
