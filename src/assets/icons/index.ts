@@ -27,6 +27,7 @@ import { ReactComponent as Blog } from "./Blog.svg";
 import { ReactComponent as Flickr } from "./Flickr.svg";
 import { ReactComponent as Instagram } from "./Instagram.svg";
 import { ReactComponent as LinkedIn } from "./LinkedIn.svg";
+import { ReactComponent as Slogan} from "./Slogan.svg";
 
 export {
   ArrowForward,
@@ -58,4 +59,5 @@ export {
   Flickr,
   Instagram,
   LinkedIn,
+  Slogan,
 };

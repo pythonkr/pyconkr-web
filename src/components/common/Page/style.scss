@@ -1,6 +1,62 @@
+$peach-puzz: #FEBD99;
+$purple: #B0A8FE;
+$yellow: #DEF080;
+$black: #141414;
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+	font-family: "Pretendard-Regular", sans-serif;
+}
+
+body {
+	background-color: #090909;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 600;
+}
+
 div.cm-page {
 	margin: 3vh 5vw;
 	padding: 0 1vw;
 	width: 90vw;
 	min-height: 90vh;
+}
+
+.purple {
+	color: $purple;
+}
+
+.peach-puzz {
+	color: $peach-puzz;
+}
+
+.black {
+	color: $black;
+}
+
+.yellow {
+	color: $yellow;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.vertical-item {
+	padding-bottom: 1rem;
+}
+
+.vertical-item:last-child {
+	padding-bottom: 0;
 }
