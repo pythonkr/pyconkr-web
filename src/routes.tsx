@@ -11,6 +11,8 @@ import TicketPage from "pages/Ticket";
 import PaymentList from "pages/Ticket/paymentList";
 import SponsorPage from "pages/Sponsor";
 import TutorialPage from "pages/Program/tutorial";
+import Pyconkr2024 from "pages/About/pyconkr2024";
+import Cfp from "pages/Contribution/cfp";
 
 const Router = () => {
   return (
@@ -18,10 +20,12 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about/pyconkr2024" element={<Pyconkr2024 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/ticket/buy" element={<TicketPage />} />
         <Route path="/ticket/payment-list" element={<PaymentList />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
+        <Route path="/contribution/cfp" element={<Cfp />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/program/tutorial" element={<TutorialPage />} />
