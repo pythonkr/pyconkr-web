@@ -9,7 +9,7 @@ export function makePaymentId(price: number): Promise<string> {
     const id = localStorage.getItem("id");
     const password = localStorage.getItem("password");
     axios
-      .post<string>("/payments/", {
+      .post<string>("https://payment-dev.pycon.kr/payments/", {
         "price": price
       }, {
         headers: {
@@ -36,7 +36,7 @@ export function completePayment(paymentId: string): Promise<void> {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-unreachable
     axios
-      .post<void>("/ticket/purchase")
+      .post<void>("https://payment-dev.pycon.kr/ticket/purchase")
       .then((response) => {
         resolve();
       })
@@ -54,7 +54,7 @@ export function refundPayment(paymentId: string): Promise<void> {
     const id = localStorage.getItem("id");
     const password = localStorage.getItem("password");
     axios
-      .post<void>(`/payments/${paymentId}/refund/`, {}, {
+      .post<void>(`https://payment-dev.pycon.kr/payments/${paymentId}/refund/`, {}, {
         headers: {
           // Authorization
           // id:pw => base64
@@ -78,7 +78,7 @@ export function listPayments(): Promise<Payment[]> {
     const id = localStorage.getItem("id");
     const password = localStorage.getItem("password");
     axios
-      .get<APIPayment[]>("/payments/", {
+      .get<APIPayment[]>("https://payment-dev.pycon.kr/payments/", {
         headers: {
           // Authorization
           // id:pw => base64

@@ -5,7 +5,7 @@ import { getErrorMessage } from "api";
 export function signIn(id: string, password: string): Promise<void> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsor[]>("/login/", {
+      .get<APISponsor[]>("https://payment-dev.pycon.kr/login/", {
         headers: {
           // Authorization
           // id:pw => base64
