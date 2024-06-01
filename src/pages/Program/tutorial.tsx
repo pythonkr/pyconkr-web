@@ -8,7 +8,7 @@ const TutorialPage = () => {
     return <Page title="튜토리얼">
         <h1>{t("PyCon Korea 2024 튜토리얼 진행자 모집")}</h1>
         <span>{t("PyCon Korea 2024 참가자 분들께 새로운 기술, 라이브러리를 전수해주실 진행자 분들을 모집합니다.")}</span>
-        <button>{t("지원하기")}</button>
+        <button className="secondary" style={{fontSize: "small", padding: "4px 8px"}}>{t("지원하기")}</button>
         <br/><br/>
         <h2>{t("튜토리얼이란?")}</h2>
         <span>{t("PyCon Korea의 튜토리얼은 파이썬에 대한 새로운 기술이나 라이브러리를 먼저 경험하신 분들로부터 직접 배울 수 있는 프로그램입니다. 이 곳에서는 현장에서 질문하고 해결하는 과정을 통해 해당 기술에 대해 깊이 있는 지식을 습득하게 됩니다.")}</span>

@@ -167,7 +167,7 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.div`
-  width: 100vw;
+  margin-top: 10vh;
 `;
 
 const Sponsors = styled.div`
@@ -180,6 +180,7 @@ const About = styled.div`
   height: 9rem;
   margin-bottom: 2.5rem;
   color: #FEBD99;
+  height: max-content;
 
   border-top: 1px solid black;
 
@@ -194,6 +195,10 @@ const About = styled.div`
     padding-left: 1%;
 
     & > table {
+      border: 1px;
+      td {
+        background-color: #090909 !important;
+      }
       tr > td:nth-of-type(2) {
         padding-left: 1.5rem;
       }
