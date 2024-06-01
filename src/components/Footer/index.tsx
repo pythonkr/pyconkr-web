@@ -179,6 +179,7 @@ const Sponsors = styled.div`
 const About = styled.div`
   height: 9rem;
   margin-bottom: 2.5rem;
+  color: #FEBD99;
 
   border-top: 1px solid black;
 
@@ -217,7 +218,7 @@ const About = styled.div`
     }
     & > div a {
       text-decoration: none;
-      color: blue;
+      color: #B0A8FE;
     }
   }
 
@@ -231,7 +232,7 @@ const Fixed = styled.div`
   position: fixed;
   bottom: 0;
 
-  width: 97vw;
+  width: 100%;
   height: 2.5rem;
 
   display: flex;
@@ -248,15 +249,17 @@ const Fixed = styled.div`
     padding-top: 4px;
 
     svg {
-      color: black;
       width: 1.4rem;
+      fill: #FEBD99;
     }
+
     a + a {
       margin-left: 1.1rem;
     }
   }
 
   //////////////////////////
-  background-color: #fbb9a4;
+  background-color: #141414;
+  color: #FEBD99;
   //////////////////////////
 `;

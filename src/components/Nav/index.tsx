@@ -7,7 +7,7 @@ import { setLanguage } from "store/Core";
 import styled from "styled-components";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
-import { Logo as LogoSvg } from "assets/icons";
+import { Slogan as SloganSvg } from "assets/icons";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -30,12 +30,11 @@ const Nav = () => {
           navigate("/");
         }}
       >
-        <LogoSvg />
-        {/* TODO 올해 로고로 바꿔야 */}
+        <SloganSvg />
       </Logo>
       <LeftMenus>
         {Object.entries(MenuRoutes).map(([path, menu]) => (
-          <Menu key={path}>
+          <Menu className="peach-puzz" key={path}>
             {t(menu.name)}
             <SubMenus>
               {menu.sub.map((subMenu) => (
@@ -53,7 +52,7 @@ const Nav = () => {
         ))}
       </LeftMenus>
       <RightMenus>
-        <Menu>
+        <Menu className="peach-puzz">
           {isLogin ? (
             <SubMenu
               onClick={() => {
@@ -73,8 +72,8 @@ const Nav = () => {
             </SubMenu>
           )}
         </Menu>
-        <Menu>
-          Language
+        <Menu className="peach-puzz">
+          {t("언어")}
           <SubMenus>
             <SubMenu
               onClick={() => {
@@ -100,18 +99,13 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
-  width: 99vw;
   height: 8vh;
-
-  padding-right: 1vw;
-
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /////////////////////////
-  background-color: #fde3db;
-  /////////////////////////
+  background-color: #141414;
 `;
 
 const Logo = styled.div`

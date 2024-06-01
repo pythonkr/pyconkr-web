@@ -6,6 +6,7 @@ const EnglishTranslation = {
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
   "언어 변경": "Change language",
+  "언어": "Language",
   프로그램: "Program",
   기여하기: "Contribution",
   후원하기: "Sponsoring",
@@ -52,6 +53,9 @@ const EnglishTranslation = {
   "결제 일시": "Payment date",
   금액: "Price",
   변경일: "Updated at",
+  "수원 컨벤션 센터": "Suwon Convention Center",
+  "2024.10.25": "October 25, 2024",
+  "2024.10.27": "October 27, 2024"
 };
 
 export default EnglishTranslation;
