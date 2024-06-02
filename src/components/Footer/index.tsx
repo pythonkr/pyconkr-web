@@ -78,7 +78,7 @@ const Footer = () => {
           ))
         )}
       </Sponsors> */}
-      <About>
+      <div className="footer-about-section">
         <section className="left">
           <table>
             <tbody>
@@ -126,9 +126,9 @@ const Footer = () => {
             <Link to="/privacy-policy">{t("개인 정보 처리 방침")}</Link>
           </div>
         </section>
-        <section className="right"></section>
-      </About>
-      <Fixed>
+        {/* <section className="right"></section> */}
+      </div>
+      <div className="footer-fixed-section">
         <section className="left">{t("파이콘 한국 행동 강령")} (CoC)</section>
         <section className="right">
           <a href="mailto:pyconkr@pycon.kr">
@@ -159,7 +159,7 @@ const Footer = () => {
             <Flickr />
           </a>
         </section>
-      </Fixed>
+      </div>
     </Container>
   );
 };
@@ -173,98 +173,5 @@ const Container = styled.div`
 const Sponsors = styled.div`
   //////////////////////////
   background-color: deeppink;
-  //////////////////////////
-`;
-
-const About = styled.div`
-  height: 9rem;
-  margin-bottom: 2.5rem;
-  color: #FEBD99;
-  height: max-content;
-
-  border-top: 1px solid black;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  font-size: 0.8rem;
-
-  & > section.left {
-    width: 29%;
-    padding-left: 1%;
-
-    & > table {
-      border: 1px;
-      td {
-        background-color: #090909 !important;
-      }
-      tr > td:nth-of-type(2) {
-        padding-left: 1.5rem;
-      }
-    }
-  }
-
-  & > section.center {
-    width: 70%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 0.75rem;
-
-    & > div.slogan {
-      font-size: 1rem;
-    }
-    & > div + div {
-      margin-top: 1vh;
-    }
-    & > div a {
-      text-decoration: none;
-      color: #B0A8FE;
-    }
-  }
-
-  & > section.right {
-    width: 29%;
-    padding-right: 1%;
-  }
-`;
-
-const Fixed = styled.div`
-  position: fixed;
-  bottom: 0;
-
-  width: 100%;
-  height: 2.5rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 0 2vw 0 1vw;
-
-  & > section.left {
-    font-weight: bold;
-  }
-
-  & > section.right {
-    padding-top: 4px;
-
-    svg {
-      width: 1.4rem;
-      fill: #FEBD99;
-    }
-
-    a + a {
-      margin-left: 1.1rem;
-    }
-  }
-
-  //////////////////////////
-  background-color: #141414;
-  color: #FEBD99;
   //////////////////////////
 `;
