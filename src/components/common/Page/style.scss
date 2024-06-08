@@ -1,74 +1,411 @@
-$peach-puzz: #FEBD99;
-$purple: #B0A8FE;
-$yellow: #DEF080;
+$peach-puzz: #febd99;
+$purple: #b0a8fe;
+$yellow: #def080;
 $black: #141414;
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
-	font-family: "Pretendard-Regular", sans-serif;
-}
-
-body {
-	background-color: #090909;
-	font-size: 20px;
-	font-weight: 400;
-}
-
-h2 {
-	font-size: 24px;
-	font-weight: 600;
-}
-
-div.cm-page {
-	margin: 3vh 5vw;
-	padding: 0 1vw;
-	width: 90vw;
-	min-height: 90vh;
-}
-
-span {
-	color: #C2C7D0;
-}
-
-ul, ol {
-	margin-left: 2rem;
-}
-
-li > a, span > a {
-	color: $purple;
+  font-family: "Pretendard-Regular", sans-serif;
+  background-color: #090909;
 }
 
 .purple {
-	color: $purple;
+  color: $purple;
 }
 
 .peach-puzz {
-	color: $peach-puzz;
+  color: $peach-puzz;
 }
 
 .black {
-	color: $black;
+  color: $black;
 }
 
 .yellow {
-	color: $yellow;
+  color: $yellow;
+}
+
+span {
+  color: #c2c7d0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  width: 0px;
 }
 
 .vertical {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .vertical-item {
-	padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .vertical-item:last-child {
-	padding-bottom: 0;
+  padding-bottom: 0;
+}
+
+body {
+  background-color: #090909;
+  font-weight: 400;
+}
+
+.border-bottom {
+  border-bottom: 1px $peach-puzz solid;
+}
+
+// mobile
+@media only screen and (min-width: 375px) {
+  body {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .nav-bar {
+    border-bottom: 1px $peach-puzz solid;
+    height: 8vh;
+  }
+
+  .nav-logo {
+    display: flex;
+    width: 100px;
+    cursor: pointer;
+    padding-left: 1rem;
+  }
+
+  div.hamburger-react {
+    cursor: pointer;
+    height: 48px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s;
+    user-select: none;
+    width: 48px;
+    outline: none;
+    transform: none;
+    background-color: $black;
+    color: $peach-puzz;
+    border: none;
+  }
+
+  .menus {
+    width: 100%;
+    position: absolute;
+    top: 8vh;
+    height: 100%;
+    background-color: $black;
+    padding: 0 1rem;
+    color: $peach-puzz;
+    text-align: center;
+
+    & > .menu-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 20px;
+
+      & > span {
+        color: $peach-puzz;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+        height: 6vh;
+        border-bottom: 1px $peach-puzz solid;
+
+        &:hover {
+          color: $purple;
+        }
+      }
+      & > .sub-menu {
+        position: relative;
+        width: 100%;
+        background-color: $black;
+        border: 1px $peach-puzz solid;
+
+        & > .sub-menu-item {
+          color: $peach-puzz;
+          font-size: 14px;
+          padding-top: 1rem;
+
+          &:last-child {
+            padding-bottom: 1rem;
+          }
+
+          &:hover {
+            color: $purple;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-logo {
+    width: 84px;
+  }
+  .mobile-slogan {
+    width: 300px;
+  }
+  .welcome-text {
+    font-size: large;
+    white-space: nowrap;
+  }
+
+  .small-text {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .big-text {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .welcome-section {
+    border-radius: 16px;
+    background-color: $black;
+    padding: 2rem 4rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: $peach-puzz;
+    margin-bottom: 2rem;
+
+    & > section {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    & > section.left {
+      width: 50%;
+      order: 2;
+
+      & > table {
+        border: 1px;
+        td {
+          background-color: #090909 !important;
+        }
+        tr > td:nth-of-type(2) {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+
+    & > section.center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      order: 1;
+
+      & > .slogan {
+        font-weight: 600;
+      }
+
+      & > div + div {
+        margin-top: 1vh;
+      }
+
+      & > div a {
+        text-decoration: none;
+        color: $purple;
+      }
+    }
+  }
+
+  .footer-fixed-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: $peach-puzz;
+    background-color: $black;
+
+    & > .left {
+      font-weight: 800;
+    }
+
+    & > .right {
+      & > a {
+        margin-left: 0.5rem;
+
+        svg {
+          width: 1rem;
+          fill: $peach-puzz;
+        }
+      }
+      & > a:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// Desktop
+@media only screen and (min-width: 810px) {
+  body {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  div.cm-page {
+    margin: 3vh 5vw;
+    padding: 0 1vw;
+    width: 90vw;
+    min-height: 90vh;
+  }
+
+  ul,
+  ol {
+    margin-left: 2rem;
+  }
+
+  li > a,
+  span > a {
+    color: $purple;
+  }
+
+  .nav-logo {
+    width: 150px;
+  }
+
+  .nav-bar {
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+    height: 6vh;
+  }
+
+  .menus {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 800;
+    position: initial;
+    color: $peach-puzz;
+
+    & > .menu-item {
+      border: none;
+
+      & > span {
+        border-bottom: none;
+      }
+
+      &:hover {
+        & > .sub-menu {
+          position: absolute;
+          width: max-content;
+        }
+      }
+
+      & > .sub-menu {
+        background-color: $black;
+        border: 1px $peach-puzz solid;
+        color: $peach-puzz;
+
+        & > .sub-menu-item {
+          cursor: pointer;
+          color: $peach-puzz;
+
+          &:hover {
+            color: $purple;
+          }
+        }
+      }
+    }
+  }
+
+  .slide-open {
+    visibility: hidden;
+  }
+
+  .mobile-logo {
+    width: 181px;
+  }
+
+  .mobile-slogan {
+    width: 510px;
+  }
+
+  .welcome-text {
+    font-size: x-large;
+    white-space: nowrap;
+  }
+
+  .small-text {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .big-text {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .welcome-section {
+    border-radius: 16px;
+    background-color: $black;
+    padding: 2rem 10rem;
+    align-items: center;
+  }
+
+  // .footer-about-section {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   justify-content: center;
+  //   align-items: center;
+  //   padding: 0 1rem;
+  //   font-size: 16px;
+
+  //   & > section.left,
+  //   & > section.right {
+  //     flex-shrink: 0;
+  //     width: 50%;
+  //   }
+
+  //   & > section.center {
+  //     flex-grow: 2;
+  //     margin-bottom: 2rem;
+  //   }
+  // }
+}
+
+@media only screen and (min-width: 1200px) {
 }

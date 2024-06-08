@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
@@ -8,13 +8,17 @@ import styled from "styled-components";
 import useTranslation from "utils/hooks/useTranslation";
 import MenuRoutes from "./menus";
 import { Slogan as SloganSvg } from "assets/icons";
+import Hamburger from "hamburger-react";
+import useIsMobile from "utils/hooks/useIsMobile";
 
 const Nav = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isMobile = useIsMobile();
   const language = useSelector<RootState, RootState["core"]["language"]>(
     (state) => state.core.language
   );
+  const [openMenu, setOpenMenu] = useState(false);
   const t = useTranslation();
 
   // 로그인 여부 확인
@@ -24,23 +28,22 @@ const Nav = () => {
   const isLogin = localStorage.getItem("id");
 
   return (
-    <Container>
-      <Logo
-        onClick={() => {
-          navigate("/");
-        }}
-      >
+    <Container className="nav-bar">
+      <div className="nav-logo" onClick={() => navigate("/")}>
         <SloganSvg />
-      </Logo>
-      <LeftMenus>
+      </div>
+      {isMobile && <Hamburger toggled={openMenu} toggle={setOpenMenu} hideOutline={true} />}
+      <div className={`menus ${isMobile && !openMenu ? "hidden" : "visible"}`}>
         {Object.entries(MenuRoutes).map(([path, menu]) => (
-          <Menu className="peach-puzz" key={path}>
-            {t(menu.name)}
-            <SubMenus>
+          <Menu className="menu-item" key={path}>
+            <span>{t(menu.name)}</span>
+            <SubMenus className="sub-menu">
               {menu.sub.map((subMenu) => (
                 <SubMenu
+                  className="sub-menu-item"
                   key={subMenu.path}
                   onClick={() => {
+                    setOpenMenu(false);
                     navigate(`/${path}/${subMenu.path}`);
                   }}
                 >
@@ -50,12 +53,12 @@ const Nav = () => {
             </SubMenus>
           </Menu>
         ))}
-      </LeftMenus>
-      <RightMenus>
-        <Menu className="peach-puzz">
+        <Menu className="menu-item border-bottom">
           {isLogin ? (
             <SubMenu
+              className="sub-menu-item"
               onClick={() => {
+                setOpenMenu(false);
                 localStorage.removeItem("id");
                 navigate("/");
               }}
@@ -64,7 +67,9 @@ const Nav = () => {
             </SubMenu>
           ) : (
             <SubMenu
+              className="sub-menu-item"
               onClick={() => {
+                setOpenMenu(false);
                 navigate("/login");
               }}
             >
@@ -72,18 +77,22 @@ const Nav = () => {
             </SubMenu>
           )}
         </Menu>
-        <Menu className="peach-puzz">
-          {t("언어")}
-          <SubMenus>
+        <Menu className="menu-item">
+          <span>{t("언어")}</span>
+          <SubMenus className="sub-menu">
             <SubMenu
+              className="sub-menu-item"
               onClick={() => {
+                setOpenMenu(false);
                 dispatch(setLanguage("KOR"));
               }}
             >
               한국어
             </SubMenu>
             <SubMenu
+              className="sub-menu-item"
               onClick={() => {
+                setOpenMenu(false);
                 dispatch(setLanguage("ENG"));
               }}
             >
@@ -91,7 +100,7 @@ const Nav = () => {
             </SubMenu>
           </SubMenus>
         </Menu>
-      </RightMenus>
+      </div>
     </Container>
   );
 };
@@ -99,8 +108,6 @@ const Nav = () => {
 export default Nav;
 
 const Container = styled.div`
-  height: 8vh;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,28 +115,12 @@ const Container = styled.div`
   background-color: #141414;
 `;
 
-const Logo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 10%;
-  height: 100%;
-
-  cursor: pointer;
-`;
-
 const SubMenus = styled.div`
   display: none;
   position: absolute;
-  top: 85%;
-  left: -10%;
-
-  padding: 0.2rem 0.5rem;
+  top: 70%;
 
   background-color: #141414;
-  border: 1px solid;
-  border-color: #FEBD99;
 
   font-size: initial;
   font-weight: initial;
@@ -138,26 +129,17 @@ const SubMenus = styled.div`
 const SubMenu = styled.div`
   cursor: pointer;
 
-  white-space: nowrap;
-
   padding: 0.1rem 0.2rem;
 
-  color: #FEBD99;
+  color: #febd99;
 
   & + & {
     margin-top: 0.2rem;
   }
 
   &:hover {
-    color: #B0A8FE;
+    color: #b0a8fe;
   }
-`;
-
-const Menus = styled.div`
-  display: flex;
-  align-items: center;
-
-  height: 100%;
 `;
 
 const Menu = styled.div`
@@ -165,27 +147,12 @@ const Menu = styled.div`
   cursor: pointer;
   user-select: none;
 
-  padding: 2vh 1vw;
+  padding: 1vh 1vw;
 
   &:hover {
-    color: #B0A8FE;
+    color: #b0a8fe;
     & > ${SubMenus} {
       display: initial;
     }
-  }
-
-  & + & {
-    margin-left: 3vw;
-  }
-`;
-
-const LeftMenus = styled(Menus)`
-  font-weight: bold;
-  font-size: 1.25rem;
-`;
-
-const RightMenus = styled(Menus)`
-  ${Menu} + ${Menu} {
-    margin-left: 1vw;
   }
 `;

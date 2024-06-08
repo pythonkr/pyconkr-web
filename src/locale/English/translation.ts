@@ -56,7 +56,8 @@ const EnglishTranslation = {
   "수원 컨벤션 센터": "Suwon Convention Center",
   "2024.10.25": "October 25, 2024",
   "2024.10.27": "October 27, 2024",
-  "10번째 파이콘 한국에 여러분을 초대합니다.": "Join us for the 10th PyCon in Korea.",
+  "10번째 파이콘 한국에": "Join us",
+  "여러분을 초대합니다.": "for the 10th PyCon in Korea.",
   // Tutorial Page translations
   "PyCon Korea 2024 튜토리얼 진행자 모집": "Recruitment of Tutorial Instructors for PyCon Korea 2024",
   "PyCon Korea 2024 참가자 분들께 새로운 기술, 라이브러리를 전수해주실 진행자 분들을 모집합니다.": "We are looking for instructors to teach new technologies and libraries to participants at PyCon Korea 2024.",
