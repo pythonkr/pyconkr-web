@@ -9,7 +9,7 @@ const TutorialPage = () => {
     const navigate = useNavigate();
 
     const goToForm = () => {
-        navigate("/");
+        alert("모집이 곧 시작될 예정입니다. 잠시만 기다려 주세요.")
     }
 
     return <Page title="스프린트">
