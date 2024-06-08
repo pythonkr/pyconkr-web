@@ -11,6 +11,7 @@ import TicketPage from "pages/Ticket";
 import PaymentList from "pages/Ticket/paymentList";
 import SponsorPage from "pages/Sponsor";
 import TutorialPage from "pages/Program/tutorial";
+import SprintPage from "pages/Program/sprint";
 import Pyconkr2024 from "pages/About/pyconkr2024";
 import Cfp from "pages/Contribution/cfp";
 
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/program/tutorial" element={<TutorialPage />} />
+        <Route path="/program/sprint" element={<SprintPage />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>
