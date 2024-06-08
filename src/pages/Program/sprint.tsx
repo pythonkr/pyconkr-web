@@ -21,7 +21,7 @@ const TutorialPage = () => {
         <span>{t("PyCon Korea의 스프린트는 오픈소스 프로젝트에 대해 집중적으로 학습하고 개발하는 프로그램입니다. 이 곳에서는 새로운 동료들을 만나고, 오픈소스에서 얻을 수 있는 경험과 지식을 자유롭게 나눌 수 있습니다. ")}</span>
         <br/><br/>
         <h2>{t("스프린트를 처음 진행하시나요?")}</h2>
-        <span><a href="https://opensourceevents.github.io/">{t("이 문서")}</a>{t("가 좋은 가이드가 될 것입니다. (Getting your open source project ready for new contributors)")}</span>
+        <span><a href="https://opensourceevents.github.io/">{t("이 문서")}</a>{t("를 참고해보시는 것은 어떨까요? (Getting your open source project ready for new contributors)")}</span>
         <br/><br/>
         <h2>{t("진행일정 및 장소")}</h2>
         <span>
