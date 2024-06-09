@@ -119,6 +119,7 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
         {Object.entries(tickets).map(([k, v]) => (
           <div key={k}>
             <h2>{t(v.name)}</h2>
+            <h3>티켓 판매 시작: 2024년 7월 15일 14:00 부터</h3>
             <table>
               <tbody>
                 {v.tickets.map((ticket) => (
