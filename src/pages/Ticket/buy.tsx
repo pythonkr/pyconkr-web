@@ -71,7 +71,10 @@ const BuyTicket = ({ onPaymentCompleted }: Props) => {
 
     const IMP = window.IMP;
     console.log(IMP);
-    IMP.init("imp96676915");
+
+    const imp = "imp96676915"
+    console.log(imp)
+    IMP.init(imp);
 
     // 결제 모듈 띄우기
     IMP.request_pay(
