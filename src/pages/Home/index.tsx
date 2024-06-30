@@ -1,44 +1,37 @@
+import Page from "components/common/Page";
 import React from "react";
 import styled from "styled-components";
+import useTranslation from "utils/hooks/useTranslation";
 
 const Home = () => {
+  const t = useTranslation();
   return (
     <Page>
-      <Header>
-        <h1>파이콘 한국 2024</h1>
-        <h2>PyCon Korea 2024</h2>
-        <h3>Coming Soon</h3>
-      </Header>
+      <Container>
+        <img className="mobile-slogan" src="images/introduceSlogan.png" alt="introduceSlogan.png" />
+      </Container>
+      <Container>
+        <div className="vertical welcome-section">
+          <span className="vertical-item peach-puzz welcome-text">
+            <b>{t("10번째 파이콘 한국에")}<br /></b>
+            {t("여러분을 초대합니다.")}
+          </span>
+          <img className="mobile-logo vertical-item" src="images/logo.png" alt="logo.png" />
+        </div>
+      </Container>
+      <Container className="vertical">
+        <span className="big-text purple">October 25-27</span>
+        <span className="small-text yellow">in Suwon Convention Center</span>
+      </Container>
     </Page>
   );
 };
 
 export default Home;
 
-const Page = styled.div`
-  margin: 5vh auto;
-  padding: 0 2.5vw;
-
-  width: 90vw;
-  height: 90vh;
-
-  border: 1px solid #f87c56;
-  background: linear-gradient(to right, #fbb9a4, #fde3db);
-`;
-
-const Header = styled.div`
-  color: #852305;
-
-  h1 {
-    font-size: 5rem;
-    margin: 5vh 0;
-  }
-  h2 {
-    font-size: 4rem;
-    margin: 3vh 0;
-  }
-  h3 {
-    font-size: 3.3rem;
-    margin: 2vh 0;
-  }
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 0;
 `;

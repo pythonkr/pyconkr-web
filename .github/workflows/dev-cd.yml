@@ -41,3 +41,7 @@ jobs:
       - name: Deploy
         run: |
           aws s3 sync --delete ./build s3://pycon-dev2024.pycon.kr --region ap-northeast-2
+
+#      - name: Deploy to pay
+#        run: |
+#          aws s3 sync --delete ./build s3://pyconkr-payment --region ap-northeast-2

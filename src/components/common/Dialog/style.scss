@@ -1,0 +1,119 @@
+div.cm-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  button {
+    outline: none;
+    cursor: pointer;
+    border: 0;
+  }
+
+  & > div {
+    width: 90%;
+    max-width: 512px;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    animation: modal-show 0.3s;
+    overflow: hidden;
+
+    & > div.header {
+      position: relative;
+      padding: 16px 64px 16px 16px;
+      background-color: #f1f1f1;
+      font-weight: 700;
+    }
+
+    & > div.content {
+      max-height: 50vh;
+      padding: 1rem;
+      overflow-y: auto;
+      word-wrap: break-word;
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    & > div.footer {
+      padding: 12px 16px;
+      text-align: right;
+
+      button {
+        padding: 6px 12px;
+        color: #fff;
+        background-color: #6c757d;
+        border-radius: 5px;
+        font-size: 13px;
+      }
+			button+button {
+				margin-left: 8px;
+			}
+    }
+
+    &.closing {
+      animation: modal-hide 0.3s;
+    }
+  }
+
+  &.opened {
+    display: flex;
+    align-items: center;
+    animation: modal-bg-show 0.3s;
+
+    &.closing {
+      animation: modal-bg-hide 0.3s;
+    }
+  }
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes modal-hide {
+  0% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  80% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+}
+
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-bg-hide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
