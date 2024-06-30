@@ -6,10 +6,10 @@ const Menus = {
         name: "파이콘 한국 2024",
         path: "pyconkr2024",
       },
-      // {
-      //   name: "파이콘 한국 행동 강령",
-      //   path: "coc",
-      // },
+      {
+        name: "파이콘 한국 행동 강령",
+        path: "coc",
+      },
       // {
       //   name: "파이콘 한국 준비위원회",
       //   path: "organizing-team",
