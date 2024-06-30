@@ -53,30 +53,31 @@ const Nav = () => {
             </SubMenus>
           </Menu>
         ))}
-        <Menu className="menu-item border-bottom">
-          {isLogin ? (
-            <SubMenu
-              className="sub-menu-item"
-              onClick={() => {
-                setOpenMenu(false);
-                localStorage.removeItem("id");
-                navigate("/");
-              }}
-            >
-              {t("로그아웃")}
-            </SubMenu>
-          ) : (
-            <SubMenu
-              className="sub-menu-item"
-              onClick={() => {
-                setOpenMenu(false);
-                navigate("/login");
-              }}
-            >
-              {t("로그인")}
-            </SubMenu>
-          )}
-        </Menu>
+        {/*TODO: 필요시 활성화*/}
+        {/*<Menu className="menu-item border-bottom">*/}
+        {/*  {isLogin ? (*/}
+        {/*    <SubMenu*/}
+        {/*      className="sub-menu-item"*/}
+        {/*      onClick={() => {*/}
+        {/*        setOpenMenu(false);*/}
+        {/*        localStorage.removeItem("id");*/}
+        {/*        navigate("/");*/}
+        {/*      }}*/}
+        {/*    >*/}
+        {/*      {t("로그아웃")}*/}
+        {/*    </SubMenu>*/}
+        {/*  ) : (*/}
+        {/*    <SubMenu*/}
+        {/*      className="sub-menu-item"*/}
+        {/*      onClick={() => {*/}
+        {/*        setOpenMenu(false);*/}
+        {/*        navigate("/login");*/}
+        {/*      }}*/}
+        {/*    >*/}
+        {/*      {t("로그인")}*/}
+        {/*    </SubMenu>*/}
+        {/*  )}*/}
+        {/*</Menu>*/}
         <Menu className="menu-item">
           <span>{t("언어")}</span>
           <SubMenus className="sub-menu">

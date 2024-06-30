@@ -41,19 +41,19 @@ const Menus = {
       },
     ],
   },
-  ticket: {
-    name: "티켓",
-    sub: [
-      {
-        name: "티켓 구매하기",
-        path: "buy",
-      },
-      {
-        name: "구매 내역",
-        path: "payment-list",
-      },
-    ],
-  },
+  // ticket: {
+  //   name: "티켓",
+  //   sub: [
+  //     {
+  //       name: "티켓 구매하기",
+  //       path: "buy",
+  //     },
+  //     {
+  //       name: "구매 내역",
+  //       path: "payment-list",
+  //     },
+  //   ],
+  // },
   contribution: {
     name: "기여하기",
     sub: [

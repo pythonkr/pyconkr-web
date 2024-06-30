@@ -22,9 +22,9 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about/pyconkr2024" element={<Pyconkr2024 />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/ticket/buy" element={<TicketPage />} />
-        <Route path="/ticket/payment-list" element={<PaymentList />} />
+        {/*<Route path="/login" element={<Login />} />*/}
+        {/*<Route path="/ticket/buy" element={<TicketPage />} />*/}
+        {/*<Route path="/ticket/payment-list" element={<PaymentList />} />*/}
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/contribution/cfp" element={<Cfp />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
