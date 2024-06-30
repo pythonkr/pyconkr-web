@@ -79,36 +79,36 @@ const Footer = () => {
         )}
       </Sponsors> */}
       <div className="footer-about-section">
-        <section className="left">
-          <table>
-            <tbody>
-              <tr>
-                <td>상호명</td>
-                <td>사단법인 파이썬사용자모임</td>
-              </tr>
-              <tr>
-                <td>사업자 등록 번호</td>
-                <td>338-82-00046</td>
-              </tr>
-              <tr>
-                <td>대표자명</td>
-                <td>배권한</td>
-              </tr>
-              <tr>
-                <td>대표 전화 번호</td>
-                <td>031-261-2203</td>
-              </tr>
-              <tr>
-                <td>사업장 주소</td>
-                <td>서울특별시 강남구 강남대로84길 24-4</td>
-              </tr>
-              <tr>
-                <td>통신판매번호</td>
-                <td>2023-서울강남-03501</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+        {/*<section className="left">*/}
+        {/*  <table>*/}
+        {/*    <tbody>*/}
+        {/*      <tr>*/}
+        {/*        <td>상호명</td>*/}
+        {/*        <td>사단법인 파이썬사용자모임</td>*/}
+        {/*      </tr>*/}
+        {/*      <tr>*/}
+        {/*        <td>사업자 등록 번호</td>*/}
+        {/*        <td>338-82-00046</td>*/}
+        {/*      </tr>*/}
+        {/*      <tr>*/}
+        {/*        <td>대표자명</td>*/}
+        {/*        <td>배권한</td>*/}
+        {/*      </tr>*/}
+        {/*      <tr>*/}
+        {/*        <td>대표 전화 번호</td>*/}
+        {/*        <td>031-261-2203</td>*/}
+        {/*      </tr>*/}
+        {/*      <tr>*/}
+        {/*        <td>사업장 주소</td>*/}
+        {/*        <td>서울특별시 강남구 강남대로84길 24-4</td>*/}
+        {/*      </tr>*/}
+        {/*      <tr>*/}
+        {/*        <td>통신판매번호</td>*/}
+        {/*        <td>2023-서울강남-03501</td>*/}
+        {/*      </tr>*/}
+        {/*    </tbody>*/}
+        {/*  </table>*/}
+        {/*</section>*/}
         <section className="center">
           <div className="slogan">Pythonic Moments, {t("파이콘 한국 2024")}</div>
           <div className="content">
