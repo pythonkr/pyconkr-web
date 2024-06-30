@@ -23,14 +23,14 @@ const Menus = {
   program: {
     name: "프로그램",
     sub: [
-      {
-        name: "키노트",
-        path: "keynote",
-      },
-      {
-        name: "발표",
-        path: "session",
-      },
+      // {
+      //   name: "키노트",
+      //   path: "keynote",
+      // },
+      // {
+      //   name: "발표",
+      //   path: "session",
+      // },
       {
         name: "스프린트",
         path: "sprint",
