@@ -61,18 +61,18 @@ const Menus = {
         name: "발표 제안하기",
         path: "cfp",
       },
-      {
-        name: "발표안 작성 가이드",
-        path: "cfp/guide",
-      },
-      {
-        name: "키노트 연사 추천하기",
-        path: "recommending-keynote",
-      },
-      {
-        name: "영상 자막",
-        path: "video-subtitle",
-      },
+      // {
+      //   name: "발표안 작성 가이드",
+      //   path: "cfp/guide",
+      // },
+      // {
+      //   name: "키노트 연사 추천하기",
+      //   path: "recommending-keynote",
+      // },
+      // {
+      //   name: "영상 자막",
+      //   path: "video-subtitle",
+      // },
     ],
   },
   sponsoring: {
@@ -82,26 +82,26 @@ const Menus = {
         name: "후원사 안내",
         path: "sponsor/prospectus",
       },
-      {
-        name: "개인 후원자",
-        path: "patron",
-      },
-      {
-        name: "후원사 혜택 안내",
-        path: "sponsor/benefit",
-      },
-      {
-        name: "후원사로 참여하기",
-        path: "sponsor/join",
-      },
-      {
-        name: "후원사 FAQ",
-        path: "sponsor/faq",
-      },
-      {
-        name: "후원사 약관",
-        path: "sponsor/terms",
-      },
+      // {
+      //   name: "개인 후원자",
+      //   path: "patron",
+      // },
+      // {
+      //   name: "후원사 혜택 안내",
+      //   path: "sponsor/benefit",
+      // },
+      // {
+      //   name: "후원사로 참여하기",
+      //   path: "sponsor/join",
+      // },
+      // {
+      //   name: "후원사 FAQ",
+      //   path: "sponsor/faq",
+      // },
+      // {
+      //   name: "후원사 약관",
+      //   path: "sponsor/terms",
+      // },
     ],
   },
 } as const;
