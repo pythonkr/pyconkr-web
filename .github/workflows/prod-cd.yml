@@ -41,4 +41,4 @@ jobs:
       - name: Deploy
         run: |
           aws s3 sync --delete ./build s3://pyconkr-web-2024 --region ap-northeast-2
-          aws cloudfront create-invalidation --distribution-id E3SSIRH09FRJAY --paths "/index.html" --region ap-northeast-2
+          aws cloudfront create-invalidation --distribution-id E3SSIRH09FRJAY --paths "/*" --region ap-northeast-2
