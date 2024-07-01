@@ -169,9 +169,3 @@ export default Footer;
 const Container = styled.div`
   margin-top: 10vh;
 `;
-
-const Sponsors = styled.div`
-  //////////////////////////
-  background-color: deeppink;
-  //////////////////////////
-`;
