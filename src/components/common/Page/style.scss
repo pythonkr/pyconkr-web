@@ -68,7 +68,7 @@ body {
 }
 
 // mobile
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 360px) {
   body {
     font-size: 12px;
   }
@@ -257,7 +257,7 @@ body {
 
     & > .right {
       & > a {
-        margin-left: 0.5rem;
+        margin-left: 0.4rem;
 
         svg {
           width: 1rem;
