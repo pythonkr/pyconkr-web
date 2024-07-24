@@ -5,8 +5,10 @@ import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
 import styled from "styled-components";
 import Page from "components/common/Page";
+import useIsMobile from "utils/hooks/useIsMobile";
 
 const SponsorPage = () => {
+  const isMobile = useIsMobile();
   return (
     <Page title="후원하기">
       <Container>
@@ -17,7 +19,10 @@ const SponsorPage = () => {
             <Button>후원하기</Button>
             <Button>후원사 가이드 다운로드</Button>
             <span className="medium-text white">
-              후원 관련 문의: <a href="mailto:sponsor@pycon.kr">sponsor@pycon.kr</a>
+              후원 관련 문의:{" "}
+              <a className="purple" href="mailto:sponsor@pycon.kr">
+                sponsor@pycon.kr
+              </a>
             </span>
           </Vertical>
         </Vertical>
@@ -28,21 +33,18 @@ const SponsorPage = () => {
           <H1>파이콘 한국 후원의 의미</H1>
           <H3>파이콘 한국은?</H3>
           <H6>
-            파이콘 한국은 커뮤니티 주관으로 이뤄지는
-            <br /> 비영리 개발자 대상 행사로 오픈소스 프로그래밍 언어인 파이썬의
-            <br /> 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.
+            파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 개발자 대상 행사로 오픈소스 프로그래밍
+            언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.
           </H6>
           <H3>비영리 행사</H3>
           <H6>
-            파이콘 한국의 발표자 및 튜토리얼 진행자를 포함,
-            <br /> 자원봉사자와 준비위원회 담당자 등 모든 인원이
-            <br /> 금전적 이득 없이 행사를 준비하고 운영해 나갑니다.
+            파이콘 한국의 발표자 및 튜토리얼 진행자를 포함, 자원봉사자와 준비위원회 담당자 등 모든
+            인원이 금전적 이득 없이 행사를 준비하고 운영해 나갑니다.
           </H6>
           <H3>커뮤니티에 기여</H3>
           <H6>
-            이에 파이콘 한국에의 후원은 국내 오픈소스 커뮤니티와
-            <br /> 파이썬 커뮤니티에 대한 가장 좋은 기여 방법이며 여러 우수한
-            <br /> 개발자들과의 만남을 가지실 수 있는 기회입니다.
+            이에 파이콘 한국에의 후원은 국내 오픈소스 커뮤니티와 파이썬 커뮤니티에 대한 가장 좋은
+            기여 방법이며 여러 우수한 개발자들과의 만남을 가지실 수 있는 기회입니다.
           </H6>
         </Vertical>
       </Container>
@@ -55,16 +57,12 @@ const SponsorPage = () => {
           />
           <H1>2024 파이콘 한국</H1>
           <H6 style={{ marginBottom: "2rem" }}>
-            2014년, 한국에서 첫 파이콘이 열린 이후로 파이써니스타들은
-            <br /> 파이콘이라는 만남의 장에 파이썬이라는 하나의 공통점으로 뭉쳐
-            <br /> 각자의 순간들을 나누고, 새로운 순간들을 함께 만들어왔습니다.
-            <br />
-            <br /> 여러분의 소중한 순간이 모여 파이콘은 점점 성장해올 수 있었고,
-            <br /> 어느덧 10번째 파이콘 한국을 앞두고 있습니다.
-            <br />
-            <br /> 파이썬과 행복했던 순간들, 파이썬이기에 가능했던 순간들,
-            <br /> 여러분이 소중한 순간순간들을 가지고 모여
-            <br /> 함께 새로운 순간들을 만들어 내길 바랍니다.
+            2014년, 한국에서 첫 파이콘이 열린 이후로 파이써니스타들은 파이콘이라는 만남의 장에
+            파이썬이라는 하나의 공통점으로 뭉쳐 각자의 순간들을 나누고, 새로운 순간들을 함께
+            만들어왔습니다. 여러분의 소중한 순간이 모여 파이콘은 점점 성장해올 수 있었고, 어느덧
+            10번째 파이콘 한국을 앞두고 있습니다. 파이썬과 행복했던 순간들, 파이썬이기에 가능했던
+            순간들, 여러분이 소중한 순간순간들을 가지고 모여 함께 새로운 순간들을 만들어 내길
+            바랍니다.
           </H6>
           <Button>지난 파이콘 보러가기</Button>
         </Vertical>
@@ -77,36 +75,32 @@ const SponsorPage = () => {
               <H3>01</H3>
               <H3>후원사 신청</H3>
               <H6>
-                본 페이지 상단의 ‘후원사로 참여하기' 버튼을
-                <br /> 통해 후원에 필요한 정보를 입력해주세요.
-                <br /> 입력해주신 정보는 내부 검토를 거치며,
-                <br /> 일부 항목의 경우수정을 요청드릴 수 있습니다.
+                본 페이지 상단의 ‘후원사로 참여하기' 버튼을 통해 후원에 필요한 정보를 입력해주세요.
+                입력해주신 정보는 내부 검토를 거치며, 일부 항목의 경우수정을 요청드릴 수 있습니다.
               </H6>
             </GuideCard>
             <GuideCard>
               <H3>02</H3>
               <H3>전자 계약서 서명</H3>
               <H6>
-                후원사 신청서에 대한 검토가 완료되면
-                <br /> 후원사 계약을 위한 전자 계약서가 발송됩니다.
+                후원사 신청서에 대한 검토가 완료되면 후원사 계약을 위한 전자 계약서가 발송됩니다.
               </H6>
             </GuideCard>
             <GuideCard>
               <H3>03</H3>
               <H3>후원금 입금</H3>
               <H6>
-                계약서 서명을 완료하신 이후 2주 이내로 후원금 입금을
-                <br /> 요청드립니다. 하단에 표기된 후원 금액은
-                <br /> 부가세가 포함되지 않은 금액으로, 부가세 10%를
-                <br /> 가산하여 입금해주셔야 합니다.
+                계약서 서명을 완료하신 이후 2주 이내로 후원금 입금을 요청드립니다. 하단에 표기된
+                후원 금액은 부가세가 포함되지 않은 금액으로, 부가세 10%를 가산하여 입금해주셔야
+                합니다.
               </H6>
             </GuideCard>
             <GuideCard>
               <H3>04</H3>
               <H3>후원사 확정</H3>
               <H6>
-                후원 금액이 정상적으로 입금된 것이 확인된 즉시,
-                <br /> 파이콘 한국 2024의 후원사로 확정됩니다.
+                후원 금액이 정상적으로 입금된 것이 확인된 즉시, 파이콘 한국 2024의 후원사로
+                확정됩니다.
               </H6>
             </GuideCard>
           </Grid>
@@ -116,7 +110,7 @@ const SponsorPage = () => {
         <Vertical>
           <H1>후원사 혜택</H1>
           <Swiper
-            slidesPerView={3}
+            slidesPerView={isMobile ? 1 : 3}
             scrollbar={true}
             spaceBetween={20}
             modules={[Scrollbar]}
@@ -375,7 +369,11 @@ const SponsorPage = () => {
               <li>커뮤니티 스폰서십은 비영리 단체에 한해 후원이 가능합니다.</li>
               <li>출판사 후원의 경우, 파이썬 관련 도서 출판 기록이 필요합니다.</li>
               <li>
-                후원 가능 여부나 기타 문의사항은 언제든지 sponsor@pycon.kr로 문의 주시기 바랍니다.
+                후원 가능 여부나 기타 문의사항은 언제든지{" "}
+                <a className="purple" href="mailto:sponsor@pycon.kr">
+                  sponsor@pycon.kr
+                </a>
+                로 문의 주시기 바랍니다.
               </li>
             </ul>
           </Caution>
@@ -391,12 +389,22 @@ const H1 = styled.h1`
   margin-top: 3rem;
   font-size: 40px;
   color: #b0a8fe;
+
+  @media only screen and (max-width: 810px) {
+    padding: 0 1rem;
+    font-size: 24px;
+  }
 `;
 
 const H3 = styled.h3`
   margin-top: 1.5rem;
   font-size: 24px;
   color: #b0a8fe;
+
+  @media only screen and (max-width: 810px) {
+    padding: 0 1rem;
+    font-size: 16px;
+  }
 `;
 
 const H6 = styled.h6`
@@ -405,6 +413,11 @@ const H6 = styled.h6`
   text-align: center;
   color: #ebebeb;
   line-height: 24px;
+
+  @media only screen and (max-width: 810px) {
+    padding: 0 1rem;
+    font-size: 12px;
+  }
 `;
 
 const Button = styled.button`
@@ -420,8 +433,12 @@ const Grid = styled.div`
   display: grid;
   width: 85%;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
   margin-top: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (max-width: 810px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const GuideCard = styled.div`
@@ -451,6 +468,11 @@ const SponsorTable = styled.div`
   border-radius: 1rem;
   margin-top: 2rem;
 
+  @media only screen and (max-width: 810px) {
+    width: 90%;
+    margin: 2rem 1rem 0 1rem;
+  }
+
   & > h3 {
     text-align: start;
     padding-left: 2rem;
@@ -478,6 +500,10 @@ const SponsorTable = styled.div`
       background: #b0a8fe;
       color: #141414;
 
+      @media only screen and (max-width: 810px) {
+        font-size: 12px;
+      }
+
       &:first-child {
         border-top-left-radius: 0.5rem;
       }
@@ -488,6 +514,10 @@ const SponsorTable = styled.div`
     }
 
     & > tbody > tr > td {
+      @media only screen and (max-width: 810px) {
+        font-size: 10px;
+      }
+
       border-bottom: 1px solid #b0a8fe;
       padding: 1rem 0;
       text-align: center;
@@ -513,6 +543,11 @@ const BenefitCard = styled.div`
     padding: 0;
     border-radius: 0;
   }
+
+  @media only screen and (max-width: 810px) {
+    width: 90%;
+    margin: 0 1rem;
+  }
 `;
 
 const BenefitImage = styled.img`
@@ -528,10 +563,19 @@ const Caution = styled.div`
     display: block;
     padding-top: 1rem;
 
+    @media only screen and (max-width: 810px) {
+      width: 85%;
+      margin-left: 2rem;
+    }
+
     & > li {
       list-style: disc;
       text-align: start;
       font-size: 16px;
+
+      @media only screen and (max-width: 810px) {
+        font-size: 12px;
+      }
     }
   }
 `;
