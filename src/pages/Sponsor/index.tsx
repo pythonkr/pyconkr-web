@@ -116,35 +116,269 @@ const SponsorPage = () => {
         <Vertical>
           <H1>후원사 혜택</H1>
           <Swiper
-            slidesPerView={2}
-            spaceBetween={30}
-            scrollbar={{
-              hide: true,
-            }}
+            slidesPerView={3}
+            scrollbar={true}
+            spaceBetween={20}
             modules={[Scrollbar]}
-            className="mySwiper"
             loop={true}
           >
             <SwiperSlide>
               <BenefitCard>
                 <H3>후원사 부스</H3>
                 <H6>
-                  후원사만의 공간에서 개발자 채용,
-                  <br /> 회사 또는 서비스 홍보, 코딩 챌린지,
-                  <br /> 제비 뽑기 등 다양한 행사를 진행할 수 있습니다.
+                  후원사만의 공간에서 개발자 채용, 회사 또는 서비스 홍보, 코딩 챌린지, 제비 뽑기 등
+                  다양한 행사를 진행할 수 있습니다.
                 </H6>
+                <BenefitImage src="/images/sponsor/booth.jpg" alt="booth" />
               </BenefitCard>
             </SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>후원사 세션</H3>
+                <H6>
+                  파이콘 한국에서 후원사 로고를 걸고 파이썬 또는 회사/단체 내의 개발 문화에 대해서
+                  이야기 할 수 있습니다.
+                </H6>
+                <BenefitImage src="/images/sponsor/session.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>로고 노출</H3>
+                <H6>
+                  파이콘 한국 행사 전체와 홈페이지를 통해서 로고가 노출되며, 지난 홈페이지도 계속
+                  보관, 유지되어 지속적으로 로고가 노출됩니다.
+                </H6>
+                <BenefitImage src="/images/sponsor/display_logo.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>홍보 영상</H3>
+                <H6>
+                  파이콘 한국에서 발표 세션 중간데 후원 등급별 노출 횟수에 따라 후원사 홍보 영상을
+                  송출합니다.
+                </H6>
+                <BenefitImage src="/images/sponsor/ticket_support.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>티켓 지원</H3>
+                <H6>
+                  파이콘 한국을 즐길 수 있는 컨퍼런스 티켓을 지원합니다. 티켓 개수는 후원 등급 별
+                  상이합니다.
+                </H6>
+                <BenefitImage src="/images/sponsor/ticket_support.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>증정품 지급</H3>
+                <H6>파이콘 한국에서 후원사의 굿즈 등 소정의 증정품을 전달할 수 있습니다.</H6>
+                <BenefitImage src="/images/sponsor/ticket_support.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>후원 증서</H3>
+                <H6>후원에 대한 감사의 마음을 담아 파이콘 한국 후원인증서를 드립니다.</H6>
+                <BenefitImage src="/images/sponsor/ticket_support.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
+            <SwiperSlide>
+              <BenefitCard>
+                <H3>네트워킹 공간</H3>
+                <H6>참가자들과 자유롭게 네트워킹 할 수 있는 공간을 제공합니다.</H6>
+                <BenefitImage src="/images/sponsor/ticket_support.jpg" alt="booth" />
+              </BenefitCard>
+            </SwiperSlide>
           </Swiper>
-          <H1>asdf</H1>
+        </Vertical>
+      </Container>
+      <Container>
+        <Vertical>
+          <H1>후원사 등급 안내</H1>
+          <SponsorTable>
+            <table>
+              <thead>
+                <td></td>
+                <td>키스톤</td>
+                <td>다이아몬드</td>
+                <td>플래티넘</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>후원금</td>
+                  <td>20,000,000원</td>
+                  <td>10,000,000원</td>
+                  <td>6,000,000원</td>
+                </tr>
+                <tr>
+                  <td>티켓 지원</td>
+                  <td>20매</td>
+                  <td>15매</td>
+                  <td>5매</td>
+                </tr>
+                <tr>
+                  <td>부스</td>
+                  <td>5칸</td>
+                  <td>3칸</td>
+                  <td>1칸</td>
+                </tr>
+                <tr>
+                  <td>테이블</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>후원사 세션</td>
+                  <td>1세션</td>
+                  <td>1세션</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>홍보 영상</td>
+                  <td>2회</td>
+                  <td>1회</td>
+                  <td>2회</td>
+                </tr>
+                <tr>
+                  <td>로고 노출 위치</td>
+                  <td>
+                    네임택(티켓) 스트랩 <br />
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                  <td>
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                  <td>
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </SponsorTable>
+          <SponsorTable>
+            <table>
+              <thead>
+                <td></td>
+                <td>골드</td>
+                <td>스타트업</td>
+                <td>커뮤니티</td>
+                <td>출판사</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>후원금</td>
+                  <td>3,000,000원</td>
+                  <td>1,000,000원</td>
+                  <td>300,000원</td>
+                  <td>도서 60권 이상</td>
+                </tr>
+                <tr>
+                  <td>티켓 지원</td>
+                  <td>3매</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>부스</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>테이블</td>
+                  <td>1칸</td>
+                  <td>1칸</td>
+                  <td>1칸</td>
+                  <td>1칸</td>
+                </tr>
+                <tr>
+                  <td>후원사 세션</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>홍보 영상</td>
+                  <td>1회</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>로고 노출 위치</td>
+                  <td>
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                  <td>
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                  <td>
+                    현수막
+                    <br />
+                    웹사이트
+                  </td>
+                  <td>
+                    현수막
+                    <br />
+                    스탠딩 배너
+                    <br />
+                    웹사이트
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </SponsorTable>
+          <SponsorTable>
+            <H3>전 등급 공통</H3>
+            <ul>
+              <li>SNS 홍보</li>
+              <li>증정품 지급</li>
+              <li>후원 증서</li>
+            </ul>
+          </SponsorTable>
+          <Caution>
+            <ul>
+              <li>표기된 금액은 부가세가 포함되지 않은 금액이며, 부가세는 10% 입니다.</li>
+              <li>추후 일부 내용이 변경될 수 있습니다.</li>
+              <li>
+                스타트업 스폰서십은 사내에서 파이썬을 사용하고, 설립 3년 이하, 사내 인원 30인 이하인
+                곳에 한합니다.
+              </li>
+              <li>커뮤니티 스폰서십은 비영리 단체에 한해 후원이 가능합니다.</li>
+              <li>출판사 후원의 경우, 파이썬 관련 도서 출판 기록이 필요합니다.</li>
+              <li>
+                후원 가능 여부나 기타 문의사항은 언제든지 sponsor@pycon.kr로 문의 주시기 바랍니다.
+              </li>
+            </ul>
+          </Caution>
         </Vertical>
       </Container>
     </Page>
@@ -210,6 +444,59 @@ const GuideCard = styled.div`
   }
 `;
 
+const SponsorTable = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 2px solid #b0a8fe;
+  border-radius: 1rem;
+  margin-top: 2rem;
+
+  & > h3 {
+    text-align: start;
+    padding-left: 2rem;
+  }
+
+  & > ul {
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    & > li {
+      list-style: disc;
+      text-align: start;
+      color: #b0a8fe;
+      font-size: 16px;
+    }
+  }
+
+  & > table {
+    background: tansparent;
+    border-collapse: collapse;
+    border-style: hidden;
+
+    & > thead > td {
+      text-align: center;
+      background: #b0a8fe;
+      color: #141414;
+
+      &:first-child {
+        border-top-left-radius: 0.5rem;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0.5rem;
+      }
+    }
+
+    & > tbody > tr > td {
+      border-bottom: 1px solid #b0a8fe;
+      padding: 1rem 0;
+      text-align: center;
+      background: #141414;
+      color: #b0a8fe;
+    }
+  }
+`;
+
 const BenefitCard = styled.div`
   border: 1px solid #b0a8fe;
   border-radius: 1rem;
@@ -225,6 +512,27 @@ const BenefitCard = styled.div`
   & > img {
     padding: 0;
     border-radius: 0;
+  }
+`;
+
+const BenefitImage = styled.img`
+  border-bottom-left-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+`;
+
+const Caution = styled.div`
+  width: 100%;
+
+  & > ul {
+    margin-left: 1.5rem;
+    display: block;
+    padding-top: 1rem;
+
+    & > li {
+      list-style: disc;
+      text-align: start;
+      font-size: 16px;
+    }
   }
 `;
 

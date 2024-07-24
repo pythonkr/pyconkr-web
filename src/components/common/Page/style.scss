@@ -74,17 +74,28 @@ body {
 .swiper {
   width: 100%;
   height: 100%;
+  padding-bottom: 3rem !important;
+  z-index: 0 !important;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   color: white;
+  background-color: $black;
 
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.swiper-scrollbar {
+  background: #555555 !important;
+}
+
+.swiper-scrollbar-drag {
+  background: $purple !important;
 }
 
 .swiper-slide img {
