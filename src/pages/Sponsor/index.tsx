@@ -6,6 +6,8 @@ import { Scrollbar } from "swiper/modules";
 import styled from "styled-components";
 import Page from "components/common/Page";
 import useIsMobile from "utils/hooks/useIsMobile";
+import Collapse from "components/common/Collapse";
+import SponsorTable from "./SponsorTable";
 
 const SponsorPage = () => {
   const isMobile = useIsMobile();
@@ -32,17 +34,17 @@ const SponsorPage = () => {
           <img className="finale-img" src="/images/finale2023_lg.png" alt="finale2023_lg" />
           <H1>파이콘 한국 후원의 의미</H1>
           <H3>파이콘 한국은?</H3>
-          <H6>
+          <H6 style={{ width: "50%" }}>
             파이콘 한국은 커뮤니티 주관으로 이뤄지는 비영리 개발자 대상 행사로 오픈소스 프로그래밍
             언어인 파이썬의 저변 확대와 커뮤니티 활성화를 위해 진행하는 행사입니다.
           </H6>
           <H3>비영리 행사</H3>
-          <H6>
+          <H6 style={{ width: "50%" }}>
             파이콘 한국의 발표자 및 튜토리얼 진행자를 포함, 자원봉사자와 준비위원회 담당자 등 모든
             인원이 금전적 이득 없이 행사를 준비하고 운영해 나갑니다.
           </H6>
           <H3>커뮤니티에 기여</H3>
-          <H6>
+          <H6 style={{ width: "50%" }}>
             이에 파이콘 한국에의 후원은 국내 오픈소스 커뮤니티와 파이썬 커뮤니티에 대한 가장 좋은
             기여 방법이며 여러 우수한 개발자들과의 만남을 가지실 수 있는 기회입니다.
           </H6>
@@ -193,7 +195,7 @@ const SponsorPage = () => {
       <Container>
         <Vertical>
           <H1>후원사 등급 안내</H1>
-          <SponsorTable>
+          <SponsorRatingTable>
             <table>
               <thead>
                 <td></td>
@@ -265,8 +267,8 @@ const SponsorPage = () => {
                 </tr>
               </tbody>
             </table>
-          </SponsorTable>
-          <SponsorTable>
+          </SponsorRatingTable>
+          <SponsorRatingTable>
             <table>
               <thead>
                 <td></td>
@@ -349,15 +351,15 @@ const SponsorPage = () => {
                 </tr>
               </tbody>
             </table>
-          </SponsorTable>
-          <SponsorTable>
+          </SponsorRatingTable>
+          <SponsorRatingTable>
             <H3>전 등급 공통</H3>
             <ul>
               <li>SNS 홍보</li>
               <li>증정품 지급</li>
               <li>후원 증서</li>
             </ul>
-          </SponsorTable>
+          </SponsorRatingTable>
           <Caution>
             <ul>
               <li>표기된 금액은 부가세가 포함되지 않은 금액이며, 부가세는 10% 입니다.</li>
@@ -377,6 +379,131 @@ const SponsorPage = () => {
               </li>
             </ul>
           </Caution>
+        </Vertical>
+      </Container>
+      <Container>
+        <Vertical>
+          <H1>FAQ</H1>
+          <Vertical>
+            <H3>후원사 신청</H3>
+            <Faq>
+              <Collapse
+                order={1}
+                header="후원사 신청시 여러 후원 등급에 중복 신청도 가능한가요?"
+                content="아니요, 중복 신청은 불가능합니다. 후원사 선정은 입금순으로 이루어지기 때문에 후원하고자 하시는 등급에 빠르게 신청하시는 걸 추천드립니다. 일부 후원 등급의 경우에는 후원사의 수가 정해져있기 때문에 조기 마감될 수 있습니다. 해당 후원 등급의 잔여 후원사 수는 추후 후원사 페이지에서 확인하실 수 있습니다."
+              />
+              <Collapse
+                order={2}
+                header="후원사 선정 방법이 궁금합니다. 선착순인가요?"
+                content="후원사 등록 과정이 정상적으로 등록되었다는 가정 하에 선착순으로 이뤄집니다."
+              />
+              <Collapse
+                order={3}
+                header="후원사 등록이 정상적으로 진행되었는지 확인 방법이 있나요?"
+                content="입금이 완료되면 입금 확인 메일과 함께 정식 후원사 확정 메일을 보내드립니다."
+              />
+            </Faq>
+          </Vertical>
+          <Vertical>
+            <H3>후원금</H3>
+            <Faq>
+              <Collapse
+                order={1}
+                header="후원금은 어디에 쓰이나요?"
+                content="행사 운영비로 사용되게 됩니다. 장소대여비, 부스 운영비, 각종 프로그램 진행비, 해외 스피커 항공료 및 호텔, 스피커와 운영팀 식사, 비디오녹화, 기념 티셔츠 등의 제작에 사용됩니다."
+              />
+              <Collapse
+                order={2}
+                header="세금 계산서 발행이 가능한가요?"
+                content="네, 사단법인 파이썬사용자모임 명의로 세금계산서 발행이 가능합니다."
+              />
+              <Collapse
+                order={3}
+                header="해당 금액은 VAT가 포함된 금액인가요?"
+                content="해당 금액은 부가세가 포함되지 않은 금액이며, 해당 항목들에 대해서도 전자 세금계산서 발급될 예정입니다."
+              />
+            </Faq>
+          </Vertical>
+          <Vertical>
+            <H3>등급 & 부스</H3>
+            <Faq>
+              <Collapse
+                order={1}
+                header="부스 위치는 어떻게 결정되나요?"
+                content="준비위에서 신청순으로 배정합니다. 이후 후원사들 간에 협의하여 바꾸시는 것은 가능합니다. 바꾸신 경우에는 준비위에 알려주시기 바랍니다."
+              />
+              <Collapse
+                order={2}
+                header="부스 운영 인력은 컨퍼런스 티켓이 필요한가요?"
+                content="부스 운영 인력은 티켓이 필요하지 않으며 별도의 식별 가능한 표식을 제공해 드릴 예정입니다. 다만 부스 운영 인력은 컨퍼런스와 세션 등을 참가할 수 없습니다."
+              />
+              <Collapse
+                order={3}
+                header="부스 운영 인력에도 제한이 있나요?"
+                content="아니요, 별도의 인원 제한은 없습니다. 다만 동시에 부스에 있는 운영 인력의 수를 준비위와 미리 협의하셔야 합니다."
+              />
+              <Collapse
+                order={4}
+                header="부스에서 제공할 수 있는 물품에 제한이 있나요?"
+                content="아니요, 행동강령을 위반하지 않는 물품이라면 제한이 없습니다. 일반적으로는 티셔츠, 리딤코드, 문구류, 뱃지, 스티커 등을 제공합니다."
+              />
+              <Collapse
+                order={5}
+                header="후원사 세션의 발표자도 컨퍼런스 티켓을 구매해야 하나요?"
+                content="네, 모든 참가자는 컨퍼런스 티켓을 소지하셔야 합니다. 후원사에게 혜택으로 제공되는 컨퍼런스 티켓을 활용하실 수 있습니다."
+              />
+              <Collapse
+                order={6}
+                header="홍보영상은 어느 시점에 노출되는 건가요?"
+                content="후원사 홍보영상은 세션 중간 중간 여유 시간에 노출 됩니다."
+              />
+            </Faq>
+          </Vertical>
+        </Vertical>
+      </Container>
+      <Container>
+        <Vertical>
+          <H1>후원사 목록</H1>
+          <SponsorList>
+            <SponsorTable
+              max={3}
+              levelName="Keystone"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Diamond"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Platinum"
+              sponsors={[
+                { name: "PyCon", image: "/images/introduceSlogan.png" },
+                { name: "PyCon", image: "/images/introduceSlogan.png" },
+              ]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Gold"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Startup"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Community"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+            <SponsorTable
+              max={4}
+              levelName="Publisher"
+              sponsors={[{ name: "PyCon", image: "/images/introduceSlogan.png" }]}
+            />
+          </SponsorList>
         </Vertical>
       </Container>
     </Page>
@@ -429,6 +556,23 @@ const Button = styled.button`
   font-size: 16px;
 `;
 
+const SponsorList = styled.div`
+  & > div + div {
+    margin-top: 2rem;
+  }
+`;
+
+const Faq = styled.table`
+  border: 1px solid #b0a8fe;
+  border-right: none;
+  border-left: none;
+  border-collapse: collapse;
+
+  @media only screen and (max-width: 810px) {
+    width: 90%;
+  }
+`;
+
 const Grid = styled.div`
   display: grid;
   width: 85%;
@@ -461,7 +605,7 @@ const GuideCard = styled.div`
   }
 `;
 
-const SponsorTable = styled.div`
+const SponsorRatingTable = styled.div`
   width: 100%;
   height: 100%;
   border: 2px solid #b0a8fe;
@@ -586,7 +730,7 @@ const Vertical = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   width: 100%;
 `;
 
@@ -594,7 +738,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
+  padding: 2rem 0;
   width: 100%;
 
   &:nth-child(even) {
