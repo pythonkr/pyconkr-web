@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.74.1",
     "styled-components": "^6.1.8",
+    "swiper": "^11.1.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
