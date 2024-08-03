@@ -1,13 +1,28 @@
-import React, {useEffect, useState} from "react";
+import { useCallback, useEffect, useState } from "react"
+
+const useMediaQuery = (width: number) => {
+  const [targetReached, setTargetReached] = useState(false);
+  const updateTarget = useCallback((e: any) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addListener(updateTarget);
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
+    return () => media.removeListener(updateTarget);
+  }, []);
+  return targetReached;
+};
 
 const useIsMobile = () => {
-    const [isMobile, setIsMobile] = useState(false);
-    useEffect(() => {
-      if (!window.matchMedia) return;
-      setIsMobile(window.matchMedia("(pointer:coarse)").matches);
-    }, []);
+  return useMediaQuery(809);
+};
 
-    return isMobile;
-  }
-
-  export default useIsMobile;
+export default useIsMobile;
