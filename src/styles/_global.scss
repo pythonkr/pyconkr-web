@@ -16,10 +16,44 @@
   font-style: normal;
 }
 
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
 
-  min-height: 100vh;
+  -webkit-user-drag: none;
+  /* Safari */
+  -khtml-user-drag: none;
+  /* Konqueror HTML */
+  -moz-user-drag: none;
+  /* Old versions of Firefox */
+  -o-user-drag: none;
+  /* Old versions of Opera */
+  user-drag: none;
+  /* Non-prefixed version */
+}
+
+body,
+html,
+#root {
+  overscroll-behavior: none;
+
+  min-height: 100svh;
+  max-height: 100svh;
+  height: 100svh;
+
+  max-width: 100vw;
+
+  word-break: keep-all;
+  overflow-wrap: break-all;
+
+  background-color: #090909;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
   overflow: hidden auto;
 
   font-family: Pretendard,
