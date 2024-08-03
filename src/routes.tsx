@@ -29,6 +29,7 @@ const Router = () => {
         <Route path="*" element={<Navigate replace to={"/404"} />} />
       </Routes>
       <Footer />
+      <DialogCollection />
     </BrowserRouter>
   );
 };
