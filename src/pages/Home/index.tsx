@@ -8,12 +8,19 @@ const Home = () => {
   return (
     <Page>
       <Container>
-        <img className="mobile-slogan" src="images/introduceSlogan.png" alt="introduceSlogan.png" />
+        <img
+          className="mobile-slogan"
+          src="/images/introduceSlogan.png"
+          alt="introduceSlogan.png"
+        />
       </Container>
       <Container>
         <div className="vertical welcome-section">
           <span className="vertical-item peach-puzz welcome-text">
-            <b>{t("10번째 파이콘 한국에")}<br /></b>
+            <b>
+              {t("10번째 파이콘 한국에")}
+              <br />
+            </b>
             {t("여러분을 초대합니다.")}
           </span>
           <img className="mobile-logo vertical-item" src="images/logo.png" alt="logo.png" />

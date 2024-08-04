@@ -16,7 +16,7 @@ $footer-height: 2rem;
 
 html {
   font-family: "Pretendard-Regular", sans-serif;
-  background-color: #090909;
+  background-color: #0a0a0a;
 }
 
 .purple {
@@ -33,6 +33,10 @@ html {
 
 .yellow {
   color: $yellow;
+}
+
+.white {
+  color: #ffffff;
 }
 
 span {
@@ -62,12 +66,61 @@ span {
 }
 
 body {
-  background-color: #090909;
+  background-color: #0a0a0a;
   font-weight: 400;
 }
 
 .border-bottom {
   border-bottom: 1px $peach-puzz solid;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 3rem !important;
+  z-index: 0 !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  background-color: $black;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-scrollbar {
+  background: #555555 !important;
+}
+
+.swiper-scrollbar-drag {
+  background: $purple !important;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// mobile
+@media only screen and (min-width: 360px) {
+  body {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .finale-img {
+    padding: 0 1rem;
+  }
 }
 
 .nav-bar {
@@ -142,6 +195,40 @@ body {
   }
 }
 
+  .mobile-logo {
+    width: 84px;
+  }
+  .mobile-slogan {
+    width: 300px;
+  }
+  .welcome-text {
+    font-size: large;
+    white-space: nowrap;
+  }
+
+  .small-text {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .medium-text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .big-text {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .welcome-section {
+    border-radius: 16px;
+    background-color: $black;
+    padding: 2rem 4rem;
+    align-items: center;
+    width: 100%;
+  }
 
 .footer-about-section {
   display: flex;
@@ -162,7 +249,7 @@ body {
     & > table {
       border: 1px;
       td {
-        background-color: #090909 !important;
+        background-color: #0a0a0a !important;
       }
       tr > td:nth-of-type(2) {
         padding-left: 1.5rem;
