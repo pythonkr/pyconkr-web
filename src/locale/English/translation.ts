@@ -54,7 +54,7 @@ const EnglishTranslation = {
   금액: "Price",
   변경일: "Updated at",
   "수원 컨벤션 센터": "Suwon Convention Center",
-  "2024.10.25": "October 25, 2024",
+  "2024.10.26": "October 26, 2024",
   "2024.10.27": "October 27, 2024",
   "10번째 파이콘 한국에": "Join us",
   "여러분을 초대합니다.": "for the 10th PyCon in Korea.",

@@ -3,6 +3,9 @@ $purple: #b0a8fe;
 $yellow: #def080;
 $black: #141414;
 
+$navbar-height: 7vh;
+$footer-height: 2rem;
+
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
@@ -67,26 +70,173 @@ body {
   border-bottom: 1px $peach-puzz solid;
 }
 
+.nav-bar {
+  padding: 0 1rem;
+  height: $navbar-height;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px $peach-puzz solid;
+}
+
+.nav-logo {
+  display: flex;
+  width: 100px;
+  cursor: pointer;
+}
+
+.menus {
+  width: 100%;
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  height: 100%;
+  background-color: $black;
+  color: $peach-puzz;
+  text-align: center;
+
+  gap: 1vw;
+
+  & > .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+
+    & > span {
+      color: $peach-puzz;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-size: 20px;
+      height: 6vh;
+      border-bottom: 1px $peach-puzz solid;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+    & > .sub-menu {
+      position: relative;
+      width: 100%;
+      background-color: $black;
+      border: 1px $peach-puzz solid;
+
+      & > .sub-menu-item {
+        color: $peach-puzz;
+        font-size: 14px;
+        padding-top: 1rem;
+
+        &:last-child {
+          padding-bottom: 1rem;
+        }
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+  }
+}
+
+
+.footer-about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: $peach-puzz;
+
+  & > section {
+    width: 100%;
+  }
+
+  & > section.left {
+    width: 50%;
+    order: 2;
+
+    & > table {
+      border: 1px;
+      td {
+        background-color: #090909 !important;
+      }
+      tr > td:nth-of-type(2) {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
+  & > section.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: $footer-height;
+    order: 1;
+
+    & > .slogan {
+      font-weight: 600;
+    }
+
+    & > div + div {
+      margin-top: 1vh;
+    }
+
+    & > div a {
+      text-decoration: none;
+      color: $purple;
+    }
+  }
+}
+
+.footer-fixed-section {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  padding: 0 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $peach-puzz;
+  background-color: $black;
+
+  & > .left {
+    font-weight: 800;
+    margin: 0;
+  }
+
+  & > .right {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    & > a {
+      line-height: 0;
+      svg {
+        width: 1rem;
+        fill: $peach-puzz;
+      }
+    }
+  }
+}
+
 // mobile
-@media only screen and (min-width: 375px) {
+@media only screen and (max-width: 809px) {
   body {
     font-size: 12px;
   }
   h2 {
     font-size: 16px;
     font-weight: 600;
-  }
-
-  .nav-bar {
-    border-bottom: 1px $peach-puzz solid;
-    height: 8vh;
-  }
-
-  .nav-logo {
-    display: flex;
-    width: 100px;
-    cursor: pointer;
-    padding-left: 1rem;
   }
 
   div.hamburger-react {
@@ -101,60 +251,6 @@ body {
     background-color: $black;
     color: $peach-puzz;
     border: none;
-  }
-
-  .menus {
-    width: 100%;
-    position: absolute;
-    top: 8vh;
-    height: 100%;
-    background-color: $black;
-    padding: 0 1rem;
-    color: $peach-puzz;
-    text-align: center;
-
-    & > .menu-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-size: 20px;
-
-      & > span {
-        color: $peach-puzz;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        font-size: 20px;
-        height: 6vh;
-        border-bottom: 1px $peach-puzz solid;
-
-        &:hover {
-          color: $purple;
-        }
-      }
-      & > .sub-menu {
-        position: relative;
-        width: 100%;
-        background-color: $black;
-        border: 1px $peach-puzz solid;
-
-        & > .sub-menu-item {
-          color: $peach-puzz;
-          font-size: 14px;
-          padding-top: 1rem;
-
-          &:last-child {
-            padding-bottom: 1rem;
-          }
-
-          &:hover {
-            color: $purple;
-          }
-        }
-      }
-    }
   }
 
   .mobile-logo {
@@ -186,89 +282,6 @@ body {
     align-items: center;
     width: 100%;
   }
-
-  .footer-about-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    color: $peach-puzz;
-    margin-bottom: 2rem;
-
-    & > section {
-      width: 100%;
-      margin-bottom: 2rem;
-    }
-
-    & > section.left {
-      width: 50%;
-      order: 2;
-
-      & > table {
-        border: 1px;
-        td {
-          background-color: #090909 !important;
-        }
-        tr > td:nth-of-type(2) {
-          padding-left: 1.5rem;
-        }
-      }
-    }
-
-    & > section.center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      white-space: nowrap;
-      order: 1;
-
-      & > .slogan {
-        font-weight: 600;
-      }
-
-      & > div + div {
-        margin-top: 1vh;
-      }
-
-      & > div a {
-        text-decoration: none;
-        color: $purple;
-      }
-    }
-  }
-
-  .footer-fixed-section {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.5rem;
-    color: $peach-puzz;
-    background-color: $black;
-
-    & > .left {
-      font-weight: 800;
-    }
-
-    & > .right {
-      & > a {
-        margin-left: 0.5rem;
-
-        svg {
-          width: 1rem;
-          fill: $peach-puzz;
-        }
-      }
-      & > a:first-child {
-        margin-left: 0;
-      }
-    }
-  }
 }
 
 // Desktop
@@ -285,7 +298,6 @@ body {
   div.cm-page {
     margin: 3vh 5vw;
     padding: 0 1vw;
-    width: 90vw;
     min-height: 90vh;
   }
 
@@ -299,24 +311,12 @@ body {
     color: $purple;
   }
 
-  .nav-logo {
-    width: 150px;
-  }
-
-  .nav-bar {
-    display: flex;
-    padding: 0 1rem;
-    justify-content: space-between;
-    height: 6vh;
-  }
-
   .menus {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-weight: 800;
     position: initial;
-    color: $peach-puzz;
 
     & > .menu-item {
       border: none;
@@ -382,30 +382,6 @@ body {
     background-color: $black;
     padding: 2rem 10rem;
     align-items: center;
+    width: 100%;
   }
-
-  // .footer-about-section {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   justify-content: center;
-  //   align-items: center;
-  //   padding: 0 1rem;
-  //   font-size: 16px;
-
-  //   & > section.left,
-  //   & > section.right {
-  //     flex-shrink: 0;
-  //     width: 50%;
-  //   }
-
-  //   & > section.center {
-  //     flex-grow: 2;
-  //     margin-bottom: 2rem;
-  //   }
-  // }
-}
-
-@media only screen and (min-width: 1200px) {
 }

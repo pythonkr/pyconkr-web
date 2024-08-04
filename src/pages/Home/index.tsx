@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </Container>
       <Container className="vertical">
-        <span className="big-text purple">October 25-27</span>
+        <span className="big-text purple">October 26-27</span>
         <span className="small-text yellow">in Suwon Convention Center</span>
       </Container>
     </Page>
