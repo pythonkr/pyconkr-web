@@ -35,9 +35,9 @@ const Footer = () => {
           Object.entries(
             res.reduce(
               (acc, cur) => {
-                if (cur.level.code === "unknown") return acc;
-                if (acc[cur.level.code] === undefined) acc[cur.level.code] = [cur];
-                else acc[cur.level.code].push(cur);
+                if (cur.level.name === "unknown") return acc;
+                if (acc[cur.level.name] === undefined) acc[cur.level.name] = [cur];
+                else acc[cur.level.name].push(cur);
                 return acc;
               },
               {} as { [l: string]: Sponsor[] }

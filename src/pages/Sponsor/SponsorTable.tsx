@@ -1,10 +1,11 @@
+import { Sponsor } from "models/sponsor";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   max: Number;
   levelName: string;
-  sponsors: Array<{ name: string; image: string }>;
+  sponsors: Sponsor[];
 };
 
 function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
@@ -13,7 +14,7 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
       <h3>{levelName}</h3>
       <div style={{ gridTemplateColumns: `repeat(${max}, 1fr)` }}>
         {sponsors.map((sponsor) => (
-          <img src={sponsor.image} alt={sponsor.name} />
+          <img src={sponsor.logo_image} alt={sponsor.name} />
         ))}
       </div>
     </SponsorCard>

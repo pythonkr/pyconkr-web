@@ -1,25 +1,172 @@
-import SponsorLevels, { SponsorLevel } from "enums/sponsorLevels";
-import { APISponsor } from "./api/sponsor";
+import { APISponsorLevel, APISponsorBenefit, APISponsor, APISponsorLevelOnly, APISponsorLevelWithSponsor } from "./api/sponsor";
+
+export class SponsorBenefit {
+  id: Number;
+  name: string;
+  desc: string;
+  offer: Number;
+  unit: string;
+  is_countable: boolean;
+
+  private constructor(p: SponsorBenefit) {
+    this.id = p.id;
+    this.name = p.name;
+    this.desc = p.desc;
+    this.offer = p.offer;
+    this.unit = p.unit;
+    this.is_countable = p.is_countable;
+  }
+
+  static fromAPI(d: APISponsorBenefit): SponsorBenefit {
+    return new SponsorBenefit({
+      id: d.id,
+      name: d.name,
+      desc: d.desc,
+      offer: d.offer,
+      unit: d.unit,
+      is_countable: d.is_countable,
+    });
+  }
+  static fromAPIs(data: APISponsorBenefit[]): SponsorBenefit[] {
+    return data.map((d) => SponsorBenefit.fromAPI(d));
+  }
+}
+
+export class SponsorLevel {
+  id: Number;
+  name: string;
+  desc: string;
+  visible: boolean;
+  price: Number;
+  limit: Number;
+  order: Number;
+  benefits: SponsorBenefit[]
+
+  private constructor(p: SponsorLevel) {
+    this.id = p.id;
+    this.name = p.name;
+    this.desc = p.desc;
+    this.visible = p.visible;
+    this.price = p.price;
+    this.limit = p.limit;
+    this.order = p.order;
+    this.benefits = SponsorBenefit.fromAPIs(p.benefits);
+  }
+
+  static fromAPI(d: APISponsorLevel): SponsorLevel {
+    return new SponsorLevel({
+      id: d.id,
+      name: d.name,
+      desc: d.desc,
+      visible: d.visible,
+      price: d.price,
+      limit: d.limit,
+      order: d.order,
+      benefits: d.benefits
+    });
+  }
+  static fromAPIs(data: APISponsorLevel[]): SponsorLevel[] {
+    return data.map((d) => SponsorLevel.fromAPI(d));
+  }
+}
+
+export class SponsorLevelWithSponsor {
+  id: Number;
+  name: string;
+  desc: string;
+  visible: boolean;
+  price: Number;
+  limit: Number;
+  order: Number;
+  sponsor: Sponsor[];
+
+  private constructor(p: SponsorLevelWithSponsor) {
+    this.id = p.id;
+    this.name = p.name;
+    this.desc = p.desc;
+    this.visible = p.visible;
+    this.price = p.price;
+    this.limit = p.limit;
+    this.order = p.order;
+    this.sponsor = Sponsor.fromAPIs(p.sponsor);
+  }
+
+  static fromAPI(d: APISponsorLevelWithSponsor): SponsorLevelWithSponsor {
+    return new SponsorLevelWithSponsor({
+      id: d.id,
+      name: d.name,
+      desc: d.desc,
+      visible: d.visible,
+      price: d.price,
+      limit: d.limit,
+      order: d.order,
+      sponsor: d.sponsor,
+    });
+  }
+  static fromAPIs(data: APISponsorLevelWithSponsor[]): SponsorLevelWithSponsor[] {
+    return data.map((d) => SponsorLevelWithSponsor.fromAPI(d));
+  }
+}
+
+class SponsorLevelOnly {
+  id: Number;
+  name: string;
+  desc: string;
+  visible: boolean;
+  price: Number;
+  limit: Number;
+  order: Number;
+
+  private constructor(p: SponsorLevelOnly) {
+    this.id = p.id;
+    this.name = p.name;
+    this.desc = p.desc;
+    this.visible = p.visible;
+    this.price = p.price;
+    this.limit = p.limit;
+    this.order = p.order;
+  }
+
+  static fromAPI(d: APISponsorLevelOnly): SponsorLevelOnly {
+    return new SponsorLevelOnly({
+      id: d.id,
+      name: d.name,
+      desc: d.desc,
+      visible: d.visible,
+      price: d.price,
+      limit: d.limit,
+      order: d.order,
+    });
+  }
+}
+
 
 export class Sponsor {
   id: string;
   name: string;
-  level: SponsorLevel;
+  level: SponsorLevelOnly;
+  logo_image: string;
+  url: string;
 
   private constructor(p: Sponsor) {
     this.id = p.id;
     this.name = p.name;
     this.level = p.level;
+    this.logo_image = p.logo_image;
+    this.url = p.url;
   }
 
   static fromAPI(d: APISponsor): Sponsor {
     return new Sponsor({
       id: d.id,
       name: d.name,
-      level: SponsorLevels.fromCode(d.level),
+      level: SponsorLevelOnly.fromAPI(d.level),
+      logo_image: d.logo_image,
+      url: d.url,
     });
   }
   static fromAPIs(data: APISponsor[]): Sponsor[] {
     return data.map((d) => Sponsor.fromAPI(d));
   }
 }
+
