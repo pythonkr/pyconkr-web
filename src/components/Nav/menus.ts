@@ -62,6 +62,13 @@ const Menus: MenuType = {
       dispatch(openGlobalDialog(DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024))
     }
   },
+  ticket: {
+    name: "티켓 구매",
+    onClick: ({ setOpenMenu, dispatch }) => {
+      setOpenMenu(false)
+      window.open("https://shop.pycon.kr/ticket", "_blank")
+    }
+  },
   contribution: {
     name: "기여하기",
     sub: [
