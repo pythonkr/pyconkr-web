@@ -37,6 +37,7 @@ const EnglishTranslation = {
   "페이지를 찾을 수 없습니다.": "Page not found.",
   로그인: "Login",
   티켓: "Ticket",
+  "티켓 구매": "Buy ticket",
   구매하기: "Buy",
   "티켓 구매하기": "Buy ticket",
   원: " KRW",
