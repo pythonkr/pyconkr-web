@@ -181,7 +181,7 @@ const SponsorPage = () => {
                 </H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/session.jpg"
-                  alt="booth"
+                  alt="session"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -195,7 +195,7 @@ const SponsorPage = () => {
                 </H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/display_logo.jpg"
-                  alt="booth"
+                  alt="display_logo"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -209,7 +209,7 @@ const SponsorPage = () => {
                 </H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
-                  alt="booth"
+                  alt="video"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -222,7 +222,7 @@ const SponsorPage = () => {
                 </H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
-                  alt="booth"
+                  alt="ticket"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -232,7 +232,7 @@ const SponsorPage = () => {
                 <H6>{t("파이콘 한국에서 후원사의 굿즈 등 소정의 증정품을 전달할 수 있습니다.")}</H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
-                  alt="booth"
+                  alt="merchandise"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -242,7 +242,7 @@ const SponsorPage = () => {
                 <H6>{t("후원에 대한 감사의 마음을 담아 파이콘 한국 후원인증서를 드립니다.")}</H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/CertificateOfSponsorship.png"
-                  alt="booth"
+                  alt="certificateOfSponsorship"
                 />
               </BenefitCard>
             </SwiperSlide>
@@ -252,7 +252,7 @@ const SponsorPage = () => {
                 <H6>{t("참가자들과 자유롭게 네트워킹 할 수 있는 공간을 제공합니다.")}</H6>
                 <BenefitImage
                   src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/OpenSpace.png"
-                  alt="booth"
+                  alt="OpenSpace"
                 />
               </BenefitCard>
             </SwiperSlide>
