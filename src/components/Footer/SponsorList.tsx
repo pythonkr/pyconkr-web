@@ -10,11 +10,9 @@ const SponsorList = () => {
   const [listOfSponsorLevel, setListOfSponsorLevel] = useState<SponsorLevelWithSponsor[]>([]);
 
   useEffect(() => {
-    SponsorAPI.listSponsorLevelWithSponsor()
-      .then((levels) => {
-        setListOfSponsorLevel(levels);
-      })
-      .catch((error) => console.error(error));
+    SponsorAPI.listSponsorLevelWithSponsor().then((levels) => {
+      setListOfSponsorLevel(levels);
+    });
   }, []);
 
   return (

@@ -1,5 +1,4 @@
-import { Sponsor } from "models/sponsor";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { SponsorAPI } from "api";
@@ -15,53 +14,11 @@ import {
   Youtube,
 } from "assets/icons";
 import useTranslation from "utils/hooks/useTranslation";
-import SponsorLevels, { SponsorLevel, SponsorLevelCode } from "enums/sponsorLevels";
 import { Link } from "react-router-dom";
 import SponsorList from "./SponsorList";
 
 const Footer = () => {
-  const [sponsors, setSponsors] = useState<
-    | {
-        level: SponsorLevel;
-        sponsors: Sponsor[];
-      }[]
-    | undefined
-  >([]);
   const t = useTranslation();
-
-  useEffect(() => {
-    SponsorAPI.listSponsors()
-      .then((res) => {
-        setSponsors(
-          Object.entries(
-            res.reduce(
-              (acc, cur) => {
-                if (cur.level.name === "unknown") return acc;
-                if (acc[cur.level.name] === undefined) acc[cur.level.name] = [cur];
-                else acc[cur.level.name].push(cur);
-                return acc;
-              },
-              {} as { [l: string]: Sponsor[] }
-            )
-          )
-            .reduce(
-              (acc, [levelCode, sponsorList]) => {
-                acc.push({
-                  level: SponsorLevels[levelCode as SponsorLevelCode],
-                  sponsors: sponsorList,
-                });
-                return acc;
-              },
-              [] as NonNullable<typeof sponsors>
-            )
-            .sort((a, b) => a.level.priority - b.level.priority)
-        );
-      })
-      .catch((e) => {
-        console.error(e);
-        setSponsors(undefined);
-      });
-  }, []);
 
   return (
     <Container>
