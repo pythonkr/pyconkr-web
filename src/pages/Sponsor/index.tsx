@@ -241,7 +241,7 @@ const SponsorPage = () => {
                 <H3>{t("후원 증서")}</H3>
                 <H6>{t("후원에 대한 감사의 마음을 담아 파이콘 한국 후원인증서를 드립니다.")}</H6>
                 <BenefitImage
-                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
+                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/CertificateOfSponsorship.png"
                   alt="booth"
                 />
               </BenefitCard>
@@ -251,7 +251,7 @@ const SponsorPage = () => {
                 <H3>{t("네트워킹 공간")}</H3>
                 <H6>{t("참가자들과 자유롭게 네트워킹 할 수 있는 공간을 제공합니다.")}</H6>
                 <BenefitImage
-                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
+                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/OpenSpace.png"
                   alt="booth"
                 />
               </BenefitCard>
