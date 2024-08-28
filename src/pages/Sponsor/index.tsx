@@ -7,11 +7,9 @@ import styled from "styled-components";
 import Page from "components/common/Page";
 import useIsMobile from "utils/hooks/useIsMobile";
 import Collapse from "components/common/Collapse";
-import SponsorTable from "./SponsorTable";
 import { Link } from "react-router-dom";
 import useTranslation from "utils/hooks/useTranslation";
 import SponsorLevelList from "./SponsorLevelList";
-import SponsorList from "./SponsorList";
 
 const SponsorPage = () => {
   const t = useTranslation();
@@ -208,7 +206,7 @@ const SponsorPage = () => {
                   )}
                 </H6>
                 <BenefitImage
-                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/ticket_support.jpg"
+                  src="https://pyconkr-web-2024.s3.ap-northeast-2.amazonaws.com/images/sponsor/session.jpg"
                   alt="video"
                 />
               </BenefitCard>
@@ -390,7 +388,6 @@ const SponsorPage = () => {
           </Vertical>
         </Vertical>
       </Container>
-      <SponsorList />
     </Page>
   );
 };

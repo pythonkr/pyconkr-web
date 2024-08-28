@@ -17,6 +17,7 @@ import {
 import useTranslation from "utils/hooks/useTranslation";
 import SponsorLevels, { SponsorLevel, SponsorLevelCode } from "enums/sponsorLevels";
 import { Link } from "react-router-dom";
+import SponsorList from "./SponsorList";
 
 const Footer = () => {
   const [sponsors, setSponsors] = useState<
@@ -64,20 +65,8 @@ const Footer = () => {
 
   return (
     <Container>
-      {/* <Sponsors>
-        {sponsors === undefined ? (
-          <span>후원사 목록을 가져오는데 실패했습니다.</span>
-        ) : (
-          sponsors.map((s) => (
-            <div key={s.level.code}>
-              <div>{s.level.name}</div>
-              {s.sponsors.map((sponsor) => (
-                <div key={sponsor.name}>{sponsor.name}</div>
-              ))}
-            </div>
-          ))
-        )}
-      </Sponsors> */}
+      <SponsorList />
+
       <div className="footer-about-section">
         <section className="left">
           <table>
