@@ -8,7 +8,7 @@ import SponsorLevels from "enums/sponsorLevels";
 
 export function listSponsorLevels(): Promise<SponsorLevel[]> {
   return new Promise((resolve, reject) => {
-    axios.get<APISponsorLevel[]>("http://localhost:8888/2023/sponsors/levels").then((response) => {
+    axios.get<APISponsorLevel[]>("/2023/sponsors/levels").then((response) => {
       resolve(SponsorLevel.fromAPIs(response.data));
     }).catch((error) => {
       console.error(error);
@@ -21,7 +21,7 @@ export function listSponsorLevels(): Promise<SponsorLevel[]> {
 export function listSponsors(): Promise<Sponsor[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsor[]>("http://localhost:8888/2023/sponsors/list/")
+      .get<APISponsor[]>("/2023/sponsors/list/")
       .then((response) => {
         resolve(Sponsor.fromAPIs(response.data));
       })
@@ -34,7 +34,7 @@ export function listSponsors(): Promise<Sponsor[]> {
 export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsorLevelWithSponsor[]>("http://localhost:8888/2023/sponsors/list/")
+      .get<APISponsorLevelWithSponsor[]>("/2023/sponsors/list/")
       .then((response) => {
         resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
       })
@@ -47,7 +47,7 @@ export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]
 
 export function listSponsorBenefits(): Promise<SponsorBenefit[]> {
   return new Promise((resolve, reject) => {
-    axios.get<APISponsorBenefit[]>("http://localhost:8888/2023/sponsors/benefits/").then(response => {
+    axios.get<APISponsorBenefit[]>("/2023/sponsors/benefits/").then(response => {
       resolve(SponsorBenefit.fromAPIs(response.data));
     }).catch(error => {
       console.error(error);
