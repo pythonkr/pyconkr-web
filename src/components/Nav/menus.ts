@@ -95,10 +95,7 @@ const Menus: MenuType = {
     sub: [
       {
         name: "후원사 안내",
-        onClick: ({ setOpenMenu }) => {
-          setOpenMenu(false)
-          window.open("https://info.pycon.kr/sponsor-2024", "_blank")
-        },
+        path: "/sponsoring/sponsor/prospectus"
       },
       // {
       //   name: "개인 후원자",
