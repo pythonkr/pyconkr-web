@@ -7,7 +7,7 @@ import { getErrorMessage } from "api";
 
 export function listSponsorLevels(): Promise<SponsorLevel[]> {
   return new Promise((resolve, reject) => {
-    axios.get<APISponsorLevel[]>("/2023/sponsors/levels").then((response) => {
+    axios.get<APISponsorLevel[]>("https://api-dev.pycon.kr/2023/sponsors/levels").then((response) => {
       resolve(SponsorLevel.fromAPIs(response.data));
     }).catch((error) => {
       console.error(error);
@@ -20,7 +20,7 @@ export function listSponsorLevels(): Promise<SponsorLevel[]> {
 export function listSponsors(): Promise<Sponsor[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsor[]>("/2023/sponsors/list/")
+      .get<APISponsor[]>("https://api-dev.pycon.kr/2023/sponsors/list/")
       .then((response) => {
         resolve(Sponsor.fromAPIs(response.data));
       })
@@ -33,7 +33,7 @@ export function listSponsors(): Promise<Sponsor[]> {
 export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsorLevelWithSponsor[]>("/2023/sponsors/levels/with-sponsor/")
+      .get<APISponsorLevelWithSponsor[]>("https://api-dev.pycon.kr/2023/sponsors/levels/with-sponsor/")
       .then((response) => {
         console.log("debug", response);
         resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
@@ -47,7 +47,7 @@ export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]
 
 export function listSponsorBenefits(): Promise<SponsorBenefit[]> {
   return new Promise((resolve, reject) => {
-    axios.get<APISponsorBenefit[]>("/2023/sponsors/benefits/").then(response => {
+    axios.get<APISponsorBenefit[]>("https://api-dev.pycon.kr/2023/sponsors/benefits/").then(response => {
       resolve(SponsorBenefit.fromAPIs(response.data));
     }).catch(error => {
       console.error(error);
