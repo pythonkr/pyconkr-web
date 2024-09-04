@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { isEscKeyPressed } from "utils";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {

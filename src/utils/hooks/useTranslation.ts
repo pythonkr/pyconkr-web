@@ -10,7 +10,7 @@ const useTranslation = () => {
     (state) => state.core.language
   );
   const t = useCallback(
-    (key: string) => {
+    (key: string, suffix: string = "") => {
       let json;
       switch (language) {
         case "ENG":
@@ -22,8 +22,9 @@ const useTranslation = () => {
           json = EngTranslationKey;
           break;
       }
+      const sentence = `${key}${suffix}`
 
-      return key in json ? json[key as keyof typeof json] : key;
+      return key in json ? json[sentence as keyof typeof json] : key;
     },
     [language]
   );
