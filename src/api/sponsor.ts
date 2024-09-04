@@ -3,7 +3,6 @@ import axios from "lib/axios";
 import { APISponsor, APISponsorBenefit, APISponsorLevel, APISponsorLevelWithSponsor } from "models/api/sponsor";
 import { SponsorLevel } from "models/sponsor";
 import { getErrorMessage } from "api";
-import SponsorLevels from "enums/sponsorLevels";
 
 
 export function listSponsorLevels(): Promise<SponsorLevel[]> {
@@ -34,8 +33,9 @@ export function listSponsors(): Promise<Sponsor[]> {
 export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]> {
   return new Promise((resolve, reject) => {
     axios
-      .get<APISponsorLevelWithSponsor[]>("/2023/sponsors/list/")
+      .get<APISponsorLevelWithSponsor[]>("/2023/sponsors/levels/with-sponsor/")
       .then((response) => {
+        console.log("debug", response);
         resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
       })
       .catch((error) => {

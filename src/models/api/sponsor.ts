@@ -1,7 +1,7 @@
 export type APISponsor = {
   id: string;
   name: string;
-  level: APISponsorLevelOnly;
+  desc: string;
   logo_image: string;
   url: string;
 };
@@ -41,8 +41,6 @@ export type APISponsorLevelWithSponsor = {
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
   order: Number;
   sponsor: APISponsor[];
 }

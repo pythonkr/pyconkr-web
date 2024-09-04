@@ -75,8 +75,6 @@ export class SponsorLevelWithSponsor {
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
   order: Number;
   sponsor: Sponsor[];
 
@@ -85,8 +83,6 @@ export class SponsorLevelWithSponsor {
     this.name = p.name;
     this.desc = p.desc;
     this.visible = p.visible;
-    this.price = p.price;
-    this.limit = p.limit;
     this.order = p.order;
     this.sponsor = Sponsor.fromAPIs(p.sponsor);
   }
@@ -97,8 +93,6 @@ export class SponsorLevelWithSponsor {
       name: d.name,
       desc: d.desc,
       visible: d.visible,
-      price: d.price,
-      limit: d.limit,
       order: d.order,
       sponsor: d.sponsor,
     });
@@ -144,14 +138,14 @@ class SponsorLevelOnly {
 export class Sponsor {
   id: string;
   name: string;
-  level: SponsorLevelOnly;
+  desc: string;
   logo_image: string;
   url: string;
 
   private constructor(p: Sponsor) {
     this.id = p.id;
     this.name = p.name;
-    this.level = p.level;
+    this.desc = p.desc;
     this.logo_image = p.logo_image;
     this.url = p.url;
   }
@@ -160,7 +154,7 @@ export class Sponsor {
     return new Sponsor({
       id: d.id,
       name: d.name,
-      level: SponsorLevelOnly.fromAPI(d.level),
+      desc: d.desc,
       logo_image: d.logo_image,
       url: d.url,
     });

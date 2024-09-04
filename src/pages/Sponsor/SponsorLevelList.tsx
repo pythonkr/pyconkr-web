@@ -10,20 +10,17 @@ const SponsorLevelList = () => {
   const [listOfSponsorBenefit, setListOfSponsorBenefit] = useState<SponsorBenefit[]>([]);
 
   useEffect(() => {
-    SponsorAPI.listSponsorLevels()
-      .then((levels) => {
-        if (levels.length > 4) {
-          const half_length = Math.ceil(levels.length / 2);
-          const firstSide = levels.slice(0, half_length);
-          const secondSide = levels.slice(half_length);
-          setListOfSponsorLevel([firstSide, secondSide]);
-        } else {
-          setListOfSponsorLevel([levels]);
-        }
-      })
-      .catch((error) => console.error(error));
+    SponsorAPI.listSponsorLevels().then((levels) => {
+      if (levels.length > 4) {
+        const half_length = Math.ceil(levels.length / 2);
+        const firstSide = levels.slice(0, half_length);
+        const secondSide = levels.slice(half_length);
+        setListOfSponsorLevel([firstSide, secondSide]);
+      } else {
+        setListOfSponsorLevel([levels]);
+      }
+    });
     SponsorAPI.listSponsorBenefits().then((benefits) => {
-      console.log("benefits", benefits, benefits.slice(1));
       setListOfSponsorBenefit(benefits);
     });
   }, []);
@@ -49,7 +46,6 @@ const SponsorLevelList = () => {
                       const benefitAboutLevel = level.benefits.find(
                         (benefitByLevel) => benefitByLevel.id === benefit.id
                       );
-                      console.log("benefitAboutLevel", level, benefitAboutLevel);
                       return (
                         <td>
                           {benefitAboutLevel?.is_countable ? `` : ``}
