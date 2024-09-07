@@ -10,6 +10,8 @@ import Cfp from "pages/Contribution/cfp"
 import Home from "pages/Home"
 import NotFound from "pages/NotFound"
 import PrivacyPolicy from "pages/PrivacyPolicy"
+import { SessionDetailPage } from "pages/Session/detail"
+import { SessionListPage } from "pages/Session/list"
 import SponsorPage from "pages/Sponsor"
 import TermsOfService from "pages/TermsOfService"
 
@@ -22,6 +24,8 @@ const Router = () => {
         <Route path="/about/pyconkr2024" element={<Pyconkr2024 />} />
         <Route path="/about/coc" element={<Coc />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
+        <Route path="/session" element={<SessionListPage />} />
+        <Route path="/session/:code" element={<SessionDetailPage />} />
         <Route path="/contribution/cfp" element={<Cfp />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

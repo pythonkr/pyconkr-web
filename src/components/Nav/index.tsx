@@ -21,7 +21,7 @@ const Nav = () => {
       navigate(menu.path)
       setOpenMenu(false)
     } else if (menu.onClick) {
-      menu.onClick?.({ setOpenMenu, dispatch })
+      menu.onClick?.({ setOpenMenu, dispatch, navigate })
     }
   }
 

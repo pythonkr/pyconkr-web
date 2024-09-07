@@ -1,4 +1,4 @@
-import { AxiosError, AxiosRequestConfig } from "axios";
+import { AxiosError, AxiosRequestConfig } from "axios"
 
 export function getHeaders(
   others?: NonNullable<AxiosRequestConfig["headers"]>
@@ -25,6 +25,5 @@ export function getErrorMessage(error: AxiosError | Error): string {
   } else return error.message;
 }
 
-export * as SponsorAPI from "./sponsor";
-export * as UserAPI from "./user";
-export * as TicketAPI from "./ticket";
+export * as SponsorAPI from "./sponsor"
+
