@@ -5,6 +5,7 @@ import { DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024 } from "store/Core/dialog"
 
 export type MenuElementOnClickArgType = {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>
+  navigate?: (path: string) => void
   dispatch: ReturnType<typeof useDispatch>
 }
 
@@ -64,31 +65,17 @@ const Menus: MenuType = {
   },
   ticket: {
     name: "티켓 구매",
-    onClick: ({ setOpenMenu, dispatch }) => {
+    onClick: ({ setOpenMenu }) => {
       setOpenMenu(false)
       window.open("https://shop.pycon.kr/ticket", "_blank")
     }
   },
-  contribution: {
-    name: "기여하기",
-    sub: [
-      {
-        name: "발표 제안하기",
-        path: "/contribution/cfp",
-      },
-      // {
-      //   name: "발표안 작성 가이드",
-      //   path: "/contribution/cfp/guide",
-      // },
-      // {
-      //   name: "키노트 연사 추천하기",
-      //   path: "/contribution/recommending-keynote",
-      // },
-      // {
-      //   name: "영상 자막",
-      //   path: "/contribution/video-subtitle",
-      // },
-    ],
+  session: {
+    name: "세션",
+    onClick: ({ setOpenMenu, navigate }) => {
+      navigate?.("/session")
+      setOpenMenu(false)
+    },
   },
   sponsoring: {
     name: "후원하기",
