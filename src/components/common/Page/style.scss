@@ -6,6 +6,10 @@ $black: #141414;
 $navbar-height: 7vh;
 $footer-height: 2rem;
 
+:root {
+  --pico-muted-border-color: #ffffff44 !important;
+}
+
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
@@ -195,40 +199,46 @@ body {
   }
 }
 
-  .mobile-logo {
-    width: 84px;
-  }
-  .mobile-slogan {
-    width: 300px;
-  }
-  .welcome-text {
-    font-size: large;
-    white-space: nowrap;
-  }
+.cm-page {
+  margin: 2vh 5vw;
+  padding: 0 1vw;
+  min-height: 50vh;
+}
 
-  .small-text {
-    font-size: 12px;
-    font-weight: 600;
-    font-style: italic;
-  }
+.mobile-logo {
+  width: 84px;
+}
+.mobile-slogan {
+  width: 300px;
+}
+.welcome-text {
+  font-size: large;
+  white-space: nowrap;
+}
 
-  .medium-text {
-    font-size: 16px;
-    font-weight: 600;
-  }
+.small-text {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+}
 
-  .big-text {
-    font-size: 30px;
-    font-weight: 800;
-  }
+.medium-text {
+  font-size: 16px;
+  font-weight: 600;
+}
 
-  .welcome-section {
-    border-radius: 16px;
-    background-color: $black;
-    padding: 2rem 4rem;
-    align-items: center;
-    width: 100%;
-  }
+.big-text {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.welcome-section {
+  border-radius: 16px;
+  background-color: $black;
+  padding: 2rem 4rem;
+  align-items: center;
+  width: 100%;
+}
 
 .footer-about-section {
   display: flex;
@@ -335,7 +345,7 @@ body {
     width: 48px;
     outline: none;
     transform: none;
-    background-color: $black;
+    background-color: rgba(0, 0, 0, 0);
     color: $peach-puzz;
     border: none;
   }
@@ -380,12 +390,6 @@ body {
   h2 {
     font-size: 24px;
     font-weight: 600;
-  }
-
-  div.cm-page {
-    margin: 3vh 5vw;
-    padding: 0 1vw;
-    min-height: 90vh;
   }
 
   ul,
