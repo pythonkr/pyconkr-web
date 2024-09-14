@@ -1,10 +1,7 @@
 import { wrap } from '@suspensive/react'
 import React from "react"
-import { useNavigate } from 'react-router'
 import styled from 'styled-components'
 
-import { SloganShort } from 'assets/icons'
-import { FallbackImg } from 'components/common/FallbackImg'
 import Page from "components/common/Page"
 import { APIPretalxSessions } from 'models/api/session'
 import { useListSessionsQuery } from 'utils/hooks/useAPI'
@@ -12,14 +9,15 @@ import useTranslation from "utils/hooks/useTranslation"
 
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
   const t = useTranslation()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   return <SessionItemEl>
-    <SessionItemImgContainer>
+    {/* <SessionItemImgContainer>
       <FallbackImg src={session.image || ''} alt={session.title} errorFallback={<SloganShort />} />
-    </SessionItemImgContainer>
+    </SessionItemImgContainer> */}
     <SessionItemInfoContainer>
-      <h3 onClick={() => navigate(`/session/${session.code}`)}>{session.title}</h3>
+      {/* <h3 onClick={() => navigate(`/session/${session.code}`)}>{session.title}</h3> */}
+      <h3>{session.title}</h3>
       <h6>{session.abstract}</h6>
       <SessionSpeakerContainer>by {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}</SessionSpeakerContainer>
       <SmallTagContainer>
@@ -106,7 +104,7 @@ const SessionItemInfoContainer = styled.div`
   h3 {
     color: #FEBD99;
     margin-bottom: 0.5rem;
-    cursor: pointer;
+    // cursor: pointer;
   }
 
   h6 {
