@@ -14,6 +14,7 @@ import { SessionDetailPage } from "pages/Session/detail"
 import { SessionListPage } from "pages/Session/list"
 import SponsorPage from "pages/Sponsor"
 import TermsOfService from "pages/TermsOfService"
+import Health from "./pages/About/health";
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about/pyconkr2024" element={<Pyconkr2024 />} />
         <Route path="/about/coc" element={<Coc />} />
+        <Route path="/about/health" element={<Health />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/session" element={<SessionListPage />} />
         <Route path="/session/:code" element={<SessionDetailPage />} />

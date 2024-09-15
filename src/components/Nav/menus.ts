@@ -31,6 +31,13 @@ const Menus: MenuType = {
         onClick: ({ setOpenMenu }) => {
           setOpenMenu(false)
           window.open("https://2023.pycon.kr/coc/purpose", "_blank")
+        },
+      },
+      {
+        name: "건강 관련 안내",
+        onClick: ({ setOpenMenu }) => {
+          setOpenMenu(false)
+          window.open("/about/health", "_blank")
         }
       },
       // {
