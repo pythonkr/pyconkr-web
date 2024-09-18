@@ -13,6 +13,7 @@ export type APISponsorBenefit = {
   unit: string;
   is_countable: boolean;
   offer: Number;
+  uncountable_offer: string;
 }
 
 export type APISponsorLevel = {

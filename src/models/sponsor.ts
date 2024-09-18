@@ -7,6 +7,7 @@ export class SponsorBenefit {
   offer: Number;
   unit: string;
   is_countable: boolean;
+  uncountable_offer: string;
 
   private constructor(p: SponsorBenefit) {
     this.id = p.id;
@@ -15,6 +16,7 @@ export class SponsorBenefit {
     this.offer = p.offer;
     this.unit = p.unit;
     this.is_countable = p.is_countable;
+    this.uncountable_offer = p.uncountable_offer;
   }
 
   static fromAPI(d: APISponsorBenefit): SponsorBenefit {
@@ -25,6 +27,7 @@ export class SponsorBenefit {
       offer: d.offer,
       unit: d.unit,
       is_countable: d.is_countable,
+      uncountable_offer: d.uncountable_offer,
     });
   }
   static fromAPIs(data: APISponsorBenefit[]): SponsorBenefit[] {

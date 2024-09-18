@@ -58,6 +58,7 @@ const Vertical = styled.div`
 `;
 
 const SponsorTableList = styled.div`
+  width: 80%;
   & > div + div {
     margin-top: 2rem;
   }
