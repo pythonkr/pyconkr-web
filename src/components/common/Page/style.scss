@@ -149,6 +149,7 @@ body {
   top: $navbar-height;
   left: 0;
   height: 100%;
+  z-index: 10000;
   background-color: $black;
   color: $peach-puzz;
   text-align: center;
