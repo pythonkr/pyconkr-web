@@ -15,7 +15,7 @@ const SessionSpeakerItem: React.FC<{ speaker: APIPretalxSessions[0]['speakers'][
   return (
     <SessionSpeakerItemStyled>
       <SessionSpeakerImageContainerStyled>
-        <FallbackImg src={speaker.avatar} alt={speaker.name} errorFallback={<SloganShort />} />
+        <FallbackImg src={speaker.avatar ?? ''} alt={speaker.name} errorFallback={<SloganShort />} />
       </SessionSpeakerImageContainerStyled>
       <div>
         <h3>{speaker.name}</h3>
@@ -51,7 +51,7 @@ const SessionDetail: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }
       <SessionInfoContainerStyled>
         <p>{t('언어')} : {t(locale)}</p>
         <p>{t('발표 시간')} : {session.duration}{t('분')}</p>
-        <p>{t('발표 장소')} : {session.slot?.room}</p>
+        <p>{t('발표 장소')} : {t(session.slot?.room[Object.keys(session.slot?.room ?? {})[0]] ?? '알 수 없음')}</p>
         <p>
           <TagContainer>
             <div style={{ margin: 0 }}>{t('태그')} :</div>
@@ -92,7 +92,7 @@ export const SessionDetailPage: React.FC = () => {
 
   return (
     <Page>
-      <ReturnToSessionList onClick={() => navigate('/session')}>⬅️ {t('세션 목록으로 돌아가기')}</ReturnToSessionList>
+      <ReturnToSessionList onClick={() => navigate(-1)}>⬅️ {t('세션 목록으로 돌아가기')}</ReturnToSessionList>
       <SessionDetailWrapper />
     </Page>
   )

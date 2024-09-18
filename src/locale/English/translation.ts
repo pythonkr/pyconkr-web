@@ -197,6 +197,13 @@ const EnglishTranslation = {
   // About Sessions
   "세션": "Session",
   "세션 목록": "Session List",
+  "세션 시간표": "Session Schedule",
+  "10월 26일 토요일": "October 26 (Sat)",
+  "10월 27일 일요일": "October 27 (Sun)",
+  "컨벤션 홀 1": "Convention Hall 1",
+  "컨벤션 홀 2": "Convention Hall 2",
+  "컨벤션 홀 3": "Convention Hall 3",
+  "휴식": "Break time",
   "발표 목록은 발표자 사정에 따라 변동될 수 있습니다.": "The list of presentations may change depending on the circumstances of the presenters.",
   "세션 목록으로 돌아가기": "Back to session list",
   "발표 시간": "Duration",
