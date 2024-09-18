@@ -12,9 +12,10 @@ import NotFound from "pages/NotFound"
 import PrivacyPolicy from "pages/PrivacyPolicy"
 import { SessionDetailPage } from "pages/Session/detail"
 import { SessionListPage } from "pages/Session/list"
+import { SessionTimeTablePage } from "pages/Session/timetable"
 import SponsorPage from "pages/Sponsor"
 import TermsOfService from "pages/TermsOfService"
-import Health from "./pages/About/health";
+import Health from "./pages/About/health"
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/session" element={<SessionListPage />} />
         <Route path="/session/:code" element={<SessionDetailPage />} />
+        <Route path="/session/timetable" element={<SessionTimeTablePage />} />
         <Route path="/contribution/cfp" element={<Cfp />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

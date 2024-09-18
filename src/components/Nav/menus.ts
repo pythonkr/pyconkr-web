@@ -79,10 +79,22 @@ const Menus: MenuType = {
   },
   session: {
     name: "세션",
-    onClick: ({ setOpenMenu, navigate }) => {
-      navigate?.("/session")
-      setOpenMenu(false)
-    },
+    sub: [
+      {
+        name: "세션 목록",
+        onClick: ({ setOpenMenu, navigate }) => {
+          navigate?.("/session")
+          setOpenMenu(false)
+        }
+      },
+      {
+        name: "세션 시간표",
+        onClick: ({ setOpenMenu, navigate }) => {
+          navigate?.("/session/timetable")
+          setOpenMenu(false)
+        }
+      },
+    ],
   },
   sponsoring: {
     name: "후원하기",
