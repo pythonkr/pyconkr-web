@@ -9,7 +9,14 @@ import store from "./store"
 import "./styles/index.scss"
 
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { retry: 3, refetchOnMount: 'always', gcTime: 1, staleTime: 10000 } },
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      gcTime: 24 * 60 * 60 * 1000, // 24 hours
+      staleTime: 3 * 1000, // 3 seconds
+      refetchOnWindowFocus: true,
+    }
+  },
 })
 
 const root = ReactDOM.createRoot(document.getElementById("root") || document.createElement("div"))
