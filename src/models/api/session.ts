@@ -1,6 +1,6 @@
 export type APIPretalxSessions = {
   code: string;
-  submission_type: string;
+  submission_type: {[key: string]: string};
   submission_type_id: number;
   state: string;
 
@@ -13,10 +13,10 @@ export type APIPretalxSessions = {
   content_locale: string;
 
   slot: {
-    start: string;
-    end: string;
-    room: string;
-    room_id: number;
+    start: string | null;
+    end: string | null;
+    room: {[key: string]: string};
+    room_id: number | null;
   } | null;
   duration: number | null;
   do_not_record: boolean;
@@ -25,8 +25,9 @@ export type APIPretalxSessions = {
   speakers: {
     code: string;
     name: string;
-    biography: string;
-    avatar: string;
+    biography: string | null;
+    avatar: string | null;
+    email: string;
   }[];
   answers: {
     id: number;
