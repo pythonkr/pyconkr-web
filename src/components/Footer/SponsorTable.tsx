@@ -1,4 +1,5 @@
 import { Sponsor } from "models/sponsor";
+import { Link } from "react-router-dom";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -14,7 +15,9 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
       <h3>{levelName}</h3>
       <div style={{ gridTemplateColumns: `repeat(${max}, 1fr)` }}>
         {sponsors.map((sponsor) => (
-          <img src={sponsor.logo_image} alt={sponsor.name} />
+          <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path">
+            <img src={sponsor.logo_image} alt={sponsor.name} />
+          </Link>
         ))}
       </div>
     </SponsorCard>
@@ -42,7 +45,6 @@ const SponsorCard = styled.div`
   }
 
   @media only screen and (max-width: 810px) {
-    display: block;
     margin: 1rem;
 
     & > div {

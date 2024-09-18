@@ -9,15 +9,24 @@ const SponsorLevelList = () => {
   const [listOfSponsorLevel, setListOfSponsorLevel] = useState<SponsorLevel[][]>([]);
   const [listOfSponsorBenefit, setListOfSponsorBenefit] = useState<SponsorBenefit[]>([]);
 
+  const getBenefitDescription = (benefit: SponsorBenefit | undefined) => {
+    if (benefit === undefined) return "-";
+    if (benefit.is_countable) {
+      return benefit.offer ? `${benefit.offer}${benefit.unit}` : benefit.uncountable_offer;
+    }
+    return benefit.uncountable_offer;
+  };
+
   useEffect(() => {
     SponsorAPI.listSponsorLevels().then((levels) => {
-      if (levels.length > 4) {
-        const half_length = Math.ceil(levels.length / 2);
-        const firstSide = levels.slice(0, half_length);
-        const secondSide = levels.slice(half_length);
+      const onlyVisible = levels.filter((level) => level.visible);
+      if (onlyVisible.length > 4) {
+        const half_length = Math.ceil(onlyVisible.length / 2);
+        const firstSide = onlyVisible.slice(0, half_length);
+        const secondSide = onlyVisible.slice(half_length);
         setListOfSponsorLevel([firstSide, secondSide]);
       } else {
-        setListOfSponsorLevel([levels]);
+        setListOfSponsorLevel([onlyVisible]);
       }
     });
     SponsorAPI.listSponsorBenefits().then((benefits) => {
@@ -47,13 +56,11 @@ const SponsorLevelList = () => {
                         (benefitByLevel) => benefitByLevel.id === benefit.id
                       );
                       return (
-                        <td>
-                          {benefitAboutLevel?.is_countable ? `` : ``}
-                          {benefitAboutLevel?.offer === 0
-                            ? "-"
-                            : benefitAboutLevel?.offer.toString()}
-                          {benefitAboutLevel?.is_countable && benefitAboutLevel?.unit}
-                        </td>
+                        <td
+                          dangerouslySetInnerHTML={{
+                            __html: getBenefitDescription(benefitAboutLevel),
+                          }}
+                        ></td>
                       );
                     })}
                   </tr>
@@ -199,6 +206,11 @@ const SponsorRatingTable = styled.div`
     & > tbody > tr > td {
       @media only screen and (max-width: 810px) {
         font-size: 10px;
+      }
+
+      & > * {
+        color: #b0a8fe;
+        margin: 0;
       }
 
       border-bottom: 1px solid #b0a8fe;

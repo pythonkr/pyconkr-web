@@ -1,1 +1,1 @@
-cp ./.env.dev ./.env || copy .\\env.dev .\\.env
+cp ./.env.development ./.env || copy .\\env.development .\\.env

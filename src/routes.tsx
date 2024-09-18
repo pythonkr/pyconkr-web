@@ -1,21 +1,22 @@
-import React from "react"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import Footer from "components/Footer"
-import Nav from "components/Nav"
-import { DialogCollection } from "dialogs"
-import Coc from "pages/About/coc"
-import Pyconkr2024 from "pages/About/pyconkr2024"
-import Cfp from "pages/Contribution/cfp"
-import Home from "pages/Home"
-import NotFound from "pages/NotFound"
-import PrivacyPolicy from "pages/PrivacyPolicy"
-import { SessionDetailPage } from "pages/Session/detail"
-import { SessionListPage } from "pages/Session/list"
-import { SessionTimeTablePage } from "pages/Session/timetable"
-import SponsorPage from "pages/Sponsor"
-import TermsOfService from "pages/TermsOfService"
-import Health from "./pages/About/health"
+import Footer from "components/Footer";
+import Nav from "components/Nav";
+import { DialogCollection } from "dialogs";
+import Coc from "pages/About/coc";
+import Pyconkr2024 from "pages/About/pyconkr2024";
+import Cfp from "pages/Contribution/cfp";
+import Home from "pages/Home";
+import NotFound from "pages/NotFound";
+import PrivacyPolicy from "pages/PrivacyPolicy";
+import { SessionDetailPage } from "pages/Session/detail";
+import { SessionListPage } from "pages/Session/list";
+import { SessionTimeTablePage } from "pages/Session/timetable";
+import SponsorPage from "pages/Sponsor";
+import TermsOfService from "pages/TermsOfService";
+import Health from "./pages/About/health";
+import SponsorDetailPage from "pages/Sponsor/SponsorDetail";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path="/about/coc" element={<Coc />} />
         <Route path="/about/health" element={<Health />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
+        <Route path="/sponsoring/sponsor/:id" element={<SponsorDetailPage />} />
         <Route path="/session" element={<SessionListPage />} />
         <Route path="/session/:code" element={<SessionDetailPage />} />
         <Route path="/session/timetable" element={<SessionTimeTablePage />} />
