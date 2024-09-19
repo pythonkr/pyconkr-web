@@ -251,7 +251,6 @@ const SessionTable = styled.table`
     border-top: unset;
     transform: translateY(-${TD_HEIGHT / 2}rem);
     width: 1.5rem;
-    max-width: 1.5rem;
 
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.5);
