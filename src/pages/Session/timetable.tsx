@@ -123,6 +123,7 @@ export const SessionTimeTablePage: React.FC = () => {
       const timeTableData = getTimeTableData(data)
       const dates = Object.keys(timeTableData).sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
       const rooms: { [room: string]: number } = getRooms(data).reduce((acc, room) => ({ ...acc, [room]: 0 }), {})
+      const sortedRoomList = Object.keys(rooms).sort()
       const roomCount = Object.keys(rooms).length
 
       const selectedDate = confDate || dates[0]
@@ -144,7 +145,7 @@ export const SessionTimeTablePage: React.FC = () => {
           <SessionTable>
             <thead>
               <th></th>
-              {Object.keys(rooms).map((room) => <th key={room}>{t(room)}</th>)}
+              {sortedRoomList.map((room) => <th key={room}>{t(room)}</th>)}
             </thead>
             <tbody>
               <tr><td colSpan={roomCount + 1}></td></tr>
@@ -154,7 +155,7 @@ export const SessionTimeTablePage: React.FC = () => {
                     <td>{time}</td>
                     {
                       Object.values(rooms).some((c) => c >= 1) || Object.values(roomData).some((room) => room !== undefined)
-                        ? Object.keys(rooms).map((room) => {
+                        ? sortedRoomList.map((room) => {
                           const roomDatum = roomData[room]
                           if (roomDatum === undefined) {
                             // 진행 중인 세션이 없는 경우, 해당 줄에서는 해당 room의 빈 column을 생성합니다.
