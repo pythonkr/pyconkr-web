@@ -10,22 +10,28 @@ import { APIPretalxSessions } from 'models/api/session'
 import { useListSessionsQuery } from 'utils/hooks/useAPI'
 import useTranslation from "utils/hooks/useTranslation"
 
+const ENABLE_PROFILE_IMG_AND_DETAILS = false
+
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
   const t = useTranslation()
   const navigate = useNavigate()
 
+  const h4Props = ENABLE_PROFILE_IMG_AND_DETAILS ? { onClick: () => navigate(`/session/${session.code}`) } : {}
+
   return <SessionItemEl>
-    <SessionItemImgContainer>
-      <FallbackImg src={session.image || ''} alt={session.title} errorFallback={<SloganShort />} />
-    </SessionItemImgContainer>
+    {
+      ENABLE_PROFILE_IMG_AND_DETAILS && <SessionItemImgContainer>
+        <FallbackImg src={session.image || ''} alt={session.title} errorFallback={<SloganShort />} />
+      </SessionItemImgContainer>
+    }
     <SessionItemInfoContainer>
-      <h3 onClick={() => navigate(`/session/${session.code}`)}>{session.title}</h3>
-      <h6>{session.abstract}</h6>
+      <h4 {...h4Props}>{session.title}</h4>
+      <p>{session.abstract}</p>
       <SessionSpeakerContainer>by {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}</SessionSpeakerContainer>
-      <SmallTagContainer>
-        {session.tags.map(tag => <SmallTag key={tag}>{tag}</SmallTag>)}
-        {session.do_not_record && <SmallTag>{t('녹화 불가')}</SmallTag>}
-      </SmallTagContainer>
+      <TagContainer>
+        {session.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
+        {session.do_not_record && <Tag>{t('녹화 불가')}</Tag>}
+      </TagContainer>
     </SessionItemInfoContainer>
   </SessionItemEl>
 }
@@ -39,7 +45,25 @@ export const SessionListPage = () => {
     .on(() => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const { data } = useListSessionsQuery()
-      return <>{data.map((session) => <SessionItem key={session.code} session={session} />)}</>
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const [currentTag, setTag] = React.useState<string | null>(null)
+      const setOrUnsetTag = (tag: string) => setTag(currentTag === tag ? null : tag)
+      const sessionOnlyData = data
+        .filter((d) => d.submission_type.en === 'Session')
+        .filter((d) => currentTag === null || d.tags.includes(currentTag))
+
+      const tags = Array.from(new Set(data.flatMap((session) => session.tags))).sort()
+      return <>
+        <hr style={{ margin: 0 }} />
+        <TagFilterBtnContainer>
+          <div>
+            {tags.map((tag) => <TagFilterBtn key={tag} onClick={() => setOrUnsetTag(tag)} className={tag === currentTag ? 'selected' : ''}>
+                {tag}
+            </TagFilterBtn>)}
+          </div>
+        </TagFilterBtnContainer>
+        {sessionOnlyData.map((session) => <SessionItem key={session.code} session={session} />)}
+      </>
     })
 
   return (
@@ -52,11 +76,36 @@ export const SessionListPage = () => {
   )
 }
 
+const TagFilterBtnContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const TagFilterBtn = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  font-size: 0.8rem;
+
+  &:focus, button::-moz-focus-inner {
+    outline: none !important;
+  }
+
+  &.selected {
+    background-color: #b0a8fe;
+    color: black;
+    font-weight: bold;
+  }
+`
+
 const SessionItemEl = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 0.75rem;
   gap: 1rem;
 
   color: var(--pico-h6-color);
@@ -71,9 +120,9 @@ const SessionItemEl = styled.div`
 `
 
 const SessionItemImgContainer = styled.div`
-  width: 7.5rem;
-  height: 7.5rem;
-  margin: 0.75rem;
+  width: 6rem;
+  height: 6rem;
+  margin: 0.6rem;
   flex-shrink: 0;
   flex-grow: 0;
 
@@ -98,20 +147,22 @@ const SessionItemImgContainer = styled.div`
 `
 
 const SessionItemInfoContainer = styled.div`
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 
   flex-grow: 1;
 
-  h3 {
+  h4 {
     color: #FEBD99;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
+    margin-bottom: 0.2rem;
+    cursor: ${ENABLE_PROFILE_IMG_AND_DETAILS ? 'pointer' : 'default'};
   }
 
-  h6 {
+  p {
+    margin-bottom: 0.3rem;
     color: var(--pico-h3-color);
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
   }
 
   @media only screen and (max-width: 809px) {
@@ -119,8 +170,9 @@ const SessionItemInfoContainer = styled.div`
       font-size: 1.5rem;
     }
 
-    h6 {
+    p {
       font-size: 0.8rem;
+      font-weight: bold;
     }
   }
 `
@@ -131,6 +183,7 @@ const SessionSpeakerContainer = styled.div`
   justify-content: flex-start;
   gap: 0.5rem;
   color: var(--pico-h6-color);
+  font-size: 0.6rem;
 
   img {
     width: 0.75rem;
@@ -145,14 +198,14 @@ const SessionSpeakerContainer = styled.div`
 
   kbd {
     background-color: #def080;
-    padding: 0.25rem 0.5rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 0.25rem;
 
-    font-size: 0.75rem;
+    font-size: 0.6rem;
   }
 `
 
-const SmallTagContainer = styled.div`
+const TagContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -160,11 +213,10 @@ const SmallTagContainer = styled.div`
   gap: 0.25rem;
 `
 
-const SmallTag = styled.kbd`
+const Tag = styled.kbd`
   background-color: #b0a8fe;
-  padding: 0.1rem 0.25rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
-  font-family: var(--pico-font-family);
 
-  font-size: 0.75rem;
+  font-size: 0.6rem;
 `
