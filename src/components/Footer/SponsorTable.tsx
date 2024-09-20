@@ -16,13 +16,17 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
       <div style={{ gridTemplateColumns: `repeat(${max}, 1fr)` }}>
         {sponsors.map((sponsor) => (
           <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path">
-            <img src={sponsor.logo_image} alt={sponsor.name} />
+            <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
           </Link>
         ))}
       </div>
     </SponsorCard>
   );
 }
+
+const LogoImage = styled.img`
+  color: white;
+`;
 
 const SponsorCard = styled.div`
   border: 1px solid #b0a8fe;
