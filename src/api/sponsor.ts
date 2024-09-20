@@ -6,7 +6,7 @@ import { Sponsor, SponsorBenefit, SponsorLevel, SponsorLevelWithSponsor } from "
 
 export function detailSponsor(id: string): Promise<Sponsor> {
   return new Promise((resolve, reject) => {
-    instance.get<APISponsor>(`http://localhost:8888/2024/sponsors/list/${id}/`).then(response => {
+    instance.get<APISponsor>(`/2024/sponsors/list/${id}/`).then(response => {
       resolve(Sponsor.fromAPI(response.data));
     }).catch(error => {
       console.error(error);
@@ -18,7 +18,7 @@ export function detailSponsor(id: string): Promise<Sponsor> {
 
 export function listSponsorLevels(): Promise<SponsorLevel[]> {
   return new Promise((resolve, reject) => {
-    instance.get<APISponsorLevel[]>("http://localhost:8888/2024/sponsors/levels").then((response) => {
+    instance.get<APISponsorLevel[]>("/2024/sponsors/levels").then((response) => {
       resolve(SponsorLevel.fromAPIs(response.data));
     }).catch((error) => {
       console.error(error);
@@ -31,7 +31,7 @@ export function listSponsorLevels(): Promise<SponsorLevel[]> {
 export function listSponsors(): Promise<Sponsor[]> {
   return new Promise((resolve, reject) => {
     instance
-      .get<APISponsor[]>("http://localhost:8888/2024/sponsors/list/")
+      .get<APISponsor[]>("/2024/sponsors/list/")
       .then((response) => {
         resolve(Sponsor.fromAPIs(response.data));
       })
@@ -44,7 +44,7 @@ export function listSponsors(): Promise<Sponsor[]> {
 export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]> {
   return new Promise((resolve, reject) => {
     instance
-      .get<APISponsorLevelWithSponsor[]>("http://localhost:8888/2024/sponsors/levels/with-sponsor/")
+      .get<APISponsorLevelWithSponsor[]>("/2024/sponsors/levels/with-sponsor/")
       .then((response) => {
         console.log("debug", response);
         resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
@@ -58,7 +58,7 @@ export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]
 
 export function listSponsorBenefits(): Promise<SponsorBenefit[]> {
   return new Promise((resolve, reject) => {
-    instance.get<APISponsorBenefit[]>("http://localhost:8888/2024/sponsors/benefits/").then(response => {
+    instance.get<APISponsorBenefit[]>("/2024/sponsors/benefits/").then(response => {
       resolve(SponsorBenefit.fromAPIs(response.data));
     }).catch(error => {
       console.error(error);
