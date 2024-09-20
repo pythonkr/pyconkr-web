@@ -25,7 +25,8 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
 }
 
 const LogoImage = styled.img`
-  color: white;
+  background: white;
+  color: black;
 `;
 
 const SponsorCard = styled.div`

@@ -13,7 +13,7 @@ const SponsorDetail: React.FC<{ sponsor: APISponsor }> = ({ sponsor }) => {
     <Vertical>
       <H1>{sponsor.name}</H1>
       <a href={sponsor.url}>
-        <img src={sponsor.logo_image} alt={sponsor.name} />
+        <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
       </a>
       <H3 dangerouslySetInnerHTML={{ __html: sponsor.desc }}></H3>
     </Vertical>
@@ -47,6 +47,12 @@ const SponsorDetailPage = () => {
 };
 
 export default SponsorDetailPage;
+
+const LogoImage = styled.img`
+  background: white;
+  color: black;
+  max-width: 50%;
+`;
 
 const Container = styled.div`
   display: flex;
