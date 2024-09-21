@@ -9,6 +9,10 @@ const SponsorLevelList = () => {
   const [listOfSponsorLevel, setListOfSponsorLevel] = useState<SponsorLevel[][]>([]);
   const [listOfSponsorBenefit, setListOfSponsorBenefit] = useState<SponsorBenefit[]>([]);
 
+  const prettryPrice = (price: number) => {
+    return new Intl.NumberFormat("ko-KR").format(price);
+  };
+
   const getBenefitDescription = (benefit: SponsorBenefit | undefined) => {
     if (benefit === undefined) return "-";
     if (benefit.is_countable) {
@@ -21,7 +25,7 @@ const SponsorLevelList = () => {
     SponsorAPI.listSponsorLevels().then((levels) => {
       const onlyVisible = levels.filter((level) => level.visible);
       if (onlyVisible.length > 4) {
-        const half_length = Math.ceil(onlyVisible.length / 2);
+        const half_length = Math.floor(onlyVisible.length / 2);
         const firstSide = onlyVisible.slice(0, half_length);
         const secondSide = onlyVisible.slice(half_length);
         setListOfSponsorLevel([firstSide, secondSide]);
@@ -48,6 +52,18 @@ const SponsorLevelList = () => {
                 ))}
               </thead>
               <tbody>
+                <tr>
+                  <td>후원금</td>
+                  {sponsorLevel.map((level) => {
+                    const unit = level.name === "출판사" ? " 권" : " 원";
+                    return (
+                      <td>
+                        {prettryPrice(level.price)}
+                        {unit}
+                      </td>
+                    );
+                  })}
+                </tr>
                 {listOfSponsorBenefit.map((benefit) => (
                   <tr>
                     <td>{benefit.name}</td>
@@ -83,7 +99,7 @@ const SponsorLevelList = () => {
             <li>{t("추후 일부 내용이 변경될 수 있습니다.")}</li>
             <li>
               {t(
-                "스타트업 스폰서십은 사내에서 파이썬을 사용하고, 설립 3년 이하, 사내 인원 30인 이하인 곳에 한합니다."
+                "스타트업 스폰서십은 사내에서 파이썬을 사용하고, 설립 5년 이하, 사내 인원 30인 이하인 곳에 한합니다."
               )}
             </li>
             <li>{t("커뮤니티 스폰서십은 비영리 단체에 한해 후원이 가능합니다.")}</li>

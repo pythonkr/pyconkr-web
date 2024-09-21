@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  max: Number;
+  max: number;
   levelName: string;
   sponsors: Sponsor[];
 };
@@ -27,6 +27,7 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
 const LogoImage = styled.img`
   background: white;
   color: black;
+  min-width: 15vw;
 `;
 
 const SponsorCard = styled.div`

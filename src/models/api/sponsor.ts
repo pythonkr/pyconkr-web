@@ -7,41 +7,41 @@ export type APISponsor = {
 };
 
 export type APISponsorBenefit = {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   unit: string;
   is_countable: boolean;
-  offer: Number;
+  offer: number;
   uncountable_offer: string;
 }
 
 export type APISponsorLevel = {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
-  order: Number;
+  price: number;
+  limit: number;
+  order: number;
   benefits: APISponsorBenefit[];
 }
 
 export type APISponsorLevelOnly = {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
-  order: Number;
+  price: number;
+  limit: number;
+  order: number;
 }
 
 export type APISponsorLevelWithSponsor = {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  order: Number;
+  order: number;
   sponsor: APISponsor[];
 }

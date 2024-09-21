@@ -90,7 +90,7 @@ const H1 = styled.h1`
 const H3 = styled.h3`
   margin-top: 1.5rem;
   font-size: 24px;
-  color: #b0a8fe;
+  color: white;
 
   @media only screen and (max-width: 810px) {
     padding: 0 1rem;
