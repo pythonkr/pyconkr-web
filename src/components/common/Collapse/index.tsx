@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  order: Number;
+  order: number;
   header: string;
   content: string;
 };

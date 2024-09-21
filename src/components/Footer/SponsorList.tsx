@@ -22,7 +22,7 @@ const SponsorList = () => {
         <SponsorTableList>
           {listOfSponsorLevel.map((level) => (
             <SponsorTable
-              max={level.name.toLowerCase() === "keystone" ? 1 : 4}
+              max={level.name === "키스톤" ? 1 : 3}
               levelName={t(level.name)}
               sponsors={level.sponsor}
             />

@@ -1,10 +1,10 @@
 import { APISponsorLevel, APISponsorBenefit, APISponsor, APISponsorLevelOnly, APISponsorLevelWithSponsor } from "./api/sponsor";
 
 export class SponsorBenefit {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
-  offer: Number;
+  offer: number;
   unit: string;
   is_countable: boolean;
   uncountable_offer: string;
@@ -36,13 +36,13 @@ export class SponsorBenefit {
 }
 
 export class SponsorLevel {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
-  order: Number;
+  price: number;
+  limit: number;
+  order: number;
   benefits: SponsorBenefit[]
 
   private constructor(p: SponsorLevel) {
@@ -74,11 +74,11 @@ export class SponsorLevel {
 }
 
 export class SponsorLevelWithSponsor {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  order: Number;
+  order: number;
   sponsor: Sponsor[];
 
   private constructor(p: SponsorLevelWithSponsor) {
@@ -106,13 +106,13 @@ export class SponsorLevelWithSponsor {
 }
 
 class SponsorLevelOnly {
-  id: Number;
+  id: number;
   name: string;
   desc: string;
   visible: boolean;
-  price: Number;
-  limit: Number;
-  order: Number;
+  price: number;
+  limit: number;
+  order: number;
 
   private constructor(p: SponsorLevelOnly) {
     this.id = p.id;
