@@ -1,5 +1,6 @@
 import { wrap } from '@suspensive/react'
 import React from "react"
+import Markdown from 'react-markdown'
 import * as R from 'remeda'
 
 import { SloganShort } from 'assets/icons'
@@ -19,7 +20,7 @@ const SessionSpeakerItem: React.FC<{ speaker: APIPretalxSessions[0]['speakers'][
       </SessionSpeakerImageContainerStyled>
       <div>
         <h3>{speaker.name}</h3>
-        <p>{speaker.biography}</p>
+        <Markdown>{speaker.biography}</Markdown>
       </div>
     </SessionSpeakerItemStyled>
   )
@@ -62,7 +63,7 @@ const SessionDetail: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }
       </SessionInfoContainerStyled>
       <hr />
       <h3>{t('설명')}</h3>
-      <p>{session.description}</p>
+      <Markdown>{session.description}</Markdown>
       <hr />
       <h3>{t('발표자 소개')}</h3>
       {session.speakers.map(speaker => <SessionSpeakerItem speaker={speaker} key={speaker.code} />)}
