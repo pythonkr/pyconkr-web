@@ -84,13 +84,13 @@ const Menus: MenuType = {
           setOpenMenu(false)
         }
       },
-      // {
-      //   name: "세션 시간표",
-      //   onClick: ({ setOpenMenu, navigate }) => {
-      //     navigate?.("/session/timetable")
-      //     setOpenMenu(false)
-      //   }
-      // },
+      {
+        name: "세션 시간표",
+        onClick: ({ setOpenMenu, navigate }) => {
+          navigate?.("/session/timetable")
+          setOpenMenu(false)
+        }
+      },
     ],
   },
   sponsoring: {
