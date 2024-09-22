@@ -1,5 +1,6 @@
 import { wrap } from '@suspensive/react'
 import React from "react"
+import * as R from 'remeda'
 import styled from 'styled-components'
 
 import Page from "components/common/Page"
@@ -7,6 +8,12 @@ import { APIPretalxSessions } from 'models/api/session'
 import { useNavigate } from 'react-router'
 import { useListSessionsQuery } from 'utils/hooks/useAPI'
 import useTranslation from "utils/hooks/useTranslation"
+
+const ENABLE_DETAILS = false
+
+const TD_HEIGHT = 2.5
+const TD_WIDTH = 12.5
+const TD_WIDTH_MOBILE = 20
 
 type TimeTableData = {
   [date: string]: {
@@ -83,10 +90,11 @@ const getTimeTableData: (data: APIPretalxSessions) => TimeTableData = (data) => 
   return timeTableData
 }
 
-const SessionColumn: React.FC<{ rowSpan: number, session: APIPretalxSessions[0] }> = ({ rowSpan, session }) => {
+const SessionColumn: React.FC<{ rowSpan: number, colSpan?: number, session: APIPretalxSessions[0] }> = ({ rowSpan, colSpan, session }) => {
   const navigate = useNavigate()
-  return <td rowSpan={rowSpan}>
-    <SessionBox onClick={() => navigate(`/session/${session.code}`)}>
+  const clickable = ENABLE_DETAILS && R.isArray(session.speakers) && !R.isEmpty(session.speakers)
+  return <td rowSpan={rowSpan} colSpan={colSpan}>
+    <SessionBox onClick={() => clickable && navigate(`/session/${session.code}`)} className={clickable ? 'clickable' : ''}>
       <h6>{session.title}</h6>
       <SessionSpeakerContainer>
         {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}
@@ -94,15 +102,6 @@ const SessionColumn: React.FC<{ rowSpan: number, session: APIPretalxSessions[0] 
     </SessionBox>
   </td>
 }
-
-const BreakColumn: React.FC<{ colSpan: number, hideText?: boolean }> = ({ colSpan, hideText }) => {
-  const t = useTranslation()
-  return <td colSpan={colSpan}>
-    <small style={{ color: 'rgba(255, 255, 255, 0.5)' }}>{!hideText && t('휴식')}</small>
-  </td>
-}
-
-const BlankColumn: React.FC = () => <td></td>
 
 export const SessionTimeTablePage: React.FC = () => {
   const t = useTranslation()
@@ -123,11 +122,13 @@ export const SessionTimeTablePage: React.FC = () => {
       const timeTableData = getTimeTableData(data)
       const dates = Object.keys(timeTableData).sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
       const rooms: { [room: string]: number } = getRooms(data).reduce((acc, room) => ({ ...acc, [room]: 0 }), {})
-      const sortedRoomList = Object.keys(rooms).sort()
       const roomCount = Object.keys(rooms).length
+      const sortedRoomList = Object.keys(rooms).sort()
 
       const selectedDate = confDate || dates[0]
       const selectedTableData = timeTableData[selectedDate]
+
+      let breakCount = 0
       return <>
         <hr />
         <SessionDateTabContainer>
@@ -151,24 +152,59 @@ export const SessionTimeTablePage: React.FC = () => {
               <tr><td colSpan={roomCount + 1}></td></tr>
               {
                 Object.entries(selectedTableData).map(([time, roomData], i, a) => {
+                  const hasSession = Object.values(rooms).some((c) => c >= 1) || Object.values(roomData).some((room) => room !== undefined)
+
+                  if (!hasSession) {
+                    if (breakCount > 1) {
+                      breakCount--
+                      return <tr></tr>
+                    } else {
+                      // 지금부터 다음 세션이 존재하기 전까지의 휴식 시간을 계산합니다.
+                      breakCount = 1
+                      for (let bi = i + 1; bi < a.length; bi++) {
+                        if (Object.values(a[bi][1]).some((room) => room !== undefined)) break
+                        breakCount += 1
+                      }
+
+                      // I really hate this, but I can't think of a better way to do this.
+                      const height = TD_HEIGHT * breakCount / (breakCount <= 2 ? 1 : 3)
+                      return <tr>
+                        <td style={{ height: `${height}rem`, transform: `translateY(-${height / 2}rem)` }}>{time}</td>
+                        <td colSpan={roomCount + 1} rowSpan={breakCount} style={{ height: `${height}rem` }}>
+                          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                            {i !== a.length - 1 && <small style={{ color: 'rgba(255, 255, 255, 0.5)' }}>{t('휴식')}</small>}
+                          </div>
+                        </td>
+                      </tr>
+                    }
+                  }
+
+                  // 만약 세션 타입이 아닌 발표가 존재하는 경우, 해당 줄에서는 colSpan이 roomCount인 column을 생성합니다.
+                  const nonSessionTypeData = Object.values(roomData).find((room) => room !== undefined && room.session.submission_type.en !== 'Session')
+                  if (nonSessionTypeData) {
+                    Object.keys(rooms).forEach((room) => rooms[room] = nonSessionTypeData.rowSpan - 1)
+                    return <tr>
+                      <td>{time}</td>
+                      <SessionColumn rowSpan={nonSessionTypeData.rowSpan} colSpan={roomCount} session={nonSessionTypeData.session} />
+                    </tr>
+                  }
+
                   return <tr>
                     <td>{time}</td>
                     {
-                      Object.values(rooms).some((c) => c >= 1) || Object.values(roomData).some((room) => room !== undefined)
-                        ? sortedRoomList.map((room) => {
-                          const roomDatum = roomData[room]
-                          if (roomDatum === undefined) {
-                            // 진행 중인 세션이 없는 경우, 해당 줄에서는 해당 room의 빈 column을 생성합니다.
-                            if (rooms[room] <= 0) return <BlankColumn />
-                            // 진행 중인 세션이 있는 경우, 이번 줄에서는 해당 세션들만큼 column을 생성하지 않습니다.
-                            rooms[room] -= 1
-                            return null
-                          }
-                          // 세션이 여러 줄에 걸쳐있는 경우, n-1 줄만큼 해당 room에 column을 생성하지 않도록 합니다.
-                          if (roomDatum.rowSpan > 1) rooms[room] = roomDatum.rowSpan - 1
-                          return <SessionColumn key={room} rowSpan={roomDatum.rowSpan} session={roomDatum.session} />
-                        })
-                        : <BreakColumn colSpan={roomCount} hideText={i === a.length - 1} />
+                      sortedRoomList.map((room) => {
+                        const roomDatum = roomData[room]
+                        if (roomDatum === undefined) {
+                          // 진행 중인 세션이 없는 경우, 해당 줄에서는 해당 room의 빈 column을 생성합니다.
+                          if (rooms[room] <= 0) return <td></td>
+                          // 진행 중인 세션이 있는 경우, 이번 줄에서는 해당 세션들만큼 column을 생성하지 않습니다.
+                          rooms[room] -= 1
+                          return null
+                        }
+                        // 세션이 여러 줄에 걸쳐있는 경우, n-1 줄만큼 해당 room에 column을 생성하지 않도록 합니다.
+                        if (roomDatum.rowSpan > 1) rooms[room] = roomDatum.rowSpan - 1
+                        return <SessionColumn key={room} rowSpan={roomDatum.rowSpan} session={roomDatum.session} />
+                      })
                     }
                   </tr>
                 })
@@ -188,9 +224,6 @@ export const SessionTimeTablePage: React.FC = () => {
     </Page>
   )
 }
-
-const TD_HEIGHT = 2.5
-const TD_WIDTH = 12.5
 
 const SessionDateTabContainer = styled.div`
   display: flex;
@@ -262,6 +295,17 @@ const SessionTable = styled.table`
     max-width: ${TD_WIDTH}vw;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  small {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: 810px) {
+    td:not(:first-child) {
+      width: ${TD_WIDTH_MOBILE}vw;
+      max-width: ${TD_WIDTH_MOBILE}vw;
+    }
+  }
 `
 
 const SessionBox = styled.div`
@@ -272,19 +316,21 @@ const SessionBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(176, 168, 254, 0.75);
+  border: 1px solid rgba(176, 168, 254, 0.3);
   border-radius: 0.5rem;
 
   background-color: rgba(176, 168, 254, 0.1);
   font-size: 1rem;
   transition: all 0.25s ease;
 
-  cursor: pointer;
+  &.clickable {
+    cursor: pointer;
+  }
 
   h6 {
     margin: 0;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: all 0.25s ease;
   }
 
@@ -300,6 +346,7 @@ const SessionBox = styled.div`
   }
 
   &:hover {
+    border: 1px solid rgba(176, 168, 254, 0.75);
     background-color: rgba(176, 168, 254, 0.25);
     transition: all 0.25s ease;
 
