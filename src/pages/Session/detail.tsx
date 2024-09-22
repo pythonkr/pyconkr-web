@@ -77,6 +77,8 @@ export const SessionDetailPage: React.FC = () => {
   const { code } = useParams<{ code: string }>()
   const navigate = useNavigate()
 
+  React.useEffect(() => window.scrollTo(0, 0), [])
+
   if (!(R.isString(code) && !R.isEmpty(code))) {
     navigate('/session')
     return null
