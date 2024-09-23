@@ -93,9 +93,16 @@ const H3 = styled.h3`
   color: #c2c7d0;
 
   & > p,
-  span > p,
   span {
-    color: #c2c7d0;
+    font-size: 24px !important;
+    color: #c2c7d0 !important;
+    text-align: left;
+
+    & > p,
+    span {
+      font-size: 24px !important;
+      color: #c2c7d0 !important;
+    }
   }
 
   @media only screen and (max-width: 810px) {
