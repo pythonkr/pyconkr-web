@@ -36,7 +36,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn build
+          yarn build:dev
 
       - name: Deploy
         run: |

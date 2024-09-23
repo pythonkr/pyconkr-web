@@ -15,7 +15,10 @@ const SponsorDetail: React.FC<{ sponsor: APISponsor }> = ({ sponsor }) => {
       <a href={sponsor.url}>
         <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
       </a>
-      <H3 dangerouslySetInnerHTML={{ __html: sponsor.desc }}></H3>
+      <H3
+        dangerouslySetInnerHTML={{ __html: sponsor.desc }}
+        style={{ maxWidth: "70%", display: "block" }}
+      />
     </Vertical>
   );
 };
@@ -90,7 +93,20 @@ const H1 = styled.h1`
 const H3 = styled.h3`
   margin-top: 1.5rem;
   font-size: 24px;
-  color: white;
+  color: #c2c7d0;
+
+  & > p,
+  span {
+    font-size: 24px !important;
+    color: #c2c7d0 !important;
+    text-align: left;
+
+    & > p,
+    span {
+      font-size: 24px !important;
+      color: #c2c7d0 !important;
+    }
+  }
 
   @media only screen and (max-width: 810px) {
     padding: 0 1rem;

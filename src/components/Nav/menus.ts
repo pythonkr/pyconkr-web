@@ -35,10 +35,7 @@ const Menus: MenuType = {
       },
       {
         name: "건강 관련 안내",
-        onClick: ({ setOpenMenu }) => {
-          setOpenMenu(false)
-          window.open("/about/health", "_blank")
-        }
+        path: "/about/health",
       },
       // {
       //   name: "파이콘 한국 준비위원회",
@@ -87,13 +84,13 @@ const Menus: MenuType = {
           setOpenMenu(false)
         }
       },
-      // {
-      //   name: "세션 시간표",
-      //   onClick: ({ setOpenMenu, navigate }) => {
-      //     navigate?.("/session/timetable")
-      //     setOpenMenu(false)
-      //   }
-      // },
+      {
+        name: "세션 시간표",
+        onClick: ({ setOpenMenu, navigate }) => {
+          navigate?.("/session/timetable")
+          setOpenMenu(false)
+        }
+      },
     ],
   },
   sponsoring: {

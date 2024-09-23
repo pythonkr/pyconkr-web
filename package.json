@@ -18,11 +18,13 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5",
+    "env-cmd": "^10.1.0",
     "hamburger-react": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.13",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^9.0.1",
     "react-redux": "^9.1.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
@@ -34,14 +36,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:prod": "react-scripts start",
-    "build": "react-scripts build",
-    "build:prod": "react-scripts build",
-    "prestart": "./scripts/set_dev.sh",
-    "prestart:prod": "./scripts/set_prod.sh",
-    "prebuild": "chmod +x ./scripts/set_dev.sh || ./scripts/set_dev.sh",
-    "prebuild:prod": "chmod +x ./scripts/set_prod.sh || ./scripts/set_prod.sh"
+    "start": "env-cmd -f ./.env.local react-scripts start",
+    "start:dev": "env-cmd -f ./.env.development react-scripts start",
+    "start:prod": "env-cmd -f ./.env.production react-scripts start",
+    "build": "env-cmd -f ./.env.local react-scripts build --profile",
+    "build:dev": "env-cmd -f ./.env.development react-scripts build --profile",
+    "build:prod": "env-cmd -f ./.env.production react-scripts build"
   },
   "eslintConfig": {
     "extends": [
