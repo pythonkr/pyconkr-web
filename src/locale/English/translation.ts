@@ -216,6 +216,18 @@ const EnglishTranslation = {
   "영어": "English",
   "한국어": "Korean",
   "일본어": "Japanese",
+  "교육": "Education",
+  "데이터 과학": "Data Science",
+  "라이브러리 / 코어": "Library / Core",
+  "보안": "Security",
+  "블록체인": "Blockchain",
+  "실무": "Work",
+  "오픈소스 / 커뮤니티": "Open Source / Community",
+  "웹 서비스": "Web Service",
+  "인공지능": "Artificial Intelligence",
+  "일상 / 사회": "Daily life / Society",
+  "자동화": "Automation",
+  "컴퓨터 비전": "Computer Vision",
 }
 
 export default EnglishTranslation

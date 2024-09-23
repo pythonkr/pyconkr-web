@@ -29,7 +29,7 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
       <p>{session.abstract}</p>
       <SessionSpeakerContainer>by {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}</SessionSpeakerContainer>
       <TagContainer>
-        {session.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
+        {session.tags.map(tag => <Tag key={tag}>{t(tag)}</Tag>)}
         {session.do_not_record && <Tag>{t('녹화 불가')}</Tag>}
       </TagContainer>
     </SessionItemInfoContainer>
@@ -58,7 +58,7 @@ export const SessionListPage = () => {
         <TagFilterBtnContainer>
           <div>
             {tags.map((tag) => <TagFilterBtn key={tag} onClick={() => setOrUnsetTag(tag)} className={tag === currentTag ? 'selected' : ''}>
-                {tag}
+                {t(tag)}
             </TagFilterBtn>)}
           </div>
         </TagFilterBtnContainer>
