@@ -30,7 +30,7 @@ const Menus: MenuType = {
         name: "파이콘 한국 행동 강령",
         onClick: ({ setOpenMenu }) => {
           setOpenMenu(false)
-          window.open("https://2023.pycon.kr/coc/purpose", "_blank")
+          window.open("https://pythonkr.github.io/pycon-code-of-conduct/ko/coc/a_intent_and_purpose.html", "_blank")
         },
       },
       {
