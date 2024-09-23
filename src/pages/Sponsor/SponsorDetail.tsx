@@ -15,7 +15,10 @@ const SponsorDetail: React.FC<{ sponsor: APISponsor }> = ({ sponsor }) => {
       <a href={sponsor.url}>
         <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
       </a>
-      <H3 dangerouslySetInnerHTML={{ __html: sponsor.desc }}></H3>
+      <H3
+        dangerouslySetInnerHTML={{ __html: sponsor.desc }}
+        style={{ maxWidth: "70%", display: "block" }}
+      />
     </Vertical>
   );
 };
