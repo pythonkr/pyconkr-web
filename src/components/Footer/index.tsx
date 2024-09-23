@@ -75,7 +75,11 @@ const Footer = () => {
         {/* <section className="right"></section> */}
       </div>
       <div className="footer-fixed-section">
-        <section className="left">{t("파이콘 한국 행동 강령")} (CoC)</section>
+        <section className="left">
+          <a href="https://pythonkr.github.io/pycon-code-of-conduct/ko/coc/a_intent_and_purpose.html">
+            {t("파이콘 한국 행동 강령")} (CoC)
+          </a>
+        </section>
         <section className="right">
           <a href="mailto:pyconkr@pycon.kr">
             <Email />
