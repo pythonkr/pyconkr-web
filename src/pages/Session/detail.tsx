@@ -55,7 +55,7 @@ const SessionDetail: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }
         <p>
           <TagContainer>
             <div style={{ margin: 0 }}>{t('태그')} :</div>
-            {session.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
+            {session.tags.map(tag => <Tag key={tag}>{t(tag)}</Tag>)}
             {session.do_not_record && <Tag>{t('녹화 불가')}</Tag>}
           </TagContainer>
         </p>
