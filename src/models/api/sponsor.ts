@@ -49,5 +49,4 @@ export type APISponsorLevelWithSponsor = {
 export type APIPatron = {
   name: string;
   message?: string | null;
-  sequence: number;
 };

@@ -37,14 +37,12 @@ const PatronList = () => {
         {t("후원해주셔서 감사합니다.")}
       </p>
 
-      {patrons
-        .sort((a, b) => a.sequence - b.sequence)
-        .map((p) => (
-          <PatronContainer key={`${p.name}-${p.sequence}`}>
-            <h4>{p.name}</h4>
-            <div>{p.message}</div>
-          </PatronContainer>
-        ))}
+      {patrons.map((p, idx) => (
+        <PatronContainer key={`${p.name}-${idx}`}>
+          <h4>{p.name}</h4>
+          <div>{p.message}</div>
+        </PatronContainer>
+      ))}
     </Page>
   );
 };

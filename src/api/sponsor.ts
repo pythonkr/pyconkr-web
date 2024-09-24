@@ -89,37 +89,14 @@ export function listSponsorBenefits(): Promise<SponsorBenefit[]> {
 
 export function listPatrons(): Promise<Patron[]> {
   return new Promise((resolve, reject) => {
-    resolve([
-      {
-        name: "김파이썬",
-        message: "후원 합니다! ",
-        sequence: 1,
-      },
-      {
-        name: "이파이썬",
-        message: "후원 합니다!",
-        sequence: 2,
-      },
-      {
-        name: "이파이썬",
-        message: "",
-        sequence: 3,
-      },
-      {
-        name: "이파이썬",
-        message: "후원 합니다!",
-        sequence: 4,
-      },
-    ]);
-
-    // instance
-    //   .get<APIPatron[]>("${process.env.REACT_APP_PYCONKR_SHOP_API}/2024/sponsors/benefits/")
-    //   .then((response) => {
-    //     resolve(Patron.fromAPIs(response.data));
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     reject(getErrorMessage(error));
-    //   });
+    instance
+      .get<APIPatron[]>(`${process.env.REACT_APP_PYCONKR_SHOP_API}/v1/ext/patron/`)
+      .then((response) => {
+        resolve(Patron.fromAPIs(response.data));
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(getErrorMessage(error));
+      });
   });
 }
