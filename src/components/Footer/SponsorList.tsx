@@ -20,13 +20,15 @@ const SponsorList = () => {
       <Vertical>
         <H1>{t("후원사 목록")}</H1>
         <SponsorTableList>
-          {listOfSponsorLevel.map((level) => (
-            <SponsorTable
-              max={level.name === "키스톤" ? 1 : 3}
-              levelName={t(level.name)}
-              sponsors={level.sponsor}
-            />
-          ))}
+          {listOfSponsorLevel
+            .filter((level) => level.sponsor.length !== 0)
+            .map((level) => (
+              <SponsorTable
+                max={level.name === "키스톤" ? 1 : 3}
+                levelName={t(level.name)}
+                sponsors={level.sponsor}
+              />
+            ))}
         </SponsorTableList>
       </Vertical>
     </Container>
