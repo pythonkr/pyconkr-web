@@ -1,12 +1,19 @@
 import { getErrorMessage } from "api";
 import instance from "lib/axios";
 import {
+  APIPatron,
   APISponsor,
   APISponsorBenefit,
   APISponsorLevel,
   APISponsorLevelWithSponsor,
 } from "models/api/sponsor";
-import { Sponsor, SponsorBenefit, SponsorLevel, SponsorLevelWithSponsor } from "models/sponsor";
+import {
+  Patron,
+  Sponsor,
+  SponsorBenefit,
+  SponsorLevel,
+  SponsorLevelWithSponsor,
+} from "models/sponsor";
 
 export function detailSponsor(id: string): Promise<Sponsor> {
   return new Promise((resolve, reject) => {
@@ -71,6 +78,20 @@ export function listSponsorBenefits(): Promise<SponsorBenefit[]> {
       .get<APISponsorBenefit[]>("/2024/sponsors/benefits/")
       .then((response) => {
         resolve(SponsorBenefit.fromAPIs(response.data));
+      })
+      .catch((error) => {
+        console.error(error);
+        reject(getErrorMessage(error));
+      });
+  });
+}
+
+export function listPatrons(): Promise<Patron[]> {
+  return new Promise((resolve, reject) => {
+    instance
+      .get<APIPatron[]>(`${process.env.REACT_APP_PYCONKR_SHOP_API}/v1/ext/patron/`)
+      .then((response) => {
+        resolve(Patron.fromAPIs(response.data));
       })
       .catch((error) => {
         console.error(error);
