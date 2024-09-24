@@ -17,6 +17,7 @@ import SponsorPage from "pages/Sponsor";
 import TermsOfService from "pages/TermsOfService";
 import Health from "./pages/About/health";
 import SponsorDetailPage from "pages/Sponsor/SponsorDetail";
+import PatronList from "pages/Sponsor/patron";
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/about/health" element={<Health />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/sponsoring/sponsor/:id" element={<SponsorDetailPage />} />
+        <Route path="/sponsoring/patron" element={<PatronList />} />
         <Route path="/session" element={<SessionListPage />} />
         <Route path="/session/:code" element={<SessionDetailPage />} />
         <Route path="/session/timetable" element={<SessionTimeTablePage />} />

@@ -1,22 +1,22 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 
-import { openGlobalDialog, setLanguage } from "store/Core"
-import { DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024 } from "store/Core/dialog"
+import { openGlobalDialog, setLanguage } from "store/Core";
+import { DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024 } from "store/Core/dialog";
 
 export type MenuElementOnClickArgType = {
-  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>
-  navigate?: (path: string) => void
-  dispatch: ReturnType<typeof useDispatch>
-}
+  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  navigate?: (path: string) => void;
+  dispatch: ReturnType<typeof useDispatch>;
+};
 
 export type MenuElementType = {
-  name: string
-  style?: React.CSSProperties
-  path?: string
-  onClick?: (_: MenuElementOnClickArgType) => void
-}
+  name: string;
+  style?: React.CSSProperties;
+  path?: string;
+  onClick?: (_: MenuElementOnClickArgType) => void;
+};
 
-export type MenuType = { [key: string]: MenuElementType & { sub?: MenuElementType[] } }
+export type MenuType = { [key: string]: MenuElementType & { sub?: MenuElementType[] } };
 
 const Menus: MenuType = {
   about: {
@@ -29,8 +29,11 @@ const Menus: MenuType = {
       {
         name: "파이콘 한국 행동 강령",
         onClick: ({ setOpenMenu }) => {
-          setOpenMenu(false)
-          window.open("https://pythonkr.github.io/pycon-code-of-conduct/ko/coc/a_intent_and_purpose.html", "_blank")
+          setOpenMenu(false);
+          window.open(
+            "https://pythonkr.github.io/pycon-code-of-conduct/ko/coc/a_intent_and_purpose.html",
+            "_blank"
+          );
         },
       },
       {
@@ -63,16 +66,16 @@ const Menus: MenuType = {
   program: {
     name: "프로그램",
     onClick: ({ setOpenMenu, dispatch }) => {
-      setOpenMenu(false)
-      dispatch(openGlobalDialog(DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024))
-    }
+      setOpenMenu(false);
+      dispatch(openGlobalDialog(DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024));
+    },
   },
   ticket: {
     name: "티켓 구매",
     onClick: ({ setOpenMenu }) => {
-      setOpenMenu(false)
-      window.open("https://shop.pycon.kr/ticket", "_blank")
-    }
+      setOpenMenu(false);
+      window.open("https://shop.pycon.kr/ticket", "_blank");
+    },
   },
   session: {
     name: "세션",
@@ -80,16 +83,16 @@ const Menus: MenuType = {
       {
         name: "세션 목록",
         onClick: ({ setOpenMenu, navigate }) => {
-          navigate?.("/session")
-          setOpenMenu(false)
-        }
+          navigate?.("/session");
+          setOpenMenu(false);
+        },
       },
       {
         name: "세션 시간표",
         onClick: ({ setOpenMenu, navigate }) => {
-          navigate?.("/session/timetable")
-          setOpenMenu(false)
-        }
+          navigate?.("/session/timetable");
+          setOpenMenu(false);
+        },
       },
     ],
   },
@@ -98,12 +101,12 @@ const Menus: MenuType = {
     sub: [
       {
         name: "후원사 안내",
-        path: "/sponsoring/sponsor/prospectus"
+        path: "/sponsoring/sponsor/prospectus",
       },
-      // {
-      //   name: "개인 후원자",
-      //   path: "/sponsoring/patron",
-      // },
+      {
+        name: "개인 후원자",
+        path: "/sponsoring/patron",
+      },
       // {
       //   name: "후원사 혜택 안내",
       //   path: "/sponsoring/sponsor/benefit",
@@ -128,19 +131,19 @@ const Menus: MenuType = {
       {
         name: "한국어",
         onClick: ({ setOpenMenu, dispatch }) => {
-          setOpenMenu(false)
-          dispatch(setLanguage("KOR"))
-        }
+          setOpenMenu(false);
+          dispatch(setLanguage("KOR"));
+        },
       },
       {
         name: "English",
         onClick: ({ setOpenMenu, dispatch }) => {
-          setOpenMenu(false)
-          dispatch(setLanguage("ENG"))
-        }
+          setOpenMenu(false);
+          dispatch(setLanguage("ENG"));
+        },
       },
-    ]
-  }
-} as const
+    ],
+  },
+} as const;
 
-export default Menus
+export default Menus;

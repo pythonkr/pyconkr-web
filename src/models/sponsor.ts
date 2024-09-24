@@ -1,4 +1,10 @@
-import { APISponsorLevel, APISponsorBenefit, APISponsor, APISponsorLevelOnly, APISponsorLevelWithSponsor } from "./api/sponsor";
+import {
+  APISponsorLevel,
+  APISponsorBenefit,
+  APISponsor,
+  APISponsorLevelOnly,
+  APISponsorLevelWithSponsor,
+} from "./api/sponsor";
 
 export class SponsorBenefit {
   id: number;
@@ -30,6 +36,7 @@ export class SponsorBenefit {
       uncountable_offer: d.uncountable_offer,
     });
   }
+
   static fromAPIs(data: APISponsorBenefit[]): SponsorBenefit[] {
     return data.map((d) => SponsorBenefit.fromAPI(d));
   }
@@ -43,7 +50,7 @@ export class SponsorLevel {
   price: number;
   limit: number;
   order: number;
-  benefits: SponsorBenefit[]
+  benefits: SponsorBenefit[];
 
   private constructor(p: SponsorLevel) {
     this.id = p.id;
@@ -65,9 +72,10 @@ export class SponsorLevel {
       price: d.price,
       limit: d.limit,
       order: d.order,
-      benefits: d.benefits
+      benefits: d.benefits,
     });
   }
+
   static fromAPIs(data: APISponsorLevel[]): SponsorLevel[] {
     return data.map((d) => SponsorLevel.fromAPI(d));
   }
@@ -100,6 +108,7 @@ export class SponsorLevelWithSponsor {
       sponsor: d.sponsor,
     });
   }
+
   static fromAPIs(data: APISponsorLevelWithSponsor[]): SponsorLevelWithSponsor[] {
     return data.map((d) => SponsorLevelWithSponsor.fromAPI(d));
   }
@@ -137,7 +146,6 @@ class SponsorLevelOnly {
   }
 }
 
-
 export class Sponsor {
   id: string;
   name: string;
@@ -162,8 +170,20 @@ export class Sponsor {
       url: d.url,
     });
   }
+
   static fromAPIs(data: APISponsor[]): Sponsor[] {
     return data.map((d) => Sponsor.fromAPI(d));
   }
 }
 
+export class Patron {
+  name: string;
+  message?: string;
+  sequence: number;
+
+  private constructor(p: Patron) {
+    this.name = p.name;
+    this.message = p.message;
+    this.sequence = p.sequence;
+  }
+}
