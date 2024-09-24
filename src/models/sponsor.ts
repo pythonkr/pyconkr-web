@@ -189,7 +189,7 @@ export class Patron {
   static fromAPI(d: APIPatron): Patron {
     return new Patron({
       name: d.name,
-      message: d.message,
+      message: d.contribution_message,
     });
   }
 
