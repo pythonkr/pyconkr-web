@@ -28,6 +28,7 @@ const LogoImage = styled.img`
   background: white;
   color: black;
   min-width: 15vw;
+  max-height: 100%;
 `;
 
 const SponsorCard = styled.div`
@@ -48,6 +49,10 @@ const SponsorCard = styled.div`
     display: grid;
     grid-gap: 1.5rem;
     flex: auto;
+
+    & > a {
+      max-height: 20rem;
+    }
   }
 
   @media only screen and (max-width: 810px) {
