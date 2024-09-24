@@ -40,7 +40,7 @@ const PatronList = () => {
       {patrons
         .sort((a, b) => a.sequence - b.sequence)
         .map((p) => (
-          <PatronContainer>
+          <PatronContainer key={`${p.name}-${p.sequence}`}>
             <h4>{p.name}</h4>
             <div>{p.message}</div>
           </PatronContainer>
