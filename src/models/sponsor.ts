@@ -76,7 +76,7 @@ export class SponsorLevel {
 export class SponsorLevelWithSponsor {
   id: number;
   name: string;
-  desc: string;
+  desc?: string;
   visible: boolean;
   order: number;
   sponsor: Sponsor[];

@@ -40,7 +40,7 @@ export type APISponsorLevelOnly = {
 export type APISponsorLevelWithSponsor = {
   id: number;
   name: string;
-  desc: string;
+  desc?: string;
   visible: boolean;
   order: number;
   sponsor: APISponsor[];
