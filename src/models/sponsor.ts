@@ -4,6 +4,7 @@ import {
   APISponsor,
   APISponsorLevelOnly,
   APISponsorLevelWithSponsor,
+  APIPatron,
 } from "./api/sponsor";
 
 export class SponsorBenefit {
@@ -178,12 +179,24 @@ export class Sponsor {
 
 export class Patron {
   name: string;
-  message?: string;
+  message?: string | null;
   sequence: number;
 
   private constructor(p: Patron) {
     this.name = p.name;
     this.message = p.message;
     this.sequence = p.sequence;
+  }
+
+  static fromAPI(d: APIPatron): Patron {
+    return new Patron({
+      name: d.name,
+      message: d.message,
+      sequence: d.sequence,
+    });
+  }
+
+  static fromAPIs(data: APIPatron[]): Patron[] {
+    return data.map((d) => Patron.fromAPI(d));
   }
 }

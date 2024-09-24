@@ -1,3 +1,4 @@
+import { SponsorAPI } from "api";
 import Page from "components/common/Page";
 import { Patron } from "models/sponsor";
 import React, { useEffect, useState } from "react";
@@ -6,21 +7,26 @@ import useTranslation from "utils/hooks/useTranslation";
 
 const PatronList = () => {
   const t = useTranslation();
-  const [patrons, setPatrons] = useState<Patron[]>([
-    {
-      name: "김파이썬",
-      message:
-        "후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다! 후원 합니다!",
-      sequence: 1,
-    },
-    {
-      name: "이파이썬",
-      message: "후원 합니다!",
-      sequence: 2,
-    },
-  ]);
+  const [patrons, setPatrons] = useState<Patron[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setIsLoading(true);
+    SponsorAPI.listPatrons()
+      .then(setPatrons)
+      .catch(() => {})
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading)
+    return (
+      <Page>
+        <h1>{t("개인 후원자")}</h1>
+        <p>{t("불러오는 중입니다...")}</p>
+      </Page>
+    );
 
   return (
     <Page>
@@ -36,7 +42,7 @@ const PatronList = () => {
         .map((p) => (
           <PatronContainer>
             <h4>{p.name}</h4>
-            <p>{p.message ?? ""}</p>
+            <div>{p.message}</div>
           </PatronContainer>
         ))}
     </Page>
@@ -46,19 +52,21 @@ const PatronList = () => {
 export default PatronList;
 
 const PatronContainer = styled.div`
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
 
   h4 {
     color: #febd99;
     margin-bottom: 0.2rem;
   }
 
-  p {
+  & > div {
     margin-bottom: 0.3rem;
     color: var(--pico-h3-color);
     font-size: 0.8rem;
     font-weight: bold;
+    min-height: 1rem;
   }
 
   @media only screen and (max-width: 809px) {

@@ -14,7 +14,7 @@ export type APISponsorBenefit = {
   is_countable: boolean;
   offer: number;
   uncountable_offer: string;
-}
+};
 
 export type APISponsorLevel = {
   id: number;
@@ -25,7 +25,7 @@ export type APISponsorLevel = {
   limit: number;
   order: number;
   benefits: APISponsorBenefit[];
-}
+};
 
 export type APISponsorLevelOnly = {
   id: number;
@@ -35,7 +35,7 @@ export type APISponsorLevelOnly = {
   price: number;
   limit: number;
   order: number;
-}
+};
 
 export type APISponsorLevelWithSponsor = {
   id: number;
@@ -44,4 +44,10 @@ export type APISponsorLevelWithSponsor = {
   visible: boolean;
   order: number;
   sponsor: APISponsor[];
-}
+};
+
+export type APIPatron = {
+  name: string;
+  message?: string | null;
+  sequence: number;
+};
