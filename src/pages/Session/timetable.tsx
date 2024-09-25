@@ -93,8 +93,10 @@ const getTimeTableData: (data: APIPretalxSessions) => TimeTableData = (data) => 
 const SessionColumn: React.FC<{ rowSpan: number, colSpan?: number, session: APIPretalxSessions[0] }> = ({ rowSpan, colSpan, session }) => {
   const navigate = useNavigate()
   const clickable = ENABLE_DETAILS && R.isArray(session.speakers) && !R.isEmpty(session.speakers)
+  // Firefox는 rowSpan된 td의 height를 계산할 때 rowSpan을 고려하지 않습니다. 따라서 직접 계산하여 height를 설정합니다.
+  const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`
   return <td rowSpan={rowSpan} colSpan={colSpan}>
-    <SessionBox onClick={() => clickable && navigate(`/session/${session.code}`)} className={clickable ? 'clickable' : ''}>
+    <SessionBox onClick={() => clickable && navigate(`/session/${session.code}`)} className={clickable ? 'clickable' : ''} style={{ height: sessionBoxHeight }}>
       <h6>{session.title}</h6>
       <SessionSpeakerContainer>
         {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}
