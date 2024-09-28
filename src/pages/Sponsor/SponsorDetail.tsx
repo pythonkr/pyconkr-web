@@ -52,8 +52,7 @@ const SponsorDetailPage = () => {
 export default SponsorDetailPage;
 
 const LogoImage = styled.img`
-  background: white;
-  color: black;
+  color: #141414;
   max-width: 50%;
 `;
 
@@ -75,14 +74,24 @@ const Vertical = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 2rem;
   width: 100%;
+  height: max-content;
+  border-radius: 16px;
+  min-height: 700px;
+  background-color: #c2c7d0;
+  margin: 0 2rem 2rem 2rem;
+
+  @media only screen and (max-width: 810px) {
+    height: max-content;
+    min-height: 300px;
+    justify-content: start;
+  }
 `;
 
 const H1 = styled.h1`
   margin-top: 3rem;
   font-size: 40px;
-  color: #b0a8fe;
+  color: #141414;
 
   @media only screen and (max-width: 810px) {
     padding: 0 1rem;
@@ -93,18 +102,17 @@ const H1 = styled.h1`
 const H3 = styled.h3`
   margin-top: 1.5rem;
   font-size: 24px;
-  color: #c2c7d0;
+  color: #141414;
 
-  & > p,
-  span {
+  & > * {
     font-size: 24px !important;
-    color: #c2c7d0 !important;
+    color: #141414 !important;
     text-align: left;
 
     & > p,
     span {
       font-size: 24px !important;
-      color: #c2c7d0 !important;
+      color: #141414 !important;
     }
   }
 
