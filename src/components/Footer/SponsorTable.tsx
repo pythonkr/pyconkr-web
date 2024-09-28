@@ -12,11 +12,11 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
 function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
   return (
     <SponsorCard>
-      <h3>{levelName}</h3>
+      <H3>{levelName}</H3>
       <div style={{ gridTemplateColumns: `repeat(${max}, 1fr)` }}>
         {sponsors.map((sponsor) => (
           <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path">
-            <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
+            <LogoImage image={sponsor.logo_image} />
           </Link>
         ))}
       </div>
@@ -24,11 +24,32 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
   );
 }
 
-const LogoImage = styled.img`
-  background: white;
-  color: black;
-  min-width: 15vw;
-  max-height: 100%;
+interface Image {
+  image: string;
+}
+
+const H3 = styled.h3`
+  color: #141414 !important;
+`;
+
+const LogoImage = styled.div<Image>`
+  display: inline-flex;
+  justify-content: center;
+  align-itmes: center;
+  color: #141414;
+  width: 320px;
+  height: 200px;
+  background-image: url(${(props) => props.image});
+  background-size: 200px;
+  background-position: center;
+
+  & > img {
+    height: 50%;
+  }
+
+  @media only screen and (max-width: 810px) {
+    width: 100%;
+  }
 `;
 
 const SponsorCard = styled.div`
@@ -37,6 +58,7 @@ const SponsorCard = styled.div`
   display: flex;
   padding: 1rem 1.5rem;
   align-items: center;
+  background-color: #c2c7d0;
 
   & > h3 {
     color: #b0a8fe;
@@ -56,11 +78,19 @@ const SponsorCard = styled.div`
   }
 
   @media only screen and (max-width: 810px) {
+    flex-direction: column;
     margin: 1rem;
+
+    & > h3 {
+      color: #b0a8fe;
+      margin: 0;
+      flex: auto;
+    }
 
     & > div {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
     }
   }
 `;
