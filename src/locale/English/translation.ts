@@ -6,7 +6,7 @@ const EnglishTranslation = {
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
   "언어 변경": "Change language",
-  언어: "Language",
+  Language: "언어",
   프로그램: "Program",
   기여하기: "Contribution",
   후원하기: "Sponsoring",

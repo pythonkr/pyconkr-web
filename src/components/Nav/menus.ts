@@ -126,7 +126,7 @@ const Menus: MenuType = {
     ],
   },
   language: {
-    name: "언어",
+    name: "Language",
     sub: [
       {
         name: "한국어",
