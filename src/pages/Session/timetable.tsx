@@ -9,8 +9,6 @@ import { useNavigate } from "react-router";
 import { useListSessionsQuery } from "utils/hooks/useAPI";
 import useTranslation from "utils/hooks/useTranslation";
 
-const ENABLE_DETAILS = false;
-
 const TD_HEIGHT = 2.5;
 const TD_WIDTH = 12.5;
 const TD_WIDTH_MOBILE = 20;
@@ -109,7 +107,7 @@ const SessionColumn: React.FC<{
   session: APIPretalxSessions[0];
 }> = ({ rowSpan, colSpan, session }) => {
   const navigate = useNavigate();
-  const clickable = ENABLE_DETAILS && R.isArray(session.speakers) && !R.isEmpty(session.speakers);
+  const clickable = R.isArray(session.speakers) && !R.isEmpty(session.speakers);
   // Firefox는 rowSpan된 td의 height를 계산할 때 rowSpan을 고려하지 않습니다. 따라서 직접 계산하여 height를 설정합니다.
   const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`;
   return (

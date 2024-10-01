@@ -10,29 +10,21 @@ import { APIPretalxSessions } from "models/api/session";
 import { useListSessionsQuery } from "utils/hooks/useAPI";
 import useTranslation from "utils/hooks/useTranslation";
 
-const ENABLE_PROFILE_IMG_AND_DETAILS = false;
-
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
   const t = useTranslation();
   const navigate = useNavigate();
 
-  const h4Props = ENABLE_PROFILE_IMG_AND_DETAILS
-    ? { onClick: () => navigate(`/session/${session.code}`) }
-    : {};
-
   return (
     <SessionItemEl>
-      {ENABLE_PROFILE_IMG_AND_DETAILS && (
-        <SessionItemImgContainer>
-          <FallbackImg
-            src={session.image || ""}
-            alt={session.title}
-            errorFallback={<SloganShort />}
-          />
-        </SessionItemImgContainer>
-      )}
+      <SessionItemImgContainer>
+        <FallbackImg
+          src={session.image || ""}
+          alt={session.title}
+          errorFallback={<SloganShort />}
+        />
+      </SessionItemImgContainer>
       <SessionItemInfoContainer>
-        <h4 {...h4Props}>{session.title}</h4>
+        <h4 onClick={() => navigate(`/session/${session.code}`)}>{session.title}</h4>
         <p>{session.abstract}</p>
         <SessionSpeakerContainer>
           by{" "}
@@ -183,7 +175,7 @@ const SessionItemInfoContainer = styled.div`
   h4 {
     color: #febd99;
     margin-bottom: 0.2rem;
-    cursor: ${ENABLE_PROFILE_IMG_AND_DETAILS ? "pointer" : "default"};
+    cursor: pointer;
   }
 
   p {
