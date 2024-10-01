@@ -15,7 +15,11 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
   const t = useTranslation();
   const navigate = useNavigate();
 
-  const speakerImageSrc = R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar || ""
+  const speakerImageSrc = (
+    session.image
+    || R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar
+    || ""
+  )
 
   return (
     <SessionItemEl>
