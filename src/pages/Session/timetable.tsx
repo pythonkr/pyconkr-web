@@ -1,231 +1,313 @@
-import { wrap } from '@suspensive/react'
-import React from "react"
-import * as R from 'remeda'
-import styled from 'styled-components'
+import { wrap } from "@suspensive/react";
+import React from "react";
+import * as R from "remeda";
+import styled from "styled-components";
 
-import Page from "components/common/Page"
-import { APIPretalxSessions } from 'models/api/session'
-import { useNavigate } from 'react-router'
-import { useListSessionsQuery } from 'utils/hooks/useAPI'
-import useTranslation from "utils/hooks/useTranslation"
+import Page from "components/common/Page";
+import { APIPretalxSessions } from "models/api/session";
+import { useNavigate } from "react-router";
+import { useListSessionsQuery } from "utils/hooks/useAPI";
+import useTranslation from "utils/hooks/useTranslation";
 
-const ENABLE_DETAILS = false
+const ENABLE_DETAILS = false;
 
-const TD_HEIGHT = 2.5
-const TD_WIDTH = 12.5
-const TD_WIDTH_MOBILE = 20
+const TD_HEIGHT = 2.5;
+const TD_WIDTH = 12.5;
+const TD_WIDTH_MOBILE = 20;
 
 type TimeTableData = {
   [date: string]: {
     [time: string]: {
-      [room: string]: {
-        rowSpan: number
-        session: APIPretalxSessions[0]
-      } | undefined
-    }
-  }
-}
+      [room: string]:
+        | {
+            rowSpan: number;
+            session: APIPretalxSessions[0];
+          }
+        | undefined;
+    };
+  };
+};
 
-const getDateStr = (date: Date) => date.toISOString().split('T')[0]
-const getDetailedDateStr = (date: Date) => date.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })
-const getPaddedTime = (time: Date) => `${time.getHours()}:${time.getMinutes().toString().padStart(2, '0')}`
+const getDateStr = (date: Date) => date.toISOString().split("T")[0];
+const getDetailedDateStr = (date: Date) =>
+  date.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+const getPaddedTime = (time: Date) =>
+  `${time.getHours()}:${time.getMinutes().toString().padStart(2, "0")}`;
 
-const getRoomName = (room: { [key: string]: string }) => Object.values(room)[0] ?? '알 수 없음'
+const getRoomName = (room: { [key: string]: string }) => Object.values(room)[0] ?? "알 수 없음";
 const getRooms = (data: APIPretalxSessions) => {
-  const rooms: Set<string> = new Set()
-  data.forEach((session) => (session.slot?.room) && rooms.add(getRoomName(session.slot.room)))
-  return Array.from(rooms)
-}
+  const rooms: Set<string> = new Set();
+  data.forEach((session) => session.slot?.room && rooms.add(getRoomName(session.slot.room)));
+  return Array.from(rooms);
+};
 
-const getConfStartEndTimePerDay: (data: APIPretalxSessions) => { [date: string]: { start: Date; end: Date } } = (data) => {
-  const result: { [date: string]: { start: Date; end: Date } } = {}
+const getConfStartEndTimePerDay: (data: APIPretalxSessions) => {
+  [date: string]: { start: Date; end: Date };
+} = (data) => {
+  const result: { [date: string]: { start: Date; end: Date } } = {};
 
   data.forEach((session) => {
     if (session.slot?.start && session.slot?.end) {
-      const startTime = new Date(session.slot.start)
-      const endTime = new Date(session.slot.end)
-      const date = getDateStr(startTime)
+      const startTime = new Date(session.slot.start);
+      const endTime = new Date(session.slot.end);
+      const date = getDateStr(startTime);
 
       if (!result[date]) {
-        result[date] = { start: startTime, end: endTime }
+        result[date] = { start: startTime, end: endTime };
       } else {
-        if (startTime < result[date].start) result[date].start = startTime
-        if (endTime > result[date].end) result[date].end = endTime
+        if (startTime < result[date].start) result[date].start = startTime;
+        if (endTime > result[date].end) result[date].end = endTime;
       }
     }
-  })
+  });
 
-  return result
-}
+  return result;
+};
 
 const getEveryTenMinutesArr = (start: Date, end: Date) => {
-  let time = new Date(start)
-  const arr = []
+  let time = new Date(start);
+  const arr = [];
 
   while (time <= end) {
-    arr.push(time)
-    time = new Date(new Date(time).setMinutes(time.getMinutes() + 10))
+    arr.push(time);
+    time = new Date(new Date(time).setMinutes(time.getMinutes() + 10));
   }
-  return arr
-}
+  return arr;
+};
 
 const getTimeTableData: (data: APIPretalxSessions) => TimeTableData = (data) => {
   // Initialize timeTableData structure
   const timeTableData: TimeTableData = Object.entries(getConfStartEndTimePerDay(data)).reduce(
     (acc, [date, { start, end }]) => ({
       ...acc,
-      [date]: getEveryTenMinutesArr(start, end).reduce((acc, time) => ({ ...acc, [getPaddedTime(time)]: {} }), {}),
-    }), {}
-  )
+      [date]: getEveryTenMinutesArr(start, end).reduce(
+        (acc, time) => ({ ...acc, [getPaddedTime(time)]: {} }),
+        {}
+      ),
+    }),
+    {}
+  );
 
   // Fill timeTableData with session data
   data.forEach((session) => {
     if (session.slot?.start && session.slot?.end) {
-      const start = new Date(session.slot.start)
-      const durationMin = (new Date(session.slot.end).getTime() - start.getTime()) / 1000 / 60
-      timeTableData[getDateStr(start)][getPaddedTime(start)][getRoomName(session.slot.room)] = { rowSpan: durationMin / 10, session }
+      const start = new Date(session.slot.start);
+      const durationMin = (new Date(session.slot.end).getTime() - start.getTime()) / 1000 / 60;
+      timeTableData[getDateStr(start)][getPaddedTime(start)][getRoomName(session.slot.room)] = {
+        rowSpan: durationMin / 10,
+        session,
+      };
     }
-  })
+  });
 
-  return timeTableData
-}
+  return timeTableData;
+};
 
-const SessionColumn: React.FC<{ rowSpan: number, colSpan?: number, session: APIPretalxSessions[0] }> = ({ rowSpan, colSpan, session }) => {
-  const navigate = useNavigate()
-  const clickable = ENABLE_DETAILS && R.isArray(session.speakers) && !R.isEmpty(session.speakers)
+const SessionColumn: React.FC<{
+  rowSpan: number;
+  colSpan?: number;
+  session: APIPretalxSessions[0];
+}> = ({ rowSpan, colSpan, session }) => {
+  const navigate = useNavigate();
+  const clickable = ENABLE_DETAILS && R.isArray(session.speakers) && !R.isEmpty(session.speakers);
   // Firefox는 rowSpan된 td의 height를 계산할 때 rowSpan을 고려하지 않습니다. 따라서 직접 계산하여 height를 설정합니다.
-  const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`
-  return <td rowSpan={rowSpan} colSpan={colSpan}>
-    <SessionBox onClick={() => clickable && navigate(`/session/${session.code}`)} className={clickable ? 'clickable' : ''} style={{ height: sessionBoxHeight }}>
-      <h6>{session.title}</h6>
-      <SessionSpeakerContainer>
-        {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}
-      </SessionSpeakerContainer>
-    </SessionBox>
-  </td>
-}
+  const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`;
+  return (
+    <td rowSpan={rowSpan} colSpan={colSpan}>
+      <SessionBox
+        onClick={() => clickable && navigate(`/session/${session.code}`)}
+        className={clickable ? "clickable" : ""}
+        style={{ height: sessionBoxHeight }}
+      >
+        <h6>{session.title}</h6>
+        <SessionSpeakerContainer>
+          {session.speakers.map((speaker) => (
+            <kbd key={speaker.code}>{speaker.name}</kbd>
+          ))}
+        </SessionSpeakerContainer>
+      </SessionBox>
+    </td>
+  );
+};
 
 export const SessionTimeTablePage: React.FC = () => {
-  const t = useTranslation()
+  const t = useTranslation();
 
   const SessionTimeTable = wrap
     .ErrorBoundary({ fallback: <h4>{t("세션 목록을 불러오는 중 에러가 발생했습니다.")}</h4> })
     .Suspense({ fallback: <h4>{t("세션 목록을 불러오는 중 입니다.")}</h4> })
     .on(() => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      React.useEffect(() => window.scrollTo(0, 0), [])
+      React.useEffect(() => window.scrollTo(0, 0), []);
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const navigate = useNavigate()
+      const navigate = useNavigate();
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const [confDate, setConfDate] = React.useState('')
+      const [confDate, setConfDate] = React.useState("");
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const { data } = useListSessionsQuery()
+      const { data } = useListSessionsQuery();
 
-      const timeTableData = getTimeTableData(data)
-      const dates = Object.keys(timeTableData).sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
-      const rooms: { [room: string]: number } = getRooms(data).reduce((acc, room) => ({ ...acc, [room]: 0 }), {})
-      const roomCount = Object.keys(rooms).length
-      const sortedRoomList = Object.keys(rooms).sort()
+      const timeTableData = getTimeTableData(data);
+      const dates = Object.keys(timeTableData).sort(
+        (a, b) => new Date(a).getTime() - new Date(b).getTime()
+      );
+      const rooms: { [room: string]: number } = getRooms(data).reduce(
+        (acc, room) => ({ ...acc, [room]: 0 }),
+        {}
+      );
+      const roomCount = Object.keys(rooms).length;
+      const sortedRoomList = Object.keys(rooms).sort();
 
-      const selectedDate = confDate || dates[0]
-      const selectedTableData = timeTableData[selectedDate]
+      const selectedDate = confDate || dates[0];
+      const selectedTableData = timeTableData[selectedDate];
 
-      let breakCount = 0
-      return <>
-        <hr />
-        <SessionDateTabContainer>
-          {
-            dates.map(
-              (date, i) => <button key={date} onClick={() => setConfDate(date)} className={selectedDate === date ? 'selected' : ''}>
+      let breakCount = 0;
+      return (
+        <>
+          <hr />
+          <SessionDateTabContainer>
+            {dates.map((date, i) => (
+              <button
+                key={date}
+                onClick={() => setConfDate(date)}
+                className={selectedDate === date ? "selected" : ""}
+              >
                 <h3>Day {i + 1}</h3>
-                <h6><small>{t(getDetailedDateStr(new Date(date)))}</small></h6>
+                <h6>
+                  <small>{t(getDetailedDateStr(new Date(date)))}</small>
+                </h6>
               </button>
-            )
-          }
-        </SessionDateTabContainer>
-        <hr />
-        <SessionTableContainer>
-          <SessionTable>
-            <thead>
-              <th></th>
-              {sortedRoomList.map((room) => <th key={room}>{t(room)}</th>)}
-            </thead>
-            <tbody>
-              <tr><td colSpan={roomCount + 1}></td></tr>
-              {
-                Object.entries(selectedTableData).map(([time, roomData], i, a) => {
-                  const hasSession = Object.values(rooms).some((c) => c >= 1) || Object.values(roomData).some((room) => room !== undefined)
+            ))}
+          </SessionDateTabContainer>
+          <hr />
+          <SessionTableContainer>
+            <SessionTable>
+              <thead>
+                <th></th>
+                {sortedRoomList.map((room) => (
+                  <th key={room}>{t(room)}</th>
+                ))}
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan={roomCount + 1}></td>
+                </tr>
+                {Object.entries(selectedTableData).map(([time, roomData], i, a) => {
+                  const hasSession =
+                    Object.values(rooms).some((c) => c >= 1) ||
+                    Object.values(roomData).some((room) => room !== undefined);
 
                   if (!hasSession) {
                     if (breakCount > 1) {
-                      breakCount--
-                      return <tr></tr>
+                      breakCount--;
+                      return <tr></tr>;
                     } else {
                       // 지금부터 다음 세션이 존재하기 전까지의 휴식 시간을 계산합니다.
-                      breakCount = 1
+                      breakCount = 1;
                       for (let bi = i + 1; bi < a.length; bi++) {
-                        if (Object.values(a[bi][1]).some((room) => room !== undefined)) break
-                        breakCount += 1
+                        if (Object.values(a[bi][1]).some((room) => room !== undefined)) break;
+                        breakCount += 1;
                       }
 
                       // I really hate this, but I can't think of a better way to do this.
-                      const height = TD_HEIGHT * breakCount / (breakCount <= 2 ? 1 : 3)
-                      return <tr>
-                        <td style={{ height: `${height}rem`, transform: `translateY(-${height / 2}rem)` }}>{time}</td>
-                        <td colSpan={roomCount + 1} rowSpan={breakCount} style={{ height: `${height}rem` }}>
-                          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                            {i !== a.length - 1 && <small style={{ color: 'rgba(255, 255, 255, 0.5)' }}>{t('휴식')}</small>}
-                          </div>
-                        </td>
-                      </tr>
+                      const height = (TD_HEIGHT * breakCount) / (breakCount <= 2 ? 1 : 3);
+                      return (
+                        <tr>
+                          <td
+                            style={{
+                              height: `${height}rem`,
+                              transform: `translateY(-${height / 2}rem)`,
+                            }}
+                          >
+                            {time}
+                          </td>
+                          <td
+                            colSpan={roomCount + 1}
+                            rowSpan={breakCount}
+                            style={{ height: `${height}rem` }}
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              {i !== a.length - 1 && (
+                                <small style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                                  {t("휴식")}
+                                </small>
+                              )}
+                            </div>
+                          </td>
+                        </tr>
+                      );
                     }
                   }
 
                   // 만약 세션 타입이 아닌 발표가 존재하는 경우, 해당 줄에서는 colSpan이 roomCount인 column을 생성합니다.
-                  const nonSessionTypeData = Object.values(roomData).find((room) => room !== undefined && room.session.submission_type.en !== 'Session')
+                  const nonSessionTypeData = Object.values(roomData).find(
+                    (room) => room !== undefined && room.session.submission_type.en !== "Session"
+                  );
                   if (nonSessionTypeData) {
-                    Object.keys(rooms).forEach((room) => rooms[room] = nonSessionTypeData.rowSpan - 1)
-                    return <tr>
-                      <td>{time}</td>
-                      <SessionColumn rowSpan={nonSessionTypeData.rowSpan} colSpan={roomCount} session={nonSessionTypeData.session} />
-                    </tr>
+                    Object.keys(rooms).forEach(
+                      (room) => (rooms[room] = nonSessionTypeData.rowSpan - 1)
+                    );
+                    return (
+                      <tr>
+                        <td>{time}</td>
+                        <SessionColumn
+                          rowSpan={nonSessionTypeData.rowSpan}
+                          colSpan={roomCount}
+                          session={nonSessionTypeData.session}
+                        />
+                      </tr>
+                    );
                   }
 
-                  return <tr>
-                    <td>{time}</td>
-                    {
-                      sortedRoomList.map((room) => {
-                        const roomDatum = roomData[room]
+                  return (
+                    <tr>
+                      <td>{time}</td>
+                      {sortedRoomList.map((room) => {
+                        const roomDatum = roomData[room];
                         if (roomDatum === undefined) {
                           // 진행 중인 세션이 없는 경우, 해당 줄에서는 해당 room의 빈 column을 생성합니다.
-                          if (rooms[room] <= 0) return <td></td>
+                          if (rooms[room] <= 0) return <td></td>;
                           // 진행 중인 세션이 있는 경우, 이번 줄에서는 해당 세션들만큼 column을 생성하지 않습니다.
-                          rooms[room] -= 1
-                          return null
+                          rooms[room] -= 1;
+                          return null;
                         }
                         // 세션이 여러 줄에 걸쳐있는 경우, n-1 줄만큼 해당 room에 column을 생성하지 않도록 합니다.
-                        if (roomDatum.rowSpan > 1) rooms[room] = roomDatum.rowSpan - 1
-                        return <SessionColumn key={room} rowSpan={roomDatum.rowSpan} session={roomDatum.session} />
-                      })
-                    }
-                  </tr>
-                })
-              }
-            </tbody>
-          </SessionTable>
-        </SessionTableContainer>
-      </>
-    })
+                        if (roomDatum.rowSpan > 1) rooms[room] = roomDatum.rowSpan - 1;
+                        return (
+                          <SessionColumn
+                            key={room}
+                            rowSpan={roomDatum.rowSpan}
+                            session={roomDatum.session}
+                          />
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </SessionTable>
+          </SessionTableContainer>
+        </>
+      );
+    });
 
   return (
     <Page>
       <h1>{t("세션 시간표")}</h1>
       <hr />
-      <h6 style={{ paddingLeft: '1rem' }}>* {t('발표 목록은 발표자 사정에 따라 변동될 수 있습니다.')}</h6>
+      <h6 style={{ paddingLeft: "1rem" }}>
+        * {t("발표 목록은 발표자 사정에 따라 변동될 수 있습니다.")}
+      </h6>
       <SessionTimeTable />
     </Page>
-  )
-}
+  );
+};
 
 const SessionDateTabContainer = styled.div`
   display: flex;
@@ -243,11 +325,16 @@ const SessionDateTabContainer = styled.div`
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
     color: inherit;
   }
-`
+`;
 
 const SessionTableContainer = styled.div`
   display: flex;
@@ -255,7 +342,7 @@ const SessionTableContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-`
+`;
 
 const SessionTable = styled.table`
   width: 100%;
@@ -308,7 +395,7 @@ const SessionTable = styled.table`
       max-width: ${TD_WIDTH_MOBILE}vw;
     }
   }
-`
+`;
 
 const SessionBox = styled.div`
   height: 100%;
@@ -377,10 +464,10 @@ const SessionBox = styled.div`
       margin: 0.25rem 0.1rem;
     }
   }
-`
+`;
 
 const SessionSpeakerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-`
+`;

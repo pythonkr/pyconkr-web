@@ -1,86 +1,113 @@
-import { wrap } from '@suspensive/react'
-import React from "react"
-import { useNavigate } from 'react-router'
-import styled from 'styled-components'
+import { wrap } from "@suspensive/react";
+import React from "react";
+import { useNavigate } from "react-router";
+import styled from "styled-components";
 
-import { SloganShort } from 'assets/icons'
-import { FallbackImg } from 'components/common/FallbackImg'
-import Page from "components/common/Page"
-import { APIPretalxSessions } from 'models/api/session'
-import { useListSessionsQuery } from 'utils/hooks/useAPI'
-import useTranslation from "utils/hooks/useTranslation"
+import { SloganShort } from "assets/icons";
+import { FallbackImg } from "components/common/FallbackImg";
+import Page from "components/common/Page";
+import { APIPretalxSessions } from "models/api/session";
+import { useListSessionsQuery } from "utils/hooks/useAPI";
+import useTranslation from "utils/hooks/useTranslation";
 
-const ENABLE_PROFILE_IMG_AND_DETAILS = false
+const ENABLE_PROFILE_IMG_AND_DETAILS = false;
 
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
-  const t = useTranslation()
-  const navigate = useNavigate()
+  const t = useTranslation();
+  const navigate = useNavigate();
 
-  const h4Props = ENABLE_PROFILE_IMG_AND_DETAILS ? { onClick: () => navigate(`/session/${session.code}`) } : {}
+  const h4Props = ENABLE_PROFILE_IMG_AND_DETAILS
+    ? { onClick: () => navigate(`/session/${session.code}`) }
+    : {};
 
-  return <SessionItemEl>
-    {
-      ENABLE_PROFILE_IMG_AND_DETAILS && <SessionItemImgContainer>
-        <FallbackImg src={session.image || ''} alt={session.title} errorFallback={<SloganShort />} />
-      </SessionItemImgContainer>
-    }
-    <SessionItemInfoContainer>
-      <h4 {...h4Props}>{session.title}</h4>
-      <p>{session.abstract}</p>
-      <SessionSpeakerContainer>by {session.speakers.map((speaker) => <kbd key={speaker.code}>{speaker.name}</kbd>)}</SessionSpeakerContainer>
-      <TagContainer>
-        {session.tags.map(tag => <Tag key={tag}>{t(tag)}</Tag>)}
-        {session.do_not_record && <Tag>{t('녹화 불가')}</Tag>}
-      </TagContainer>
-    </SessionItemInfoContainer>
-  </SessionItemEl>
-}
+  return (
+    <SessionItemEl>
+      {ENABLE_PROFILE_IMG_AND_DETAILS && (
+        <SessionItemImgContainer>
+          <FallbackImg
+            src={session.image || ""}
+            alt={session.title}
+            errorFallback={<SloganShort />}
+          />
+        </SessionItemImgContainer>
+      )}
+      <SessionItemInfoContainer>
+        <h4 {...h4Props}>{session.title}</h4>
+        <p>{session.abstract}</p>
+        <SessionSpeakerContainer>
+          by{" "}
+          {session.speakers.map((speaker) => (
+            <kbd key={speaker.code}>{speaker.name}</kbd>
+          ))}
+        </SessionSpeakerContainer>
+        <TagContainer>
+          {session.tags.map((tag) => (
+            <Tag key={tag}>{t(tag)}</Tag>
+          ))}
+          {session.do_not_record && <Tag>{t("녹화 불가")}</Tag>}
+        </TagContainer>
+      </SessionItemInfoContainer>
+    </SessionItemEl>
+  );
+};
 
 export const SessionListPage = () => {
-  const t = useTranslation()
+  const t = useTranslation();
 
   const SessionList = wrap
     .ErrorBoundary({ fallback: <h4>{t("세션 목록을 불러오는 중 에러가 발생했습니다.")}</h4> })
     .Suspense({ fallback: <h4>{t("세션 목록을 불러오는 중 입니다.")}</h4> })
     .on(() => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const { data } = useListSessionsQuery()
+      const { data } = useListSessionsQuery();
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const [currentTag, setTag] = React.useState<string | null>(null)
-      const setOrUnsetTag = (tag: string) => setTag(currentTag === tag ? null : tag)
+      const [currentTag, setTag] = React.useState<string | null>(null);
+      const setOrUnsetTag = (tag: string) => setTag(currentTag === tag ? null : tag);
       const sessionOnlyData = data
-        .filter((d) => d.submission_type.en === 'Session')
-        .filter((d) => currentTag === null || d.tags.includes(currentTag))
+        .filter((d) => d.submission_type.en === "Session")
+        .filter((d) => currentTag === null || d.tags.includes(currentTag));
 
-      const tags = Array.from(new Set(data.flatMap((session) => session.tags))).sort()
-      return <>
-        <hr style={{ margin: 0 }} />
-        <TagFilterBtnContainer>
-          <div>
-            {tags.map((tag) => <TagFilterBtn key={tag} onClick={() => setOrUnsetTag(tag)} className={tag === currentTag ? 'selected' : ''}>
-                {t(tag)}
-            </TagFilterBtn>)}
-          </div>
-        </TagFilterBtnContainer>
-        {sessionOnlyData.map((session) => <SessionItem key={session.code} session={session} />)}
-      </>
-    })
+      const tags = Array.from(new Set(data.flatMap((session) => session.tags))).sort();
+      return (
+        <>
+          <hr style={{ margin: 0 }} />
+          <TagFilterBtnContainer>
+            <div>
+              {tags.map((tag) => (
+                <TagFilterBtn
+                  key={tag}
+                  onClick={() => setOrUnsetTag(tag)}
+                  className={tag === currentTag ? "selected" : ""}
+                >
+                  {t(tag)}
+                </TagFilterBtn>
+              ))}
+            </div>
+          </TagFilterBtnContainer>
+          {sessionOnlyData.map((session) => (
+            <SessionItem key={session.code} session={session} />
+          ))}
+        </>
+      );
+    });
 
   return (
     <Page>
       <h1>{t("세션 목록")}</h1>
       <hr />
-      <h6 style={{ paddingLeft: '1rem' }}>* {t('발표 목록은 발표자 사정에 따라 변동될 수 있습니다.')}</h6>
+      <h6 style={{ paddingLeft: "1rem" }}>
+        * {t("발표 목록은 발표자 사정에 따라 변동될 수 있습니다.")}
+      </h6>
       <SessionList />
     </Page>
-  )
-}
+  );
+};
 
 const TagFilterBtnContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const TagFilterBtn = styled.button`
   background-color: rgba(0, 0, 0, 0);
@@ -90,7 +117,8 @@ const TagFilterBtn = styled.button`
   margin: 0.25rem;
   font-size: 0.8rem;
 
-  &:focus, button::-moz-focus-inner {
+  &:focus,
+  button::-moz-focus-inner {
     outline: none !important;
   }
 
@@ -99,7 +127,7 @@ const TagFilterBtn = styled.button`
     color: black;
     font-weight: bold;
   }
-`
+`;
 
 const SessionItemEl = styled.div`
   display: flex;
@@ -117,7 +145,7 @@ const SessionItemEl = styled.div`
     padding: 0rem;
     gap: 0.5rem;
   }
-`
+`;
 
 const SessionItemImgContainer = styled.div`
   width: 6rem;
@@ -144,7 +172,7 @@ const SessionItemImgContainer = styled.div`
     height: 5rem;
     margin: 0.25rem;
   }
-`
+`;
 
 const SessionItemInfoContainer = styled.div`
   padding-top: 0.5rem;
@@ -153,9 +181,9 @@ const SessionItemInfoContainer = styled.div`
   flex-grow: 1;
 
   h4 {
-    color: #FEBD99;
+    color: #febd99;
     margin-bottom: 0.2rem;
-    cursor: ${ENABLE_PROFILE_IMG_AND_DETAILS ? 'pointer' : 'default'};
+    cursor: ${ENABLE_PROFILE_IMG_AND_DETAILS ? "pointer" : "default"};
   }
 
   p {
@@ -175,7 +203,7 @@ const SessionItemInfoContainer = styled.div`
       font-weight: bold;
     }
   }
-`
+`;
 
 const SessionSpeakerContainer = styled.div`
   display: flex;
@@ -203,7 +231,7 @@ const SessionSpeakerContainer = styled.div`
 
     font-size: 0.6rem;
   }
-`
+`;
 
 const TagContainer = styled.div`
   display: flex;
@@ -211,7 +239,7 @@ const TagContainer = styled.div`
   justify-content: flex-start;
   padding: 0.25rem 0;
   gap: 0.25rem;
-`
+`;
 
 const Tag = styled.kbd`
   background-color: #b0a8fe;
@@ -219,4 +247,4 @@ const Tag = styled.kbd`
   border-radius: 0.25rem;
 
   font-size: 0.6rem;
-`
+`;
