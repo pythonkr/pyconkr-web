@@ -203,4 +203,5 @@ const Tag = styled.kbd`
   margin: 0;
   background-color: #b0a8fe;
   font-family: var(--pico-font-family);
+  font-size: 0.6rem;
 `;
