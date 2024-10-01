@@ -1,24 +1,27 @@
-import { wrap } from "@suspensive/react";
-import React from "react";
-import { useNavigate } from "react-router";
-import styled from "styled-components";
+import { wrap } from "@suspensive/react"
+import React from "react"
+import { useNavigate } from "react-router"
+import * as R from "remeda"
+import styled from "styled-components"
 
-import { SloganShort } from "assets/icons";
-import { FallbackImg } from "components/common/FallbackImg";
-import Page from "components/common/Page";
-import { APIPretalxSessions } from "models/api/session";
-import { useListSessionsQuery } from "utils/hooks/useAPI";
-import useTranslation from "utils/hooks/useTranslation";
+import { SloganShort } from "assets/icons"
+import { FallbackImg } from "components/common/FallbackImg"
+import Page from "components/common/Page"
+import { APIPretalxSessions } from "models/api/session"
+import { useListSessionsQuery } from "utils/hooks/useAPI"
+import useTranslation from "utils/hooks/useTranslation"
 
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
   const t = useTranslation();
   const navigate = useNavigate();
 
+  const speakerImageSrc = R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar || ""
+
   return (
     <SessionItemEl>
       <SessionItemImgContainer>
         <FallbackImg
-          src={session.image || ""}
+          src={speakerImageSrc}
           alt={session.title}
           errorFallback={<SloganShort />}
         />
