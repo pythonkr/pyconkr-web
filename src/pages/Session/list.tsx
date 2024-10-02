@@ -31,7 +31,7 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
         />
       </SessionItemImgContainer>
       <SessionItemInfoContainer>
-        <h4 onClick={() => navigate(`/session/${session.code}`)}>{session.title}</h4>
+        <h4 onClick={() => navigate(`/session/${session.code}??${session.title.replace(/ /g, "-")}`)}>{session.title}</h4>
         <p>{session.abstract}</p>
         <SessionSpeakerContainer>
           by{" "}
