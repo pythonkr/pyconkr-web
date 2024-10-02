@@ -1,13 +1,13 @@
-import { wrap } from "@suspensive/react";
-import React from "react";
-import * as R from "remeda";
-import styled from "styled-components";
+import { wrap } from "@suspensive/react"
+import React from "react"
+import * as R from "remeda"
+import styled from "styled-components"
 
-import Page from "components/common/Page";
-import { APIPretalxSessions } from "models/api/session";
-import { useNavigate } from "react-router";
-import { useListSessionsQuery } from "utils/hooks/useAPI";
-import useTranslation from "utils/hooks/useTranslation";
+import Page from "components/common/Page"
+import { APIPretalxSessions } from "models/api/session"
+import { useNavigate } from "react-router"
+import { useListSessionsQuery } from "utils/hooks/useAPI"
+import useTranslation from "utils/hooks/useTranslation"
 
 const TD_HEIGHT = 2.5;
 const TD_WIDTH = 12.5;
@@ -110,10 +110,11 @@ const SessionColumn: React.FC<{
   const clickable = R.isArray(session.speakers) && !R.isEmpty(session.speakers);
   // Firefox는 rowSpan된 td의 height를 계산할 때 rowSpan을 고려하지 않습니다. 따라서 직접 계산하여 height를 설정합니다.
   const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`;
+  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/(?![A-Za-zㄱ-ㅣ가-힣-])./g, "")
   return (
     <td rowSpan={rowSpan} colSpan={colSpan}>
       <SessionBox
-        onClick={() => clickable && navigate(`/session/${session.code}`)}
+        onClick={() => clickable && navigate(`/session/${session.code}#${urlSafeTitle}`)}
         className={clickable ? "clickable" : ""}
         style={{ height: sessionBoxHeight }}
       >
