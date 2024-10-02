@@ -110,7 +110,7 @@ const SessionColumn: React.FC<{
   const clickable = R.isArray(session.speakers) && !R.isEmpty(session.speakers);
   // Firefox는 rowSpan된 td의 height를 계산할 때 rowSpan을 고려하지 않습니다. 따라서 직접 계산하여 height를 설정합니다.
   const sessionBoxHeight = `${TD_HEIGHT * rowSpan}rem`;
-  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/(?![A-Za-zㄱ-ㅣ가-힣-])./g, "")
+  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/([.])/g, "_").replace(/(?![.0-9A-Za-zㄱ-ㅣ가-힣-])./g, "")
   return (
     <td rowSpan={rowSpan} colSpan={colSpan}>
       <SessionBox
