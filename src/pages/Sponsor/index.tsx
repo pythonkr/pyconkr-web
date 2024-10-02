@@ -21,7 +21,7 @@ const SponsorPage = () => {
           <img className="sponsor-logo" src="/images/sponsor_logo_lg.png" alt="sponsor_logo" />
           <span className="medium-text peach-puzz">2024.05.27. - 2024.10.13.</span>
           <Vertical style={{ paddingTop: "5rem" }}>
-            <a target="_blank" rel="noreferrer" href="https://forms.gle/CTt3CNscaRTdfX7s7">
+            <a target="_blank" rel="noreferrer" href="https://forms.gle/5HTtHAGVXpzNcGX19">
               <Button>{t("후원하기", "2")}</Button>
             </a>
             <a target="_blank" rel="noreferrer" href="/파이콘 한국 2024 후원사 가이드.pdf" download>
