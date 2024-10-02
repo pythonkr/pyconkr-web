@@ -20,7 +20,7 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
     || R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar
     || ""
   )
-  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/(?![A-Za-zㄱ-ㅣ가-힣-])./g, "")
+  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/([.])/g, "_").replace(/(?![0-9A-Za-zㄱ-ㅣ가-힣-_])./g, "")
 
   return (
     <SessionItemEl>
