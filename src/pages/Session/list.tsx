@@ -20,6 +20,7 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
     || R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar
     || ""
   )
+  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/(?![A-Za-zㄱ-ㅣ가-힣-])./g, "")
 
   return (
     <SessionItemEl>
@@ -31,7 +32,7 @@ const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) 
         />
       </SessionItemImgContainer>
       <SessionItemInfoContainer>
-        <h4 onClick={() => navigate(`/session/${session.code}??${session.title.replace(/ /g, "-")}`)}>{session.title}</h4>
+        <h4 onClick={() => navigate(`/session/${session.code}#${urlSafeTitle}`)}>{session.title}</h4>
         <p>{session.abstract}</p>
         <SessionSpeakerContainer>
           by{" "}
