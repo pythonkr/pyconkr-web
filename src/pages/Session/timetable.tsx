@@ -113,7 +113,7 @@ const SessionColumn: React.FC<{
   return (
     <td rowSpan={rowSpan} colSpan={colSpan}>
       <SessionBox
-        onClick={() => clickable && navigate(`/session/${session.code}`)}
+        onClick={() => clickable && navigate(`/session/${session.code}?${session.title.replace(/ /g, "-")}`)}
         className={clickable ? "clickable" : ""}
         style={{ height: sessionBoxHeight }}
       >
