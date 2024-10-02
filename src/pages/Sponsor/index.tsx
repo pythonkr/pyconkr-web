@@ -19,7 +19,7 @@ const SponsorPage = () => {
       <Container>
         <Vertical>
           <img className="sponsor-logo" src="/images/sponsor_logo_lg.png" alt="sponsor_logo" />
-          <span className="medium-text peach-puzz">2024.05.27 - 2024.09.30</span>
+          <span className="medium-text peach-puzz">2024.05.27. - 2024.10.13.</span>
           <Vertical style={{ paddingTop: "5rem" }}>
             <a target="_blank" rel="noreferrer" href="https://forms.gle/CTt3CNscaRTdfX7s7">
               <Button>{t("후원하기", "2")}</Button>
