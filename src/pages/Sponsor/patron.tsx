@@ -68,6 +68,8 @@ const PatronContainer = styled.div`
   }
 
   @media only screen and (max-width: 809px) {
+    width: 75%;
+
     p {
       font-size: 0.8rem;
       font-weight: bold;

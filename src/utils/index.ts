@@ -150,3 +150,17 @@ export function elapsedBefore(
       throw new Error(type);
   }
 }
+
+export function sortByKey<T extends Record<string, any>>(array: T[], key: keyof T): T[] {
+  return array.sort((a, b) => {
+    const av = a[key] as any;
+    const bv = b[key] as any;
+
+    if (av == null) return -1;
+    if (bv == null) return 1;
+    if (typeof av === "number" && typeof bv === "number") return av - bv;
+    if (av instanceof Date && bv instanceof Date) return av.getTime() - bv.getTime();
+
+    return av === bv ? 0 : av > bv ? 1 : -1;
+  });
+}
