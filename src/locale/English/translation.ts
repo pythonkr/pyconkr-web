@@ -6,6 +6,7 @@ const EnglishTranslation = {
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
   "언어 변경": "Change language",
+  "언어": "Language",
   Language: "언어",
   프로그램: "Program",
   기여하기: "Contribution",
@@ -261,8 +262,10 @@ const EnglishTranslation = {
   "발표 목록은 발표자 사정에 따라 변동될 수 있습니다.":
     "The list of presentations may change depending on the circumstances of the presenters.",
   "세션 목록으로 돌아가기": "Back to session list",
+  "발표 시각": "Date & Time",
   "발표 시간": "Duration",
   분: "min.",
+  "ko-KR": "en-US",
   "발표 장소": "Room",
   태그: "Tags",
   "녹화 불가": "Not recordable",
