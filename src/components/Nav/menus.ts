@@ -37,13 +37,13 @@ const Menus: MenuType = {
         },
       },
       {
+        name: "파이콘 한국 준비위원회",
+        path: "/about/organizing-team",
+      },
+      {
         name: "건강 관련 안내",
         path: "/about/health",
       },
-      // {
-      //   name: "파이콘 한국 준비위원회",
-      //   path: "/about/organizing-team",
-      // },
       // {
       //   name: "지난 파이콘 한국",
       //   path: "/about/previous-pyconkr",
