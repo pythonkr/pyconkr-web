@@ -1,7 +1,6 @@
-import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux"
 
-import { openGlobalDialog, setLanguage } from "store/Core";
-import { DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024 } from "store/Core/dialog";
+import { setLanguage } from "store/Core"
 
 export type MenuElementOnClickArgType = {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -39,6 +38,10 @@ const Menus: MenuType = {
       {
         name: "건강 관련 안내",
         path: "/about/health",
+      },
+      {
+        name: "장소 안내",
+        path: "/about/place",
       },
       // {
       //   name: "파이콘 한국 준비위원회",
