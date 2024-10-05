@@ -13,13 +13,13 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
   return (
     <SponsorCard>
       <H3>{levelName}</H3>
-      <div style={{ gridTemplateColumns: `repeat(${max}, 1fr)` }}>
+      <SponsorLogoList>
         {sponsors.map((sponsor) => (
           <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path">
             <LogoImage image={sponsor.logo_image} />
           </Link>
         ))}
-      </div>
+      </SponsorLogoList>
     </SponsorCard>
   );
 }
@@ -30,6 +30,7 @@ interface Image {
 
 const H3 = styled.h3`
   color: #141414 !important;
+  width: 120px;
 `;
 
 const LogoImage = styled.div<Image>`
@@ -37,19 +38,38 @@ const LogoImage = styled.div<Image>`
   justify-content: center;
   align-itmes: center;
   color: #141414;
-  width: 320px;
   height: 200px;
   background-image: url(${(props) => props.image});
   background-size: contain;
   background-position: center;
 
-  & > img {
-    height: 50%;
+  @media only screen and (max-width: 480px) {
+    width: 320px;
   }
 
   @media only screen and (max-width: 810px) {
-    width: 100%;
+    width: 200px;
   }
+
+  @media only screen and (max-width: 1200px) {
+    width: 240px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 320px;
+  }
+
+  @media only screen and (min-width: 1800px) {
+    width: 360px;
+  }
+`;
+
+const SponsorLogoList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3vw;
+  justify-content: center;
+  width: 100%;
 `;
 
 const SponsorCard = styled.div`
@@ -59,25 +79,14 @@ const SponsorCard = styled.div`
   padding: 1rem 1.5rem;
   align-items: center;
   background-color: #c2c7d0;
+  min-width: 280px;
 
   & > h3 {
     color: #b0a8fe;
     margin: 0;
-    flex: 200px;
   }
 
-  & > div {
-    width: 100%;
-    display: grid;
-    grid-gap: 1.5rem;
-    flex: auto;
-
-    & > a {
-      max-height: 20rem;
-    }
-  }
-
-  @media only screen and (max-width: 810px) {
+  @media only screen and (max-width: 480px) {
     flex-direction: column;
     margin: 1rem;
 
@@ -85,12 +94,6 @@ const SponsorCard = styled.div`
       color: #b0a8fe;
       margin: 0;
       flex: auto;
-    }
-
-    & > div {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
     }
   }
 `;
