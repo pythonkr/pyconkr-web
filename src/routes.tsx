@@ -18,6 +18,7 @@ import TermsOfService from "pages/TermsOfService";
 import Health from "./pages/About/health";
 import SponsorDetailPage from "pages/Sponsor/SponsorDetail";
 import PatronList from "pages/Sponsor/patron";
+import PosterSession from "pages/PosterSession";
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
         <Route path="/about/pyconkr2024" element={<Pyconkr2024 />} />
         <Route path="/about/coc" element={<Coc />} />
         <Route path="/about/health" element={<Health />} />
+        <Route path="/poster-session" element={<PosterSession />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/sponsoring/sponsor/:id" element={<SponsorDetailPage />} />
         <Route path="/sponsoring/patron" element={<PatronList />} />

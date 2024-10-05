@@ -97,6 +97,10 @@ const Menus: MenuType = {
       },
     ],
   },
+  poster: {
+    name: "포스터 세션",
+    path: "/poster-session"
+  },
   sponsoring: {
     name: "후원하기",
     sub: [
