@@ -31,6 +31,8 @@ const PosterSession = () => {
       <p>
         {t("신청 링크: ")}
         <a href={registerFormUrl}>{registerFormUrl}</a>
+        <br />
+        {t("신청 기한: ")} {t("2024년 10월 18일 (금) 23:59분 까지")}
       </p>
       <h1>{t("미리보는 포스터 세션")}</h1>
       <Swiper
@@ -41,6 +43,9 @@ const PosterSession = () => {
         loop={true}
       >
         <SwiperSlide>
+          <SampleImage src="/images/poster-session/posterSession4.jpg" alt="포스터 세션 예시 4" />
+        </SwiperSlide>
+        <SwiperSlide>
           <SampleImage src="/images/poster-session/posterSession1.jpg" alt="포스터 세션 예시 1" />
         </SwiperSlide>
         <SwiperSlide>
@@ -48,12 +53,6 @@ const PosterSession = () => {
         </SwiperSlide>
         <SwiperSlide>
           <SampleImage src="/images/poster-session/posterSession3.jpg" alt="포스터 세션 예시 3" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SampleImage src="/images/poster-session/posterSession4.jpg" alt="포스터 세션 예시 4" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SampleImage src="/images/poster-session/posterSession5.jpg" alt="포스터 세션 예시 5" />
         </SwiperSlide>
       </Swiper>
       <Grid></Grid>
@@ -64,7 +63,6 @@ const PosterSession = () => {
 export default PosterSession;
 
 const SampleImage = styled.img`
-  max-width: 75%;
   border-radius: 1rem;
 `;
 
