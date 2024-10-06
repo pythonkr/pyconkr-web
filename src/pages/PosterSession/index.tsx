@@ -25,14 +25,16 @@ const PosterSession = () => {
       <p>
         {t("포스터 세션은 토~일 2일 운영됩니다.")}
         <br />
-        {t("오후 세션 시작 30분 전 점심시간 / 매 쉬는 시간마다 포스터 세션이 운영됩니다.")}
+        {t("오후 세션 시작 30분 전 점심 시간 / 매 쉬는 시간마다 포스터 세션이 운영됩니다.")}
       </p>
       <h1>{t("포스터 세션 신청하기")}</h1>
       <p>
         {t("신청 링크: ")}
-        <a href={registerFormUrl}>{registerFormUrl}</a>
+        <a href={registerFormUrl} target="_blank" rel="noreferrer">
+          {registerFormUrl}
+        </a>
         <br />
-        {t("신청 기한: ")} {t("2024년 10월 18일 (금) 23:59분 까지")}
+        {t("신청 기한: ")} {t("2024년 10월 18일 (금) 23:59분까지")}
       </p>
       <h1>{t("미리보는 포스터 세션")}</h1>
       <Swiper
