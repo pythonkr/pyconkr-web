@@ -8,6 +8,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdi/js": "^7.4.47",
+    "@mdi/react": "^1.6.1",
     "@picocss/pico": "^2.0.6",
     "@reduxjs/toolkit": "^2.2.3",
     "@suspensive/react": "^2.16.1",

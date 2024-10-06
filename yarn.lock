@@ -2338,6 +2338,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mdi/js@npm:^7.4.47":
+  version: 7.4.47
+  resolution: "@mdi/js@npm:7.4.47"
+  checksum: 7379aa55e4494cd90e9121f90a6148312121e6b48d262432e33797da2c6c3431aa9da235aaa7c9ba8ef6357d9059c940c7a9f96283a35bfca2f3a9d4d9588650
+  languageName: node
+  linkType: hard
+
+"@mdi/react@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@mdi/react@npm:1.6.1"
+  dependencies:
+    prop-types: ^15.7.2
+  checksum: d0408c5fcc1cf6e4b1fc7be57a5516453b12c076dc682fe320c2fe7c19a333c265cd16dd2348d5587356f9f9a35cec46fb5f5f530d34c485d23975dcd240f834
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -11931,6 +11947,8 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": ^6.5.2
     "@fortawesome/free-solid-svg-icons": ^6.5.2
     "@fortawesome/react-fontawesome": ^0.2.0
+    "@mdi/js": ^7.4.47
+    "@mdi/react": ^1.6.1
     "@picocss/pico": ^2.0.6
     "@reduxjs/toolkit": ^2.2.3
     "@suspensive/react": ^2.16.1
