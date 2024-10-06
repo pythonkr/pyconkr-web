@@ -1,6 +1,6 @@
 import { Sponsor } from "models/sponsor";
 import { Link } from "react-router-dom";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
@@ -15,7 +15,7 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
       <H3>{levelName}</H3>
       <SponsorLogoList>
         {sponsors.map((sponsor) => (
-          <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path">
+          <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path" key={sponsor.id}>
             <LogoImage image={sponsor.logo_image} />
           </Link>
         ))}
@@ -36,7 +36,7 @@ const H3 = styled.h3`
 const LogoImage = styled.div<Image>`
   display: inline-flex;
   justify-content: center;
-  align-itmes: center;
+  align-items: center;
   color: #141414;
   height: 200px;
   background-image: url(${(props) => props.image});
