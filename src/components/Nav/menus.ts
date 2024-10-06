@@ -86,6 +86,10 @@ const Menus: MenuType = {
     name: "포스터 세션",
     path: "/poster-session",
   },
+  fa: {
+    name: "재정 지원",
+    path: "/fa",
+  },
   sponsoring: {
     name: "후원하기",
     sub: [

@@ -1,5 +1,5 @@
-import React from "react"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Footer from "components/Footer";
 import Nav from "components/Nav";
@@ -21,6 +21,7 @@ import PatronList from "pages/Sponsor/patron";
 import PosterSession from "pages/PosterSession";
 import { HowToGetThere } from "pages/About/howToGetThere";
 import OrganizingTeam from "pages/About/organizingTeam";
+import FinancialAid from "pages/FinancialAid";
 
 const Router = () => {
   return (
@@ -34,6 +35,7 @@ const Router = () => {
         <Route path="/about/place" element={<HowToGetThere />} />
         <Route path="/about/organizing-team" element={<OrganizingTeam />} />
         <Route path="/poster-session" element={<PosterSession />} />
+        <Route path="/fa" element={<FinancialAid />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />
         <Route path="/sponsoring/sponsor/:id" element={<SponsorDetailPage />} />
         <Route path="/sponsoring/patron" element={<PatronList />} />
