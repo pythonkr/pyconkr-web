@@ -154,8 +154,6 @@ body {
   color: $peach-puzz;
   text-align: center;
 
-  gap: 1vw;
-
   & > .menu-item {
     display: flex;
     justify-content: center;
@@ -196,6 +194,12 @@ body {
           color: $purple;
         }
       }
+    }
+    & > span.separator {
+      display: none;
+      height: 1rem;
+      border-left: 1px solid;
+      margin: 0 0.5rem;
     }
   }
 }
@@ -412,15 +416,32 @@ body {
 
     & > .menu-item {
       border: none;
+      flex-direction: row;
 
       & > span {
         border-bottom: none;
+        width: unset;
+      }
+
+      & > span.separator {
+        display: block;
+      }
+
+      &:last-of-type > span.separator {
+        display: none;
       }
 
       &:hover {
         & > .sub-menu {
           position: absolute;
           width: max-content;
+          transform: translateX(-0.5rem);
+        }
+      }
+
+      &:last-of-type:hover {
+        & > .sub-menu {
+          transform: none;
         }
       }
 

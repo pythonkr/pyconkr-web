@@ -24,6 +24,7 @@ const SponsorList = () => {
             .filter((level) => level.sponsor.length !== 0)
             .map((level) => (
               <SponsorTable
+                key={level.id}
                 max={level.name === "키스톤" ? 1 : 3}
                 levelName={t(level.name)}
                 sponsors={level.sponsor}

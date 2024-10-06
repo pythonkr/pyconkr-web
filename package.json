@@ -60,6 +60,8 @@
     ]
   },
   "devDependencies": {
+    "@types/kakaomaps": "^1.1.5",
+    "@types/navermaps": "^3.7.8",
     "@types/react-helmet": "^6.1.11",
     "@types/react-redux": "^7.1.33",
     "eslint-config-prettier": "^9.1.0",
