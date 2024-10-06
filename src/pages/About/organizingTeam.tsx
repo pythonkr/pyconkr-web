@@ -8,7 +8,12 @@ import { SloganShort } from "assets/icons";
 
 const OrganizingTeam = () => {
   const t = useTranslation();
-  type Member = { name: string; comment?: React.ReactNode; imageFileName?: string };
+  type Member = {
+    name: string;
+    displayName?: string;
+    comment?: React.ReactNode;
+    imageFileName?: string;
+  };
   const members = useMemo<Member[]>(
     () =>
       sortByKey<Member>(
@@ -18,7 +23,19 @@ const OrganizingTeam = () => {
           { name: "박성흠" },
           { name: "김순태" },
           { name: "김강민" },
-          { name: "이우섭" },
+          {
+            name: "이우섭",
+            displayName: "WooSub Lee",
+            comment: (
+              <>
+                LoveFrom,{" "}
+                <a href="https://www.linkedin.com/in/woosublee" target="_blank" rel="noreferrer">
+                  https://www.linkedin.com/in/woosublee
+                </a>
+              </>
+            ),
+            imageFileName: "이우섭.png",
+          },
           { name: "이영은" },
           { name: "심명진" },
           { name: "이한결" },
@@ -35,23 +52,29 @@ const OrganizingTeam = () => {
             imageFileName: "이준원.jpeg",
           },
           { name: "노하은" },
-          { name: "임혜정" },
           { name: "이해용", comment: "파이썬을 좋아하는 개발자입니다." },
           {
-            name: "김수빈 (sudosubin)",
+            name: "김수빈",
+            displayName: "김수빈 (sudosubin)",
             comment: "내려갈 때 보았네 올라갈 때 보지 못한 그 꽃",
             imageFileName: "김수빈S.png",
           },
           { name: "정미르", comment: "if import this and hire(me): can_do_anything()" },
           {
-            name: "이준영 / MUsoftware",
+            name: "이준영",
+            displayName: "이준영 / MUsoftware",
             comment: "개미는 (뚠뚠) 오늘도 (뚠뚠) 열심히 일을 하네",
             imageFileName: "이준영.png",
           },
           { name: "김민정" },
           { name: "강나영" },
           { name: "윤준기" },
-          { name: "송지헌" },
+          {
+            name: "송지헌",
+            displayName: "송지헌 / Honey",
+            comment: "Everything for Python!c Moments",
+            imageFileName: "송지헌.png",
+          },
           { name: "김지희" },
           {
             name: "삐야기",
@@ -93,7 +116,7 @@ const OrganizingTeam = () => {
             )}
           </section>
           <section className="right">
-            <h4>{m.name}</h4>
+            <h4>{m.displayName ?? m.name}</h4>
             <div>{m.comment ?? "Pythonic Moments"}</div>
           </section>
         </MemberContainer>
