@@ -98,10 +98,16 @@ const Menu = styled.div`
   user-select: none;
 
   @media only screen and (min-width: 810px) {
+    padding: 0 0.5rem;
     & + & {
       border-left: 1px solid;
       height: 1rem;
-      padding-left: 0.5rem;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
     }
   }
 
