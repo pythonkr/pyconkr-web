@@ -246,6 +246,9 @@ const EnglishTranslation = {
   스타트업: "Startup",
   커뮤니티: "Community",
   출판사: "Publisher",
+  "미디어 후원": "Media",
+  "기술 후원": "Technical",
+  "장소 후원": "Venue",
   "파이콘 한국 2024를 후원해주신 개인 후원자분들의 명단입니다.":
     "Here is a list of patrons who supported PyCon Korea 2024.",
   "후원해주셔서 감사합니다.": "Thank you for your support.",
@@ -364,7 +367,20 @@ const EnglishTranslation = {
   "주차요금 감면 등의 자세한 내용은": "For more information on parking fee reductions, please refer to the ",
   "수원컨벤션센터 주차안내 페이지": "Suwon Convention Center Parking Information page",
   "를 참고해주세요.": "",
-  "https://www.scc.or.kr/parking-2/": "https://www.scc.or.kr/en/parking-2"
+  "https://www.scc.or.kr/parking-2/": "https://www.scc.or.kr/en/parking-2",
+
+  // Poster Session
+  "포스터 세션": "Poster Session",
+  "포스터 세션이란?": "What is a Poster Session?",
+  "발표자들의 포스터를 특정 장소에 계속 설치해 두고, 지정된 시간에는 컨퍼런스 참석자들과 발표자들이 포스터에 대해 자유롭게 의견을 교류하는 자리입니다.": "The presenters' posters remain up in a specific location, and during a designated time, conference attendees and presenters interact freely about the posters.",
+  "언제 진행하나요?": "When does it take place?",
+  "포스터 세션은 토~일 2일 운영됩니다.": "The poster session will run Saturday-Sunday.",
+  "오후 세션 시작 30분 전 점심 시간 / 매 쉬는 시간마다 포스터 세션이 운영됩니다.": "Poster sessions will run during lunch / every break 30 minutes before the afternoon session starts.",
+  "포스터 세션 신청하기": "Sign up for a poster session",
+  "신청 링크: ": "Link to sign up: ",
+  "신청 기한: ": "Deadline: ",
+  "2024년 10월 18일 (금) 23:59분까지": "Until Friday, October 18, 2024, 23:59 KST",
+  "미리보는 포스터 세션": "Preview poster sessions",
 };
 
 export default EnglishTranslation;
