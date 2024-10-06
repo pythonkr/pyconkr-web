@@ -48,6 +48,7 @@ const Nav = () => {
                 ))}
               </SubMenus>
             )}
+            <span className="separator" />
           </Menu>
         ))}
       </div>
@@ -68,7 +69,7 @@ const Container = styled.div`
 const SubMenus = styled.div`
   display: none;
   position: absolute;
-  top: 1.5rem;
+  top: 90%;
 
   background-color: #141414;
 
@@ -100,20 +101,6 @@ const Menu = styled.div`
   position: relative;
   cursor: pointer;
   user-select: none;
-
-  @media only screen and (min-width: 810px) {
-    padding: 0 0.5rem;
-    height: 1rem;
-    & + & {
-      border-left: 1px solid;
-    }
-    &:first-of-type {
-      padding-left: 0;
-    }
-    &:last-of-type {
-      padding-right: 0;
-    }
-  }
 
   &:hover {
     color: #b0a8fe;
