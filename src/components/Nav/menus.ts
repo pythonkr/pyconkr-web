@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 
-import { setLanguage } from "store/Core"
+import { setLanguage } from "store/Core";
 
 export type MenuElementOnClickArgType = {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,7 +10,6 @@ export type MenuElementOnClickArgType = {
 
 export type MenuElementType = {
   name: string;
-  style?: React.CSSProperties;
   path?: string;
   onClick?: (_: MenuElementOnClickArgType) => void;
 };
@@ -47,25 +46,8 @@ const Menus: MenuType = {
         name: "장소 안내",
         path: "/about/place",
       },
-      // {
-      //   name: "지난 파이콘 한국",
-      //   path: "/about/previous-pyconkr",
-      // },
     ],
   },
-  // keynote: {
-  //   name: "키노트",
-  //   sub: [
-  //     {
-  //       name: "키노트",
-  //       path: "/keynote/keynote",
-  //     },
-  //     {
-  //       name: "발표",
-  //       path: "/keynote/session",
-  //     },
-  //   ],
-  // },
   // FYI 0929 충분히 안내가 되어서 제거
   // program: {
   //   name: "프로그램",
@@ -102,7 +84,7 @@ const Menus: MenuType = {
   },
   poster: {
     name: "포스터 세션",
-    path: "/poster-session"
+    path: "/poster-session",
   },
   sponsoring: {
     name: "후원하기",
@@ -115,22 +97,6 @@ const Menus: MenuType = {
         name: "개인 후원자",
         path: "/sponsoring/patron",
       },
-      // {
-      //   name: "후원사 혜택 안내",
-      //   path: "/sponsoring/sponsor/benefit",
-      // },
-      // {
-      //   name: "후원사로 참여하기",
-      //   path: "/sponsoring/sponsor/join",
-      // },
-      // {
-      //   name: "후원사 FAQ",
-      //   path: "/sponsoring/sponsor/faq",
-      // },
-      // {
-      //   name: "후원사 약관",
-      //   path: "/sponsoring/sponsor/terms",
-      // },
     ],
   },
   language: {
