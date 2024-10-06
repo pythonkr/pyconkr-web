@@ -6,7 +6,7 @@ const Cfp = () => {
   const t = useTranslation();
 
   return (
-    <Page>
+    <Page title="발표 제안">
       <h1>{t("발표 제안하기")}</h1>
       <ul>
         <li>2차 모집: 6/1~6/22</li>
@@ -16,8 +16,7 @@ const Cfp = () => {
           <a href="https://forms.gle/qF4enrUpHKrUeAgAA">https://forms.gle/qF4enrUpHKrUeAgAA</a>
         </li>
         <li>
-          문의:{" "}
-          <a href="mailto:session@pycon.kr">session@pycon.kr</a>
+          문의: <a href="mailto:session@pycon.kr">session@pycon.kr</a>
         </li>
       </ul>
     </Page>

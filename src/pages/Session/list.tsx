@@ -1,38 +1,38 @@
-import { wrap } from "@suspensive/react"
-import React from "react"
-import { useNavigate } from "react-router"
-import * as R from "remeda"
-import styled from "styled-components"
+import { wrap } from "@suspensive/react";
+import React from "react";
+import { useNavigate } from "react-router";
+import * as R from "remeda";
+import styled from "styled-components";
 
-import { SloganShort } from "assets/icons"
-import { FallbackImg } from "components/common/FallbackImg"
-import Page from "components/common/Page"
-import { APIPretalxSessions } from "models/api/session"
-import { useListSessionsQuery } from "utils/hooks/useAPI"
-import useTranslation from "utils/hooks/useTranslation"
+import { SloganShort } from "assets/icons";
+import { FallbackImg } from "components/common/FallbackImg";
+import Page from "components/common/Page";
+import { APIPretalxSessions } from "models/api/session";
+import { useListSessionsQuery } from "utils/hooks/useAPI";
+import useTranslation from "utils/hooks/useTranslation";
 
 const SessionItem: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }) => {
   const t = useTranslation();
   const navigate = useNavigate();
 
-  const speakerImageSrc = (
-    session.image
-    || R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar
-    || ""
-  )
-  const urlSafeTitle = session.title.replace(/ /g, "-").replace(/([.])/g, "_").replace(/(?![0-9A-Za-zㄱ-ㅣ가-힣-_])./g, "")
+  const speakerImageSrc =
+    session.image ||
+    (R.isArray(session.speakers) && !R.isEmpty(session.speakers) && session.speakers[0].avatar) ||
+    "";
+  const urlSafeTitle = session.title
+    .replace(/ /g, "-")
+    .replace(/([.])/g, "_")
+    .replace(/(?![0-9A-Za-zㄱ-ㅣ가-힣-_])./g, "");
 
   return (
     <SessionItemEl>
       <SessionItemImgContainer>
-        <FallbackImg
-          src={speakerImageSrc}
-          alt={session.title}
-          errorFallback={<SloganShort />}
-        />
+        <FallbackImg src={speakerImageSrc} alt={session.title} errorFallback={<SloganShort />} />
       </SessionItemImgContainer>
       <SessionItemInfoContainer>
-        <h4 onClick={() => navigate(`/session/${session.code}#${urlSafeTitle}`)}>{session.title}</h4>
+        <h4 onClick={() => navigate(`/session/${session.code}#${urlSafeTitle}`)}>
+          {session.title}
+        </h4>
         <p>{session.abstract}</p>
         <SessionSpeakerContainer>
           by{" "}
@@ -92,7 +92,7 @@ export const SessionListPage = () => {
     });
 
   return (
-    <Page>
+    <Page title="세션 목록">
       <h1>{t("세션 목록")}</h1>
       <hr />
       <h6 style={{ paddingLeft: "1rem" }}>

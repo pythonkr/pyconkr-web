@@ -1,10 +1,10 @@
-import { mdiLinkVariant } from "@mdi/js"
-import Icon from "@mdi/react"
-import Page from "components/common/Page"
-import React from "react"
-import { useNavigate } from "react-router"
-import styled from "styled-components"
-import useTranslation from "utils/hooks/useTranslation"
+import { mdiLinkVariant } from "@mdi/js";
+import Icon from "@mdi/react";
+import Page from "components/common/Page";
+import React from "react";
+import { useNavigate } from "react-router";
+import styled from "styled-components";
+import useTranslation from "utils/hooks/useTranslation";
 
 const Home = () => {
   const t = useTranslation();
@@ -71,4 +71,4 @@ const LinkBtn = styled.button`
   &:hover {
     background-color: rgba(176, 168, 254, 0.2);
   }
-`
+`;
