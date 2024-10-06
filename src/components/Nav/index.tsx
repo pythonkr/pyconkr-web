@@ -68,12 +68,16 @@ const Container = styled.div`
 const SubMenus = styled.div`
   display: none;
   position: absolute;
-  top: 90%;
+  top: 1.5rem;
 
   background-color: #141414;
 
   font-size: initial;
   font-weight: initial;
+
+  @media only screen and (max-width: 810px) {
+    top: 0;
+  }
 `;
 
 const SubMenu = styled.div`
@@ -99,9 +103,9 @@ const Menu = styled.div`
 
   @media only screen and (min-width: 810px) {
     padding: 0 0.5rem;
+    height: 1rem;
     & + & {
       border-left: 1px solid;
-      height: 1rem;
     }
     &:first-of-type {
       padding-left: 0;
