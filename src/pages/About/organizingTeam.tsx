@@ -8,40 +8,57 @@ import { SloganShort } from "assets/icons";
 
 const OrganizingTeam = () => {
   const t = useTranslation();
-  type Member = { name: string; comment?: string; imageFileName?: string };
+  type Member = { name: string; comment?: React.ReactNode; imageFileName?: string };
   const members = useMemo<Member[]>(
     () =>
       sortByKey<Member>(
         [
-          { name: "배권한" },
+          { name: "배권한", comment: "우리모두 파이썬으로 같이 합시다." },
           { name: "권혁민", comment: "asdfasdfasdfasdf", imageFileName: "권혁민.jpg" },
           { name: "박성흠" },
           { name: "김순태" },
           { name: "김강민" },
           { name: "이우섭" },
           { name: "이영은" },
-          { name: "김수빈" },
           { name: "심명진" },
           { name: "이한결" },
-          { name: "이준원" },
+          {
+            name: "이준원",
+            comment: (
+              <>
+                아직 파이썬 실력이 이븐하지 않습니다.{" "}
+                <a href="https://github.com/cpprhtn" target="_blank" rel="noreferrer">
+                  https://github.com/cpprhtn
+                </a>
+              </>
+            ),
+            imageFileName: "이준원.jpeg",
+          },
           { name: "노하은" },
           { name: "임혜정" },
-          { name: "이해용" },
+          { name: "이해용", comment: "파이썬을 좋아하는 개발자입니다." },
           {
             name: "김수빈 (sudosubin)",
             comment: "내려갈 때 보았네 올라갈 때 보지 못한 그 꽃",
             imageFileName: "김수빈S.png",
           },
-          { name: "정미르" },
-          { name: "음대웅" },
-          { name: "이준영" },
+          { name: "정미르", comment: "if import this and hire(me): can_do_anything()" },
+          {
+            name: "이준영 / MUsoftware",
+            comment: "개미는 (뚠뚠) 오늘도 (뚠뚠) 열심히 일을 하네",
+            imageFileName: "이준영.png",
+          },
           { name: "김민정" },
           { name: "강나영" },
           { name: "윤준기" },
           { name: "송지헌" },
           { name: "김지희" },
-          { name: "조성수" },
-          { name: "박조은", comment: "Now is better than never.", imageFileName: "박조은.jpg" },
+          {
+            name: "삐야기",
+            comment: "파이썬 나라의 개발자들이 먹을 치킨을 튀기고 있는 삐야기입니다.",
+            imageFileName: "삐야기.jpg",
+          },
+          { name: "박조은", comment: "Now is better than never.", imageFileName: "박조은.png" },
         ],
         "name"
       ),
