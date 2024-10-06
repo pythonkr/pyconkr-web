@@ -16,7 +16,7 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
       <SponsorLogoList>
         {sponsors.map((sponsor) => (
           <Link to={`/sponsoring/sponsor/${sponsor.id}`} relative="path" key={sponsor.id}>
-            <LogoImage image={sponsor.logo_image} />
+            <LogoImage $image={sponsor.logo_image} />
           </Link>
         ))}
       </SponsorLogoList>
@@ -24,22 +24,18 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
   );
 }
 
-interface Image {
-  image: string;
-}
-
 const H3 = styled.h3`
   color: #141414 !important;
   width: 120px;
 `;
 
-const LogoImage = styled.div<Image>`
+const LogoImage = styled.div<{ $image: string }>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
   color: #141414;
   height: 200px;
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => props.$image});
   background-size: contain;
   background-position: center;
 
