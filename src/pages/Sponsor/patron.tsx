@@ -22,14 +22,14 @@ const PatronList = () => {
 
   if (isLoading)
     return (
-      <Page>
+      <Page title="개인 후원자">
         <h1>{t("개인 후원자")}</h1>
         <p>{t("불러오는 중입니다...")}</p>
       </Page>
     );
 
   return (
-    <Page>
+    <Page title="개인 후원자">
       <h1>{t("개인 후원자")}</h1>
       <p>
         {t("파이콘 한국 2024를 후원해주신 개인 후원자분들의 명단입니다.")}

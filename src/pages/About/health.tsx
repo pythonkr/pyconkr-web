@@ -5,7 +5,7 @@ import useTranslation from "utils/hooks/useTranslation";
 const Health = () => {
   const t = useTranslation();
   return (
-    <Page>
+    <Page title="건강 관련 안내">
       <h1>{t("파이콘 한국 건강 관련 안내")}</h1>
       <p>{t("파이콘 한국에 참여해주신 모든 분들을 위해 안내 말씀드립니다.")}</p>
       <h2>코로나19 관련 안내</h2>

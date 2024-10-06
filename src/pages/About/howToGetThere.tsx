@@ -42,7 +42,7 @@ export const HowToGetThere: React.FC = () => {
   const mapStyle: React.CSSProperties = { border: 0, width: "100%", height: "450px" };
 
   return (
-    <Page>
+    <Page title="장소 안내">
       <div style={{ width: "100%", maxWidth: "1200px" }}>
         <h1>{t("장소 안내")}</h1>
         <h2>{t("수원컨벤션센터")}</h2>

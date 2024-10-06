@@ -14,7 +14,7 @@ const PosterSession = () => {
   const registerFormUrl = "https://forms.gle/yjhuUZHR9tR3AR7d9";
 
   return (
-    <Page>
+    <Page title="포스터 세션">
       <h1>{t("포스터 세션이란?")}</h1>
       <p>
         {t(
