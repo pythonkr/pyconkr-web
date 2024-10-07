@@ -19,7 +19,11 @@ const OrganizingTeam = () => {
       sortByKey<Member>(
         [
           { name: "배권한", comment: "우리모두 파이썬으로 같이 합시다." },
-          { name: "권혁민", comment: "asdfasdfasdfasdf", imageFileName: "권혁민.jpg" },
+          {
+            name: "권혁민",
+            comment: "Pie, Remidomine... Benedicite!",
+            imageFileName: "권혁민.jpg",
+          },
           { name: "박성흠" },
           { name: "김순태" },
           { name: "김강민" },
