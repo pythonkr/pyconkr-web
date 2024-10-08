@@ -26,7 +26,7 @@ function SponsorTable({ max, levelName, sponsors, ...rest }: Props) {
 
 const H3 = styled.h3`
   color: #141414 !important;
-  width: 120px;
+  width: 160px;
 `;
 
 const LogoImage = styled.div<{ $image: string }>`
