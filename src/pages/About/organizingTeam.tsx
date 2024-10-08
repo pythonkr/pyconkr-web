@@ -26,7 +26,13 @@ const OrganizingTeam = () => {
           },
           { name: "박성흠" },
           { name: "김순태" },
-          { name: "김강민" },
+          {
+            name: "김강민",
+            displayName: "김강민/KLOU",
+            comment:
+              "파이썬과 파이콘을 사랑하는 데이터 저널리스트입니다. 시빅 테크 커뮤니티 코드포코리아 오거나이저이기도 합니다. 기술을 통해 사회 문제를 해결하는 데 관심이 있습니다.",
+            imageFileName: "김강민.jpg",
+          },
           {
             name: "이우섭",
             displayName: "WooSub Lee",
@@ -146,7 +152,8 @@ const MemberContainer = styled.div`
     border-radius: 50%;
     border: 1px solid var(--pico-muted-border-color);
 
-    * {
+    img,
+    svg {
       width: 100%;
       height: 100%;
       min-width: 100%;
@@ -164,6 +171,7 @@ const MemberContainer = styled.div`
   }
 
   & > section.right {
+    width: calc(100% - 6rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
