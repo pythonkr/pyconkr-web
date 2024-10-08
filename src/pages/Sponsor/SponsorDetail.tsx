@@ -9,6 +9,13 @@ import styled from "styled-components";
 import { useRetrieveSponsorQuery } from "utils/hooks/useAPI";
 
 const SponsorDetail: React.FC<{ sponsor: APISponsor }> = ({ sponsor }) => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <Vertical>
       <H1>{sponsor.name}</H1>
