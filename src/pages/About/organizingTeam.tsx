@@ -61,7 +61,23 @@ const OrganizingTeam = () => {
             ),
             imageFileName: "이준원.jpeg",
           },
-          { name: "노하은" },
+          {
+            name: "노하은",
+            comment: (
+              <>
+                프로그래밍과 오픈소스를 사랑하는 기획자입니다.
+                <br />
+                <a
+                  href="https://www.linkedin.com/in/bluepicture08"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://www.linkedin.com/in/bluepicture08
+                </a>
+              </>
+            ),
+            imageFileName: "노하은.jpeg",
+          },
           { name: "이해용", comment: "파이썬을 좋아하는 개발자입니다." },
           {
             name: "김수빈",
