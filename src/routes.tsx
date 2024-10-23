@@ -22,6 +22,7 @@ import PosterSession from "pages/PosterSession";
 import { HowToGetThere } from "pages/About/howToGetThere";
 import OrganizingTeam from "pages/About/organizingTeam";
 import FinancialAid from "pages/FinancialAid";
+import Volunteer from "pages/About/volunteer";
 
 const Router = () => {
   return (
@@ -34,6 +35,7 @@ const Router = () => {
         <Route path="/about/health" element={<Health />} />
         <Route path="/about/place" element={<HowToGetThere />} />
         <Route path="/about/organizing-team" element={<OrganizingTeam />} />
+        <Route path="/about/volunteer" element={<Volunteer />} />
         <Route path="/poster-session" element={<PosterSession />} />
         <Route path="/fa" element={<FinancialAid />} />
         <Route path="/sponsoring/sponsor/prospectus" element={<SponsorPage />} />

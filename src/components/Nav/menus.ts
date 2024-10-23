@@ -39,6 +39,10 @@ const Menus: MenuType = {
         path: "/about/organizing-team",
       },
       {
+        name: "자원봉사자",
+        path: "/about/volunteer",
+      },
+      {
         name: "건강 관련 안내",
         path: "/about/health",
       },
