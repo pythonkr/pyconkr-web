@@ -25,7 +25,18 @@ const OrganizingTeam = () => {
             imageFileName: "권혁민.jpg",
           },
           { name: "박성흠" },
-          { name: "김순태" },
+          {
+            name: "김순태",
+            comment: (
+              <>
+                파이썬으로 개발합니다.{" "}
+                <a href="https://www.linkedin.com/in/kst6294/" target="_blank" rel="noreferrer">
+                  https://www.linkedin.com/in/kst6294/
+                </a>
+              </>
+            ),
+            imageFileName: "김순태.jpeg",
+          },
           {
             name: "김강민",
             displayName: "김강민/KLOU",
@@ -94,7 +105,19 @@ const OrganizingTeam = () => {
           },
           { name: "김민정" },
           { name: "강나영" },
-          { name: "윤준기" },
+          {
+            name: "윤준기",
+            comment: (
+              <>
+                안녕하세요, 23년도에는 파이콘 스피커로
+                <br />
+                24년도에는 파준위로 활동하고 있는 윤준기 입니다.
+                <br />
+                개발이나 다양한 주제로 이야기 하는 것을 좋아합니다 :)
+              </>
+            ),
+            imageFileName: "윤준기.jpeg",
+          },
           {
             name: "송지헌",
             displayName: "송지헌 / Honey",
