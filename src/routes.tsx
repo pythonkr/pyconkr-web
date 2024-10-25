@@ -23,6 +23,8 @@ import { HowToGetThere } from "pages/About/howToGetThere";
 import OrganizingTeam from "pages/About/organizingTeam";
 import FinancialAid from "pages/FinancialAid";
 import Volunteer from "pages/About/volunteer";
+import Tutorial from "pages/Program/tutorial";
+import Sprint from "pages/Program/sprint";
 
 const Router = () => {
   return (
@@ -45,6 +47,8 @@ const Router = () => {
         <Route path="/session/:code" element={<SessionDetailPage />} />
         <Route path="/session/timetable" element={<SessionTimeTablePage />} />
         <Route path="/contribution/cfp" element={<Cfp />} />
+        <Route path="/program/tutorial" element={<Tutorial />} />
+        <Route path="/program/sprint" element={<Sprint />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/404" element={<NotFound />} />
