@@ -1,8 +1,8 @@
-import Page from "components/common/Page";
-import React from "react";
-import styled from "styled-components";
+import Page from "components/common/Page"
+import React from "react"
+import styled from "styled-components"
 
-import useTranslation from "utils/hooks/useTranslation";
+import useTranslation from "utils/hooks/useTranslation"
 
 const KAKAO_MAP_URL = "https://map.kakao.com/link/map/1946823368";
 const NAVER_MAP_URL = "https://naver.me/Goz5cKSr";
@@ -27,7 +27,7 @@ export const HowToGetThere: React.FC = () => {
   React.useEffect(() => {
     if (!(window.kakao && window.kakao.maps && kakaoMapRef.current)) return;
 
-    const content = `<a href="${KAKAO_MAP_URL}"><div style="width:250px;text-align:center;">${t("수원컨벤션센터")}</div></a>`;
+    const content = `<a href="${KAKAO_MAP_URL}"><div style="width:250px;text-align:center;">${t("수원컨벤션센터 3층")}</div></a>`;
     const position = new window.kakao.maps.LatLng(37.285818093062026, 127.05950558082746);
     const map = new window.kakao.maps.Map(kakaoMapRef.current, { center: position, level: 3 });
     new kakao.maps.InfoWindow({ content }).open(map, new kakao.maps.Marker({ map, position }));
@@ -45,7 +45,7 @@ export const HowToGetThere: React.FC = () => {
     <Page title="장소 안내">
       <div style={{ width: "100%", maxWidth: "1200px" }}>
         <h1>{t("장소 안내")}</h1>
-        <h2>{t("수원컨벤션센터")}</h2>
+        <h2>{t("수원컨벤션센터 3층")}</h2>
         <div>
           <div style={{ ...flexBoxStyle }}>
             <MapSelectTabBtn
