@@ -52,14 +52,19 @@ const Menus: MenuType = {
       },
     ],
   },
-  // FYI 0929 충분히 안내가 되어서 제거
-  // program: {
-  //   name: "프로그램",
-  //   onClick: ({ setOpenMenu, dispatch }) => {
-  //     setOpenMenu(false);
-  //     dispatch(openGlobalDialog(DIALOG_CONST_PROGRAM_NOT_HELD_ON_2024));
-  //   },
-  // },
+  program: {
+    name: "프로그램",
+    sub: [
+      {
+        name: "튜토리얼",
+        path: "/program/tutorial",
+      },
+      {
+        name: "스프린트",
+        path: "/program/sprint",
+      },
+    ],
+  },
   ticket: {
     name: "티켓 구매",
     onClick: ({ setOpenMenu }) => {
