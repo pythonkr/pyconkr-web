@@ -6,7 +6,7 @@ const EnglishTranslation = {
   "파이콘 한국": "PyCon Korea",
   준비위원회: "Organizing Team",
   "언어 변경": "Change language",
-  "언어": "Language",
+  언어: "Language",
   Language: "언어",
   프로그램: "Program",
   기여하기: "Contribution",
@@ -59,7 +59,7 @@ const EnglishTranslation = {
   "결제 일시": "Payment date",
   금액: "Price",
   변경일: "Updated at",
-  "수원컨벤션센터": "Suwon Convention Center",
+  수원컨벤션센터: "Suwon Convention Center",
   "2024.10.26": "October 26, 2024",
   "2024.10.27": "October 27, 2024",
   "10번째 파이콘 한국에": "Join us",
@@ -292,79 +292,94 @@ const EnglishTranslation = {
   "건강 관련 안내": "Health Information",
   // About place
   "장소 안내": "Location",
-  "카카오맵": "Kakaomap",
+  카카오맵: "Kakaomap",
   "네이버 지도": "NAVER Map",
   "구글 지도": "Google Maps",
   "카카오맵에서 열기": "Open in Kakaomap",
   "네이버 지도에서 열기": "Open in NAVER Map",
   "구글 지도에서 열기": "Open in Google Maps",
   "도로명 주소": "Road Address",
-  "도로명 주소 : 16514, 경기도 수원시 영통구 광교중앙로 140(하동)": "16514, 140, Gwanggyojungang-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, Republic of Korea",
+  "도로명 주소 : 16514, 경기도 수원시 영통구 광교중앙로 140(하동)":
+    "16514, 140, Gwanggyojungang-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, Republic of Korea",
   "지번 주소 : 16514, 경기도 수원시 영통구 하동 864-10": "",
-  "대중교통": "Public Transportation",
-  "지하철": "Subway",
-  "버스": "Bus",
-  "광교중앙역": "GwanggyoJungang Station",
+  대중교통: "Public Transportation",
+  지하철: "Subway",
+  버스: "Bus",
+  광교중앙역: "GwanggyoJungang Station",
   "신분당선 「광교중앙역」": "Shinbundang Line 「GwanggyoJungang Station」",
   "4번 출구에서 도보 10분": "10 minutes on foot from Exit 4",
-  "광역급행버스 「광교중앙·아주대환승센터」 하차 시": "Get off at Gwanggyo Jungang (Ajou University) station (using WideArea Express Bus)",
-  "서울역": "Seoul Station",
-  "강남역": "Gangnam Station",
+  "광역급행버스 「광교중앙·아주대환승센터」 하차 시":
+    "Get off at Gwanggyo Jungang (Ajou University) station (using WideArea Express Bus)",
+  서울역: "Seoul Station",
+  강남역: "Gangnam Station",
   "「광교중앙·아주대환승센터」 하차": "Get off at Gwanggyo Jungang (Ajou University) station",
-  "시내버스 「수원컨벤션센터·롯데아울렛」 하차 시": "Get off at Suwon Convention Center (Lotte Outlet) station (using city bus)",
+  "시내버스 「수원컨벤션센터·롯데아울렛」 하차 시":
+    "Get off at Suwon Convention Center (Lotte Outlet) station (using city bus)",
   "수원컨벤션센터·롯데아울렛 하차": "Get off at Suwon Convention Center (Lotte Outlet) station",
-  "수원컨벤션센터·광교갤러리아 백화점": "Suwon Convention Center (Gwanggyo Galleria Department Store) station",
-  "수원컨벤션센터·광교갤러리아 백화점 하차": "Get off at Suwon Convention Center (Gwanggyo Galleria Department Store) station",
+  "수원컨벤션센터·광교갤러리아 백화점":
+    "Suwon Convention Center (Gwanggyo Galleria Department Store) station",
+  "수원컨벤션센터·광교갤러리아 백화점 하차":
+    "Get off at Suwon Convention Center (Gwanggyo Galleria Department Store) station",
   "공항 리무진": "Airport Shuttle Bus",
   "리무진 버스": "Airport Shuttle Bus",
-  "시외버스": "Intercity Bus",
-  "인천공항": "Incheon International Airport",
-  "김포공항": "Gimpo International Airport",
+  시외버스: "Intercity Bus",
+  인천공항: "Incheon International Airport",
+  김포공항: "Gimpo International Airport",
   "인천공항 「한국민속촌」행": "Incheon International Airport to Korean Folk Village",
-  "동수원": "East Suwon(Dongsuwon)",
+  동수원: "East Suwon(Dongsuwon)",
   "동수원 하차": "Get off at East Suwon(Dongsuwon)",
   "김포공항 「동수원」행": "Gimpo International Airport to East Suwon(Dongsuwon)",
   "(택시 10분 또는 버스 30분)": "(10 minutes by taxi or 30 minutes by city bus)",
   "노선 세부정보": "Route Details",
-  "운행시간": "Operating Hours",
-  "소요시간": "Travel Time",
-  "노선정보": "Route",
-  "요금": "Fare",
-  "탑승위치": "Boarding Location",
+  운행시간: "Operating Hours",
+  소요시간: "Travel Time",
+  노선정보: "Route",
+  요금: "Fare",
+  탑승위치: "Boarding Location",
   "(공항행) 첫차 04:35, 막차 19:05": "(For Airport) The First Bus 04:35, The Last Bus 19:05",
-  "(수원행) 첫차 T1 05:50, T2 05:30, 막차 T1 22:20, T2 22:00": "(For Suwon) The First Bus T1 05:50, T2 05:30, The Last Bus T1 22:20, T2 22:00",
+  "(수원행) 첫차 T1 05:50, T2 05:30, 막차 T1 22:20, T2 22:00":
+    "(For Suwon) The First Bus T1 05:50, T2 05:30, The Last Bus T1 22:20, T2 22:00",
   "75분 (73km)": "75 minutes (73km)",
   "30분 ~ 110분 배차 간격": "Interval 30min~110min",
-  "제1터미널": "Terminal 1",
-  "제2터미널": "Terminal 2",
+  제1터미널: "Terminal 1",
+  제2터미널: "Terminal 2",
   "(제1터미널) 1층 7번 게이트": "(Terminal 1) Gate 7 on the 1st floor",
-  "(제2터미널) 교통센터 지하 1층 40번 게이트": "(Terminal 2) Gate 40 on 1st basement level, Transportation Center",
-  "흥덕지구입구 ↔ 신갈(용인) ↔ 한국민속촌": "Heungdeok Zone Entrance ↔ Singal(Yongin) ↔ Korean Folk Village",
+  "(제2터미널) 교통센터 지하 1층 40번 게이트":
+    "(Terminal 2) Gate 40 on 1st basement level, Transportation Center",
+  "흥덕지구입구 ↔ 신갈(용인) ↔ 한국민속촌":
+    "Heungdeok Zone Entrance ↔ Singal(Yongin) ↔ Korean Folk Village",
 
   "(공항행) 첫차 05:05, 막차 20:20": "(For Airport) The First Bus 05:05, The Last Bus 20:20",
   "(수원행) 첫차 06:50, 막차 22:25": "(For Suwon) The First Bus 06:50, The Last Bus 22:25",
-  "일반": "Normal",
-  "급행": "Express",
-  "(일반) 15분 ~ 30분 배차 간격 / (급행) 60분 ~ 130분 배차 간격": "(Normal Bus) Interval 15~30min, (Express Bus) Interval 60~130min",
+  일반: "Normal",
+  급행: "Express",
+  "(일반) 15분 ~ 30분 배차 간격 / (급행) 60분 ~ 130분 배차 간격":
+    "(Normal Bus) Interval 15~30min, (Express Bus) Interval 60~130min",
   "(국제선) 2층 1번": "(International Terminal) No. 1 on the 2nd floor",
   "(국내선) 11-4번": "(Domestic Terminal) No. 11-4",
-  "한일타운 ↔ 의왕(고천) ↔ 호계사거리 ↔ 안양(범계) ↔ 관악역 ↔ 김포공항": "Hanil Town ↔ Uiwang(Gocheon) ↔ Hogye Four Way ↔ Anyang(Beomgye) ↔ Gwanak Station ↔ Gimpo Airport",
+  "한일타운 ↔ 의왕(고천) ↔ 호계사거리 ↔ 안양(범계) ↔ 관악역 ↔ 김포공항":
+    "Hanil Town ↔ Uiwang(Gocheon) ↔ Hogye Four Way ↔ Anyang(Beomgye) ↔ Gwanak Station ↔ Gimpo Airport",
   "수원역 ↔ 서수원터미널 ↔ 김포공항": "Suwon Station ↔ Seo Suwon Bus Terminal ↔ Gimpo Airport",
 
   "주차 안내": "Parking Information",
   "주차장 주차요금표": "Parking Rate Table",
-  "구분": "Classification",
+  구분: "Classification",
   "1회 주차요금": "One-time parking Rate",
   "최초 30분까지": "First 30 minutes",
   "30분 초과 후 (10분마다)": "After 30 minutes (every 10 minutes)",
   "1일": "1 day",
   "승용 및 승합": "Sedan and Van",
   "※수원시주차장조례 1급지 적용": "",
-  "위 표는 2024년 10월 5일 기준 수원컨벤션센터 홈페이지에 게시된 지하주차장 요금표입니다.": "This is based on the parking rate table posted on the Suwon Convention Center website as of October 5, 2024.",
-  "카드결제만 가능합니다. (신용/체크/교통/삼성페이)": "Card payment only. (Credit/Debit/Transport/Samsung Wallet)",
-  "15인승 이상 25인승 미만 승합자동차, 2.5톤 이상 4.5톤 미만 화물자동차 또는 크기가 이에 준하는 차량은 지하주차장 이용이 불가합니다.": "Vans with 15 to 25 seats, trucks with 2.5 to 4.5 tons, or vehicles of similar size are not allowed in the underground parking lot.",
-  "출구 정산 기준 20분 이내 회차시간은 무료입니다. (※ 경과 시 20분을 포함한 정상요금 부과)": "If you return within 20 minutes of exiting, it's free. (※ If more than 20 minutes have passed, the normal rate will be charged.)",
-  "주차요금 감면 등의 자세한 내용은": "For more information on parking fee reductions, please refer to the ",
+  "위 표는 2024년 10월 5일 기준 수원컨벤션센터 홈페이지에 게시된 지하주차장 요금표입니다.":
+    "This is based on the parking rate table posted on the Suwon Convention Center website as of October 5, 2024.",
+  "카드결제만 가능합니다. (신용/체크/교통/삼성페이)":
+    "Card payment only. (Credit/Debit/Transport/Samsung Wallet)",
+  "15인승 이상 25인승 미만 승합자동차, 2.5톤 이상 4.5톤 미만 화물자동차 또는 크기가 이에 준하는 차량은 지하주차장 이용이 불가합니다.":
+    "Vans with 15 to 25 seats, trucks with 2.5 to 4.5 tons, or vehicles of similar size are not allowed in the underground parking lot.",
+  "출구 정산 기준 20분 이내 회차시간은 무료입니다. (※ 경과 시 20분을 포함한 정상요금 부과)":
+    "If you return within 20 minutes of exiting, it's free. (※ If more than 20 minutes have passed, the normal rate will be charged.)",
+  "주차요금 감면 등의 자세한 내용은":
+    "For more information on parking fee reductions, please refer to the ",
   "수원컨벤션센터 주차안내 페이지": "Suwon Convention Center Parking Information page",
   "를 참고해주세요.": "",
   "https://www.scc.or.kr/parking-2/": "https://www.scc.or.kr/en/parking-2",
@@ -372,15 +387,62 @@ const EnglishTranslation = {
   // Poster Session
   "포스터 세션": "Poster Session",
   "포스터 세션이란?": "What is a Poster Session?",
-  "발표자들의 포스터를 특정 장소에 계속 설치해 두고, 지정된 시간에는 컨퍼런스 참석자들과 발표자들이 포스터에 대해 자유롭게 의견을 교류하는 자리입니다.": "The presenters' posters remain up in a specific location, and during a designated time, conference attendees and presenters interact freely about the posters.",
+  "발표자들의 포스터를 특정 장소에 계속 설치해 두고, 지정된 시간에는 컨퍼런스 참석자들과 발표자들이 포스터에 대해 자유롭게 의견을 교류하는 자리입니다.":
+    "The presenters' posters remain up in a specific location, and during a designated time, conference attendees and presenters interact freely about the posters.",
   "언제 진행하나요?": "When does it take place?",
   "포스터 세션은 토~일 2일 운영됩니다.": "The poster session will run Saturday-Sunday.",
-  "오후 세션 시작 30분 전 점심 시간 / 매 쉬는 시간마다 포스터 세션이 운영됩니다.": "Poster sessions will run during lunch / every break 30 minutes before the afternoon session starts.",
+  "오후 세션 시작 30분 전 점심 시간 / 매 쉬는 시간마다 포스터 세션이 운영됩니다.":
+    "Poster sessions will run during lunch / every break 30 minutes before the afternoon session starts.",
   "포스터 세션 신청하기": "Sign up for a poster session",
   "신청 링크: ": "Link to sign up: ",
   "신청 기한: ": "Deadline: ",
   "2024년 10월 18일 (금) 23:59분까지": "Until Friday, October 18, 2024, 23:59 KST",
   "미리보는 포스터 세션": "Preview poster sessions",
+
+  // Tutorial
+  "파이썬 관련 모든 주제에 대해 튜토리얼을 진행하실 수 있습니다.":
+    "You can host tutorials on any Python related topic.",
+  "강연자분들께는 소정의 운영비가 지원됩니다.":
+    "A certain amount of operating expenses will be provided to the speakers.",
+  일시: "Date",
+  "2024년 11월 9일 (토요일)": "2024.11.09. (Sat)",
+  장소: "Location",
+  "참여 신청 방법": "How to apply for participation",
+  이메일: "Email",
+  "필수 기재사항": "Required information",
+  "참여 희망 프로그램 (튜토리얼이라고 적어주세요)":
+    "Program you would like to host (please write tutorial)",
+  성함: "Name",
+  연락처: "Contact",
+  "강연 주제 및 간단한 개요, 강의는 3~4시간 분량":
+    "Tutorial topic and brief outline, tutorial is 3-4 hours long",
+  "많은 관심과 참여 부탁드립니다.": "We ask for your interest and participation.",
+
+  // Sprint
+  "스프린트는 다음 두 가지 트랙으로 진행됩니다.": "The sprint will be run along two tracks:",
+  "프로젝트 리더 트랙": "Project Leader Track",
+  "현재 오픈소스 프로젝트를 리딩하고 계신 분": "Anyone currently leading an open source project",
+  "다른 참가자들의 기여를 이끌어주실 수 있는 분":
+    "Someone who can guide the contributions of other participants",
+  "프로젝트 소개와 기여 가이드를 준비해주실 수 있는 분":
+    "Anyone who can prepare a project introduction and contribution guide",
+  "예비 리더 트랙": "Preliminary Leader Track",
+  "향후 오픈소스 프로젝트 리딩에 관심이 있으신 분":
+    "Anyone interested in leading open source projects in the future",
+  "프로젝트 리딩 경험을 쌓고 싶으신 분": "Anyone who wants to gain project leading experience",
+  "기여하고 싶은 프로젝트가 있지만 리딩 방법을 고민하시는 분":
+    "If you have a project you want to contribute to but are having trouble figuring out how to lead it",
+  "제가 직접 프로젝트 리딩 경험을 공유하고 함께 방법을 모색해볼 수 있습니다":
+    "I can share my project leading experience and explore ways together.",
+  "2024년 11월 2일 (토요일)": "2024.11.02. (Sat)",
+  "강남/서초 인근": "Gangnam/Seocho area",
+  "추후 확정 안내 예정": "Confirmation will be announced later",
+  "참여 희망 프로그램 (프로젝트 리더/예비 리더)":
+    "Programs you wish to participate in (Project Leader/Preliminary Leader)",
+  "프로젝트 리더의 경우: 프로젝트 소개 및 준비사항":
+    "For project leaders: Project introduction and preparation",
+  "예비 리더의 경우: 관심있는 프로젝트 분야와 리딩 목표":
+    "For preliminary leaders: Project areas of interest and leadership goals",
 };
 
 export default EnglishTranslation;
