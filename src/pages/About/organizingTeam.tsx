@@ -96,14 +96,14 @@ const OrganizingTeam = () => {
             comment: "내려갈 때 보았네 올라갈 때 보지 못한 그 꽃",
             imageFileName: "김수빈S.png",
           },
-          { name: "정미르", comment: "if import this and hire(me): can_do_anything()" },
+          { name: "정미르", comment: "ㅍ..파...파이...코..ㄹ..ㅣ", imageFileName: "정미르.png" },
           {
             name: "이준영",
             displayName: "이준영 / MUsoftware",
             comment: "개미는 (뚠뚠) 오늘도 (뚠뚠) 열심히 일을 하네",
             imageFileName: "이준영.png",
           },
-          { name: "김민정" },
+          { name: "김민정", comment: "파이썬을 좋아하는 사람. 인간의 삶과 행복을 위한 과학기술을 연구합니다." , imageFileName: "김민정.jpeg"},
           { name: "강나영" },
           {
             name: "윤준기",
