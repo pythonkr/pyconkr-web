@@ -9,6 +9,18 @@ const Tutorial = () => {
     <Page title={t("튜토리얼")}>
       <h1>{t("튜토리얼")}</h1>
       <p>
+        튜토리얼은 강의와 실습으로 진행자가 지식을 공유하는 프로그램입니다. 아래 폼을 작성해주시면
+        참가 신청이 시작될 때 알려드리겠습니다.
+        <br />
+        알림 신청:{" "}
+        <a href="https://forms.gle/EKUG11MWEpPz6dgT9" target="_blank" rel="noreferrer">
+          https://forms.gle/EKUG11MWEpPz6dgT9
+        </a>
+      </p>
+
+      <hr />
+      <h2>튜토리얼 진행자 모집</h2>
+      <p>
         {t("파이썬 관련 모든 주제에 대해 튜토리얼을 진행하실 수 있습니다.")}{" "}
         {t("강연자분들께는 소정의 운영비가 지원됩니다.")}
       </p>
