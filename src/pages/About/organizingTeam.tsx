@@ -103,7 +103,11 @@ const OrganizingTeam = () => {
             comment: "개미는 (뚠뚠) 오늘도 (뚠뚠) 열심히 일을 하네",
             imageFileName: "이준영.png",
           },
-          { name: "김민정", comment: "파이썬을 좋아하는 사람. 인간의 삶과 행복을 위한 과학기술을 연구합니다." , imageFileName: "김민정.jpeg"},
+          {
+            name: "김민정",
+            comment: "파이썬을 좋아하는 사람. 인간의 삶과 행복을 위한 과학기술을 연구합니다.",
+            imageFileName: "김민정.jpeg",
+          },
           { name: "강나영" },
           {
             name: "윤준기",
