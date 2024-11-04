@@ -47,6 +47,11 @@ span {
   color: #c2c7d0;
 }
 
+ul,
+ol {
+  margin-left: 2rem;
+}
+
 .hidden {
   display: none;
 }
@@ -395,11 +400,6 @@ body {
   h2 {
     font-size: 24px;
     font-weight: 600;
-  }
-
-  ul,
-  ol {
-    margin-left: 2rem;
   }
 
   li > a,

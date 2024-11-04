@@ -60,7 +60,7 @@ const Tutorial = () => {
                   <h4>한바름</h4>
                   <ul>
                     <li>파이썬 사용 5년째</li>
-                    <li>&lt; 나를 위한 업무관리 툴: SLASH &gt; 제작사 <b>시그</b> 근무중</li>
+                    <li>&lt; 나를 위한 업무관리 툴: SLASH &gt; 제작사 시그 근무중</li>
                     <li>&lt; 처음 시작하는 FastAPI &gt; 공역</li>
                   </ul>
                 </p>
@@ -240,7 +240,7 @@ const Tutorial = () => {
                 <p>
                   <h4>이경록 &lt;Teddy Lee&gt; <small><a href="https://linktr.ee/teddynote" target="_blank" rel="noreferrer">(소개 링크)</a></small></h4>
                   <ul>
-                    <li><b><a href="http://www.youtube.com/@teddynote" target="_blank" rel="noreferrer">YouTube 테디노트</a></b> 채널 운영</li>
+                    <li><a href="http://www.youtube.com/@teddynote" target="_blank" rel="noreferrer">YouTube 테디노트</a> 채널 운영</li>
                     <li>LLM, RAG 개발 및 강의</li>
                   </ul>
                 </p>
@@ -287,6 +287,7 @@ const TutorialProgramDetails = styled.details`
   summary {
     font-size: 1.15rem;
     font-weight: bold;
+    line-height: 1.5;
     cursor: pointer;
     padding: 0.25rem 0.5rem;
 
