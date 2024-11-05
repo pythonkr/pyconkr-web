@@ -1,17 +1,57 @@
 import Page from "components/common/Page"
 import React from "react"
 import styled from "styled-components"
+
 import useTranslation from "utils/hooks/useTranslation"
 
+const KAKAO_MAP_URL = "https://place.map.kakao.com/700052629"
+const NAVER_MAP_URL = "https://naver.me/FfMdLRIM"
+const GOOGLE_MAP_URL = "https://maps.app.goo.gl/H8QiqNRrHHwa6giv7"
+const GOOGLE_MAP_IFRAME_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4548.557545780045!2d126.92092772543593!3d37.55771056652137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c98d855555555%3A0x843e97bd5279ea6b!2z7ZWc67mb66-465SU7Ja0KOyjvCk!5e0!3m2!1sko!2skr!4v1730765243757!5m2!1sko!2skr"
+
+type MapInfoStateType = {
+  mapType: "kakao" | "google"
+}
+
 const Tutorial = () => {
+  const kakaoMapRef = React.useRef<HTMLDivElement>(null)
+  const [state, setState] = React.useState<MapInfoStateType>({ mapType: "kakao" })
   const t = useTranslation()
+
+  const selectMap = (mapType: MapInfoStateType["mapType"]) =>
+    setState((prevState) => ({ ...prevState, mapType }))
+
+  React.useEffect(() => {
+    if (!(window.kakao && window.kakao.maps && kakaoMapRef.current)) return
+
+    const content = `<a href="${KAKAO_MAP_URL}"><div style="width:150px;text-align:center;color:#000">${t("한빛미디어")}</div></a>`
+    const position = new window.kakao.maps.LatLng(37.55917491634307, 126.9278766893293)
+    const map = new window.kakao.maps.Map(kakaoMapRef.current, { center: position, level: 3 })
+    new kakao.maps.InfoWindow({ content }).open(map, new kakao.maps.Marker({ map, position }))
+  })
+
+  const flexBoxStyle: React.CSSProperties = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+  const columnFlexBoxStyle: React.CSSProperties = { ...flexBoxStyle, flexDirection: "column" }
+  const mapStyle: React.CSSProperties = { border: 0, width: "100%", height: "450px" }
 
   return (
     <Page title={t("튜토리얼")}>
-      <h1>{t("튜토리얼")}</h1>
+      <h1>
+        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+          {t("튜토리얼")} &nbsp;
+          <GoToRegistrationButtonContainer href="https://event-us.kr/pythonkorea/event/94452" target="_blank" rel="noreferrer">
+            <GoToRegistrationButton>지금 등록하러 가기!</GoToRegistrationButton>
+          </GoToRegistrationButtonContainer>
+        </div>
+      </h1>
       <div>
         <p>
-          <h2>튜토리얼이란?</h2>
+          <h3>튜토리얼이란?</h3>
           튜토리얼은 초보자들을 위해, 또는 새로운 것을 접하는 사람들을 위해 진행하는 교육 프로그램입니다.<br />
           직접 컴퓨터를 가져와서 진행하며 현장에서 질문하고 해결하는 만큼 해당 기술에 대해 좀 더 깊게 알게됩니다.<br />
         </p>
@@ -19,14 +59,14 @@ const Tutorial = () => {
         <hr />
 
         <p>
-          <h2>튜토리얼 프로그램 소개</h2>
+          <h3>튜토리얼 프로그램 소개</h3>
           <small>
             * 튜토리얼 프로그램은 오전 / 오후 두 타임으로 구성되어 있습니다. 신청 시 시간대가 겹치지 않도록 주의해주시기 바랍니다!
           </small>
         </p>
         <br />
         <p>
-          <h3>오전 세션 <sup>[10:00 - 13:00]</sup></h3>
+          <h4>오전 세션 <sup>[10:00 - 13:00]</sup></h4>
           <TutorialProgramDetails>
             <summary>FastAPI로 CRUD API 서버 만들기</summary>
             <div>
@@ -105,7 +145,7 @@ const Tutorial = () => {
         </p>
         <br />
         <p>
-          <h3>오후 세션 <sup>[14:00 - 18:00]</sup></h3>
+          <h4>오후 세션 <sup>[14:00 - 18:00]</sup></h4>
           <TutorialProgramDetails>
             <summary>Django ORM 톺아보기</summary>
             <div>
@@ -253,11 +293,29 @@ const Tutorial = () => {
         <hr />
 
         <p>
-          <h2>시간 &amp; 장소</h2>
+          <h3>시간 &amp; 장소</h3>
           <ul>
             <li>시간 : 10:00 ~ 18:00</li>
-            <li>장소 : 서울 서대문구 연희로 2길 62</li>
+            <li>
+              장소 : 서울 서대문구 연희로 2길 62
+            </li>
           </ul>
+          <div>
+            <div style={{ ...flexBoxStyle }}>
+              <MapSelectTabBtn className={state.mapType === "kakao" ? "active" : ""} onClick={() => selectMap("kakao")}>{t("카카오맵")}</MapSelectTabBtn>
+              <MapSelectTabBtn className={state.mapType === "google" ? "active" : ""} onClick={() => selectMap("google")}>{t("구글 지도")}</MapSelectTabBtn>
+            </div>
+
+            <div style={{ ...columnFlexBoxStyle, display: state.mapType === "kakao" ? "flex" : "none" }}>
+              <div ref={kakaoMapRef} style={mapStyle}></div>
+              <FullWidthAnchorBtn href={KAKAO_MAP_URL} target="_blank" rel="noreferrer"><button className="kakao">{t("카카오맵에서 열기")}</button></FullWidthAnchorBtn>
+              <FullWidthAnchorBtn href={NAVER_MAP_URL} target="_blank" rel="noreferrer"><button className="naver">{t("네이버 지도에서 열기")}</button></FullWidthAnchorBtn>
+            </div>
+            <div style={{ ...columnFlexBoxStyle, display: state.mapType === "google" ? "flex" : "none" }}>
+              <iframe title="map" src={GOOGLE_MAP_IFRAME_SRC} style={mapStyle} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <FullWidthAnchorBtn href={GOOGLE_MAP_URL} target="_blank" rel="noreferrer"><button className="google">{t("구글 지도에서 열기")}</button></FullWidthAnchorBtn>
+            </div>
+          </div>
         </p>
         <br />
         <p>
@@ -275,6 +333,19 @@ const Tutorial = () => {
 }
 
 export default Tutorial
+
+const GoToRegistrationButtonContainer = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const GoToRegistrationButton = styled.button`
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  cursor: pointer;
+`
 
 const TutorialProgramDetails = styled.details`
   margin: 0.5rem 0;
@@ -336,6 +407,61 @@ const TutorialProgramDetails = styled.details`
       &:not([role]):not(:focus) {
         color: rgb(176, 168, 254);
       }
+    }
+  }
+`
+
+const MapSelectTabBtn = styled.button`
+  flex-grow: 1;
+  padding: 0.25rem;
+
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-weight: lighter;
+
+  border-radius: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+`
+
+const FullWidthAnchorBtn = styled.a`
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 0.5rem;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: none;
+    border-radius: unset;
+
+    &.kakao {
+      background-color: #fee500;
+      color: #191919;
+    }
+
+    &.naver {
+      background-color: #04c75b;
+      color: #fff;
+    }
+
+    &.google {
+      background-color: #4285f4;
+      color: #fff;
     }
   }
 `
