@@ -302,6 +302,7 @@ body {
 }
 
 .footer-fixed-section {
+  z-index: 10000;
   position: fixed;
   bottom: 0;
   width: 100%;
