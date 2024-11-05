@@ -8,10 +8,17 @@ const Tutorial = () => {
 
   return (
     <Page title={t("튜토리얼")}>
-      <h1>{t("튜토리얼")}</h1>
+      <h1>
+        <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+          {t("튜토리얼")} &nbsp;
+          <GoToRegistrationButtonContainer href="https://event-us.kr/pythonkorea/event/94452" target="_blank" rel="noreferrer">
+            <GoToRegistrationButton>지금 등록하러 가기!</GoToRegistrationButton>
+          </GoToRegistrationButtonContainer>
+        </div>
+      </h1>
       <div>
         <p>
-          <h2>튜토리얼이란?</h2>
+          <h3>튜토리얼이란?</h3>
           튜토리얼은 초보자들을 위해, 또는 새로운 것을 접하는 사람들을 위해 진행하는 교육 프로그램입니다.<br />
           직접 컴퓨터를 가져와서 진행하며 현장에서 질문하고 해결하는 만큼 해당 기술에 대해 좀 더 깊게 알게됩니다.<br />
         </p>
@@ -19,14 +26,14 @@ const Tutorial = () => {
         <hr />
 
         <p>
-          <h2>튜토리얼 프로그램 소개</h2>
+          <h3>튜토리얼 프로그램 소개</h3>
           <small>
             * 튜토리얼 프로그램은 오전 / 오후 두 타임으로 구성되어 있습니다. 신청 시 시간대가 겹치지 않도록 주의해주시기 바랍니다!
           </small>
         </p>
         <br />
         <p>
-          <h3>오전 세션 <sup>[10:00 - 13:00]</sup></h3>
+          <h4>오전 세션 <sup>[10:00 - 13:00]</sup></h4>
           <TutorialProgramDetails>
             <summary>FastAPI로 CRUD API 서버 만들기</summary>
             <div>
@@ -105,7 +112,7 @@ const Tutorial = () => {
         </p>
         <br />
         <p>
-          <h3>오후 세션 <sup>[14:00 - 18:00]</sup></h3>
+          <h4>오후 세션 <sup>[14:00 - 18:00]</sup></h4>
           <TutorialProgramDetails>
             <summary>Django ORM 톺아보기</summary>
             <div>
@@ -253,7 +260,7 @@ const Tutorial = () => {
         <hr />
 
         <p>
-          <h2>시간 &amp; 장소</h2>
+          <h3>시간 &amp; 장소</h3>
           <ul>
             <li>시간 : 10:00 ~ 18:00</li>
             <li>장소 : 서울 서대문구 연희로 2길 62</li>
@@ -275,6 +282,19 @@ const Tutorial = () => {
 }
 
 export default Tutorial
+
+const GoToRegistrationButtonContainer = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const GoToRegistrationButton = styled.button`
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  cursor: pointer;
+`
 
 const TutorialProgramDetails = styled.details`
   margin: 0.5rem 0;
