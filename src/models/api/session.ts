@@ -2,9 +2,12 @@ export type APIPretalxSessions = {
   code: string;
   submission_type: {[key: string]: string};
   submission_type_id: number;
+  track: unknown;
+  track_id: unknown;
   state: string;
 
   image: string | null;
+  resources: unknown;
   title: string;
   abstract: string | null;
   description: string | null;
@@ -15,10 +18,11 @@ export type APIPretalxSessions = {
   slot: {
     start: string | null;
     end: string | null;
-    room: {[key: string]: string};
+    room: {[key: string]: string} | null;
     room_id: number | null;
   } | null;
   duration: number | null;
+  slot_count: unknown;
   do_not_record: boolean;
   is_featured: boolean;
 
@@ -47,4 +51,8 @@ export type APIPretalxSessions = {
 
   tags: string[];
   tag_ids: number[];
+
+  created?: unknown;
+  pending_state?: unknown;
+  room?: unknown;
 }[]

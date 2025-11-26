@@ -57,7 +57,8 @@ const SessionDetail: React.FC<{ session: APIPretalxSessions[0] }> = ({ session }
   if (
     R.isObjectType(session.slot) &&
     R.isString(session.slot.start) &&
-    R.isString(session.slot.end)
+    R.isString(session.slot.end) &&
+    session.slot.room !== null
   ) {
     const startTime = new Date(session.slot.start);
     const endTime = new Date(session.slot.end);
