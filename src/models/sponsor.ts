@@ -11,10 +11,10 @@ export class SponsorBenefit {
   id: number;
   name: string;
   desc: string;
-  offer: number;
+  offer?: number;
   unit: string;
   is_countable: boolean;
-  uncountable_offer: string;
+  uncountable_offer?: string | null;
 
   private constructor(p: SponsorBenefit) {
     this.id = p.id;
@@ -46,7 +46,7 @@ export class SponsorBenefit {
 export class SponsorLevel {
   id: number;
   name: string;
-  desc: string;
+  desc: string | null;
   visible: boolean;
   price: number;
   limit: number;
@@ -148,11 +148,11 @@ class SponsorLevelOnly {
 }
 
 export class Sponsor {
-  id: string;
+  id: string | number;
   name: string;
   desc: string;
   logo_image: string;
-  url: string;
+  url: string | null;
 
   private constructor(p: Sponsor) {
     this.id = p.id;
