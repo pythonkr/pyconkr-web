@@ -1,12 +1,6 @@
 import { getErrorMessage } from "api";
 import instance from "lib/axios";
-import {
-  APIPatron,
-  APISponsor,
-  APISponsorBenefit,
-  APISponsorLevel,
-  APISponsorLevelWithSponsor,
-} from "models/api/sponsor";
+import { APIPatron, APISponsor, APISponsorBenefit, APISponsorLevel } from "models/api/sponsor";
 import {
   Patron,
   Sponsor,
@@ -14,6 +8,7 @@ import {
   SponsorLevel,
   SponsorLevelWithSponsor,
 } from "models/sponsor";
+import SPONSOR_LEVELS_WITH_SPONSORS from "./data/sponsor_levels_with_sponsors.json";
 
 export function detailSponsor(id: string): Promise<Sponsor> {
   return new Promise((resolve, reject) => {
@@ -45,30 +40,24 @@ export function listSponsorLevels(): Promise<SponsorLevel[]> {
   });
 }
 
-export function listSponsors(): Promise<Sponsor[]> {
-  return new Promise((resolve, reject) => {
-    instance
-      .get<APISponsor[]>("/2024/sponsors/list/")
-      .then((response) => {
-        resolve(Sponsor.fromAPIs(response.data));
-      })
-      .catch((error) => {
-        console.error(error);
-        reject(getErrorMessage(error));
-      });
-  });
-}
 export function listSponsorLevelWithSponsor(): Promise<SponsorLevelWithSponsor[]> {
   return new Promise((resolve, reject) => {
-    instance
-      .get<APISponsorLevelWithSponsor[]>("/2024/sponsors/levels/with-sponsor/")
-      .then((response) => {
-        resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
-      })
-      .catch((error) => {
-        console.error(error);
-        reject(getErrorMessage(error));
-      });
+    // instance
+    //   .get<APISponsorLevelWithSponsor[]>("/2024/sponsors/levels/with-sponsor/")
+    //   .then((response) => {
+    //     resolve(SponsorLevelWithSponsor.fromAPIs(response.data));
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //     reject(getErrorMessage(error));
+    //   });
+
+    try {
+      resolve(SponsorLevelWithSponsor.fromAPIs(SPONSOR_LEVELS_WITH_SPONSORS));
+    } catch (e) {
+      console.error(e);
+      reject(e);
+    }
   });
 }
 
