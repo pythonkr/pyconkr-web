@@ -88,7 +88,7 @@ const getTimeTableData: (data: APIPretalxSessions) => TimeTableData = (data) => 
 
   // Fill timeTableData with session data
   data.forEach((session) => {
-    if (session.slot?.start && session.slot?.end) {
+    if (session.slot?.start && session.slot?.end && session.slot.room) {
       const start = new Date(session.slot.start);
       const durationMin = (new Date(session.slot.end).getTime() - start.getTime()) / 1000 / 60;
       timeTableData[getDateStr(start)][getPaddedTime(start)][getRoomName(session.slot.room)] = {

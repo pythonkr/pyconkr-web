@@ -1,9 +1,9 @@
 export type APISponsor = {
-  id: string;
+  id: string | number;
   name: string;
   desc: string;
   logo_image: string;
-  url: string;
+  url: string | null;
 };
 
 export type APISponsorBenefit = {
@@ -12,14 +12,14 @@ export type APISponsorBenefit = {
   desc: string;
   unit: string;
   is_countable: boolean;
-  offer: number;
-  uncountable_offer: string;
+  offer?: number;
+  uncountable_offer?: string | null;
 };
 
 export type APISponsorLevel = {
   id: number;
   name: string;
-  desc: string;
+  desc: string | null;
   visible: boolean;
   price: number;
   limit: number;

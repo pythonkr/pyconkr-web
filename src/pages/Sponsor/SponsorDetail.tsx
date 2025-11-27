@@ -19,7 +19,7 @@ const SponsorDetail: React.FC<{ sponsor: APISponsor }> = ({ sponsor }) => {
   return (
     <Vertical>
       <H1>{sponsor.name}</H1>
-      <a href={sponsor.url}>
+      <a href={sponsor.url ?? ""}>
         <LogoImage src={sponsor.logo_image} alt={sponsor.name} />
       </a>
       <H3

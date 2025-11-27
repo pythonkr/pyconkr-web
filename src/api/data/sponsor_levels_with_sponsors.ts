@@ -1,0 +1,311 @@
+import { APISponsorLevelWithSponsor } from "../../models/api/sponsor";
+
+export const SPONSOR_LEVELS_WITH_SPONSORS: APISponsorLevelWithSponsor[] = [
+  {
+    id: 13,
+    name: "키스톤",
+    visible: true,
+    order: 1,
+    sponsor: [],
+  },
+  {
+    id: 14,
+    name: "다이아몬드",
+    visible: true,
+    order: 2,
+    sponsor: [
+      {
+        name: "Python Software Foundation",
+        desc: "Python Software Foundation",
+        url: "https://www.python.org/psf-landing/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/60/PSF-Logo-Shapes.png",
+        id: 60,
+      },
+    ],
+  },
+  {
+    id: 15,
+    name: "플래티넘",
+    visible: true,
+    order: 3,
+    sponsor: [
+      {
+        name: "래블업 주식회사",
+        desc: '<p><span style="font-size: 18px;">Backend.AI는 다양한 환경에서의 스케일러블한 AI 모델 개발 및 서비스를 제공하는 올인원 오픈소스/엔터프라이즈 AI 플랫폼입니다. </span></p><p><span style="font-size: 18px;">온프레미스 서버와 하이브리드 클라우드 환경에서 높은 이식성을 보장하며, 컨테이너 기술을 활용하여 제한된 자원 내에서도 안전하고 효율적으로 코드를 실행할 수 있게 합니다. </span></p><p><span style="font-size: 18px;">사용자는 Backend.AI의 강력하고 효율적인 AI 모델 인퍼런스 기능을 통해 비용을 절감할 수 있으며, 고성능 컴퓨팅 워크로드 처리 능력과 함께 다양한 AI 프레임워크를 지원하여 개인 개발자부터 대규모의 AI 프로젝트에서까지 폭넓게 활용할 수 있습니다.</span></p><p><span style="font-size: 18px;"> \r\n\r\n"Make AI Accessible" 이라는 목표를 가지고 인공지능 기술을 누구나 쉽고 빠르게 사용할 수 있는 Backend.AI를 만들고, AI의 수면 아래에서 혁신을 이끌고 있습니다.</span></p>',
+        url: "https://www.lablup.com",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/63/lablup_logo.png",
+        id: 63,
+      },
+      {
+        name: "주식회사 쿼드마이너",
+        desc: "네트워크 트래픽 저장 및 분석을 통한 탐지 및 대응 서비스 제공",
+        url: "www.quadminers.com",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/66/%E1%84%8F%E1%85%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.png",
+        id: 66,
+      },
+      {
+        name: "탈레스 코리아",
+        desc: "<p>Thales 소프트웨어 모네타이제이션 부서는 소프트웨어 라이선싱, 보안, 및 수익화 솔루션을 제공합니다.</p><p>소프트웨어 개발사들이 제품을 보호하고 수익을 최적화하는 데 도움을 주며, 클라우드 기반 및 온-프레미스 라이선싱 옵션을 포함한 유연한 라이선싱 모델을 제공합니다.</p><p>또한 소프트웨어 사용 데이터 분석을 통해 고객 인사이트를 제공하며 AI 모델, 파이콘 랭귀지 소프트웨어 등의 애플리케이션을 강력한 암호화 기술로 소프트웨어 불법 복제를 방지하고 지적 재산권을 보호합니다.</p>",
+        url: "https://cpl.thalesgroup.com/ko/software-monetization",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/71/thales_logo_2023.png",
+        id: 71,
+      },
+      {
+        name: "KREAM",
+        desc: '<div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">"KREAM은 성장의 밀도가 달라요"</span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">"다양한 도전을 자유롭게 해볼 수 있는 곳"</span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">2020년 한정판 스니커즈 거래로 시작해 MAU 600만 하이엔드 라이프스타일 플랫폼으로</span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">폭발적으로 성장 중인 KREAM에서 과감한 도전과 성장을 함께 할 개발자를 찾습니다.</span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">배울 수 있는 동료, 성장할 수 있는 환경, 그리고 자유로운 개발 문화가 여러분을 기다리고 있습니다.</span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">#높은_트래픽 #실력있는_동료&nbsp;</span><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">#자유로운_개발문화<span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">&nbsp;</span></span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></span></div><div style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; font-family: 나눔고딕, NanumGothic, sans-serif; color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">지금 KREAM에 합류하세요! &gt;&gt;<span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">&nbsp;</span></span><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;"><a href="https://recruit.kreamcorp.com/" target="_blank" rel="noreferrer noopener" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-line: underline; color: rgb(0, 120, 212); cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">https://recruit.kreamcorp.com/</a></span></div>',
+        url: "https://www.kreamcorp.com/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/None/KREAM_Logo_Pure_black.png",
+        id: 81,
+      },
+      {
+        name: "비바리퍼블리카",
+        desc: '<p><span data-sheets-root="1" style="color: rgb(0, 0, 0); font-size: 10pt; font-family: Arial;">간편하면서도 안전한, 모두를 위한 금융 서비스를 만들어요.</span><br></p>',
+        url: "https://toss.im/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/80/%E1%84%90%E1%85%A9%E1%84%89%E1%85%B3_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.png",
+        id: 80,
+      },
+    ],
+  },
+  {
+    id: 16,
+    name: "골드",
+    visible: true,
+    order: 4,
+    sponsor: [
+      {
+        name: "에잇퍼센트",
+        desc: '<span id="docs-internal-guid-45cb2d9e-7fff-5a43-7cad-50a5271ead22" style="background-color: rgb(0, 0, 0);"><font color="#000000"><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트의 미션은 고객의 가능성을 발견하고, 최적의 금융을 실현하는 것입니다.&nbsp;</span></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">가능성을 인정받고 싶은 대출자, 가능성을 넓히고 싶은 투자자.</span></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">이들을 연결시켜 새로운 금융 기회를 펼칠 수 있게 합니다.&nbsp;</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">중금리라는 용어조차 생소했던 2014년. P2P 금융이라는 새로운 시도로 대출 시장을 개척하였습니다. 그리고 8퍼센트는 금융기관 중 유일하게 파이썬으로 금융플랫폼을 만들어 가고 있습니다.&nbsp;</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트는 AI 기반의 솔루션으로 은행 다음 고금리를 선택해야 했던 대출자에게 합리적 대우를,투자자에게는 안정적이고 예측 가능한 수익을 제공하고 있습니다. 이 과정 또한 파이썬을 통해 데이터를 분석하고 독자적인 신용,자산 평가모형을 개발하고 있습니다.&nbsp;</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트는 더 나아가 근로 인구 및 자산 유형의 변화에 주목하고 있습니다. 노동 시장은 긱 워커, 외국인 등으로 재편되고 있으며,개인의 자산 유형은 전에 없이 분화되고 있습니다.</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트는 새로운 시각으로 고객의 가능성을 찾고, 다양한 방식으로 금융 기회를 연결하겠습니다. 진보한 임베디드 금융 솔루션으로 다양한 정보를 모으고 평가하여 최적의 서비스를 제공할 것입니다.</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">마침내 관성적 금융 시스템의 한계를 극복하고, 마땅한 분들에게 금융이 더 잘 닿게 하겠습니다.</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트는 이미 최고의 파이썬 개발자분들과 이 여정을 함께하고 있으며, 파이썬을 사랑하는 분들을 항상 모시고 있습니다.&nbsp;</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">회사에 오시면 다음과 같은 일과 함께 도전과제를 맞게 됩니다.</span></p><ul style="margin-bottom: 0px; padding-inline-start: 48px;"><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">코어 뱅킹 시스템을 고도화 합니다. 복잡한 DB 설계를 진행하고, 결함 없는 시스템을 만들어야 합니다.</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트 웹/앱 서비스를 만들어 갑니다. Django 기반의 복잡한 레거시를 이해하고, 점진적인 개선을 만들어 나가야 합니다.</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">다양한 곳과 연계를 합니다. API를 사용하고 API를 설계해서 제공합니다. 확장 가능한 아키텍처를 설계하고 상대측의 장애에도 안전한 시스템을 개발해야 합니다.&nbsp;</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">데이터를 체계적으로 관리하고 신용평가모형을 위한 시스템을 만듭니다. DevOps에서 MLOps 로 확장되어 갑니다. 관리된 데이터의 중요성을 이해하고 개발시부터 변경, 중단시 까지 데이터에 대한 고민을 해야 합니다.</span></p></li></ul><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">저희는 다음과 같은 문화를 가지고 있습니다.&nbsp;</span></p><ul style="margin-bottom: 0px; padding-inline-start: 48px;"><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">좋은것을 찾을 때 까지 코드리뷰를 합니다.&nbsp;</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">견고한 로직을 작성하고, 모든 코드를 테스트와 함께 작성합니다.&nbsp;</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">개발 프로세스를 지속적으로 개선합니다.</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">나의 어려움 보다 동료의 어려움을 먼저 해결합니다.</span></p></li><li dir="ltr" aria-level="1" style="list-style-type: disc; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><p dir="ltr" role="presentation" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">학습하고, 학습한것을 사용합니다. 이를 통해 성장합니다.&nbsp;</span></p></li></ul><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><br></p><p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">회사에 대해 더 알고 싶으시면 아래 링크를 참고해 주세요.</span></p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;"><br></span></p><ul><li style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트 홈페이지 :&nbsp;</span><a href="https://8percent.kr/" target="_blank" style="background-color: rgb(0, 0, 0);">https://8percent.kr</a><a href="https://8percent.kr/" style="background-color: rgb(0, 0, 0);"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-skip-ink: none; vertical-align: baseline;"></span></a>&nbsp;<br></li><li style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;">8퍼센트 블로그 :&nbsp;</span><a href="https://blog.8percent.kr/" target="_blank" style="background-color: rgb(0, 0, 0);">https://blog.8percent.kr/</a>&nbsp;</li><li style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.2;">채용 안내 페이지 : <a href="https://8percent.kr/jobs" target="_blank" style="background-color: rgb(0, 0, 0);">https://8percent.kr/jobs</a></li></ul></font></span>',
+        url: "https://8percent.kr",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/64/8percent_logo_rgb.png",
+        id: 64,
+      },
+      {
+        name: "NHN Dooray",
+        desc: '<p style="margin-bottom: 0px; font-style: normal; font-variant-caps: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-stroke-width: 0px; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">NHN Dooray는 올인원 협업도구 두레이 서비스를 만드는 기업으로 올해 10살을 맞이한 계속 성장 중인 기업입니다.</span></p><p style="margin-bottom: 0px; font-style: normal; font-variant-caps: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-stroke-width: 0px; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">프로젝트(협업), 메일, 메신저, 드라이브, 위키 등의 서비스를 제공하고 있으며, 파이콘과는 2017년부터 인연을 맺어 계속 후원 중에 있습니다.</span></p><p style="margin-bottom: 0px; font-style: normal; font-variant-caps: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-stroke-width: 0px; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">24년 8월, Dooray AI가 정식 출시되어 파이콘에서도 소개를 드리고 사용해보실 수 있는 기회도 제공하는 이벤트도 준비하고자 합니다. 많은 관심 부탁드립니다. :)</span></p>',
+        url: "https://dooray.com/main/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/None/NHN_DOORAY_Black_1.png",
+        id: 76,
+      },
+      {
+        name: "JetBrains",
+        desc: '<p style="margin-bottom: 0px; font-style: normal; font-variant-caps: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-stroke-width: 0px; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5; color: rgb(0, 0, 0); font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; letter-spacing: -0.3px; caret-color: rgb(0, 0, 0); white-space-collapse: preserve; font-size: 11pt; font-family: Arial, sans-serif;">JetBrains는 소프트웨어 개발자, 데이터 전문가 및 팀을 위한 생산성 향상 도구를 제작하는 글로벌 SW 공급업체입니다. PyCharm은 Python 전문가를 위한 최고의 도구로 Python, Jupyter, SQL 데이터베이스 및 대화형 테이블에 대한 최고의 AI 기반 코딩 지원과 Django, Flask 및 FastAPI 지원을 제공합니다. </span><span style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; letter-spacing: -0.3px; caret-color: rgb(0, 0, 0); white-space-collapse: preserve; text-decoration-line: underline; font-size: 11.5pt; font-family: Roboto, sans-serif; color: rgb(29, 155, 240);"><a href="https://t.co/wGdiJXQ0Yj" target="_blank" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(0, 120, 212); cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">jb.gg/q9huc6</a></span><br></p>',
+        url: "https://www.JetBrains.com/ko-kr/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/75/JetBrains_logo_cmyk.png",
+        id: 75,
+      },
+      {
+        name: "테디노트",
+        desc: '<div dir="ltr" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;"><div dir="ltr" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr; letter-spacing: -0.3px;"><div dir="ltr" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr; letter-spacing: -0.3px;"><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">안녕하세요, 파이썬을 사랑하는 여러분!</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">요즘&nbsp;<span style="font-weight: 700;">RAG (Retrieval-Augmented Generation)</span>&nbsp;기술이 주목받고 있다는 이야기, 들어보셨나요?&nbsp; RAG는 AI가 질문에 대한 답을 단순히 생성하는 것에서 나아가,&nbsp;<span style="font-weight: 700;">실시간으로 관련 정보를 검색</span>해 더욱 정확하고 신뢰성 있는 답변을 제공하는 기술입니다. 이 기술 덕분에 AI는 기존의 데이터를 활용해 새로운 지식을 생성하는 데 그치지 않고,<span style="font-weight: 700;">&nbsp;최신 정보</span>와&nbsp;<span style="font-weight: 700;">정확한 출처</span>를 기반으로 답을 제시할 수 있어요.</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">그렇다면,&nbsp;<span style="font-weight: 700;">RAG 기술을 익혀두면 왜 쓸모가 있을까요?&nbsp;</span></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">많은 기업들이 이 기술에 관심을 갖는 이유는 바로&nbsp;<span style="font-weight: 700;">더 빠르고 정확한 의사 결정</span>을 지원하기 때문입니다. 대량의 정보를 처리하는 업무에서 실시간으로 유용한 정보를 검색하고, AI의 생성 능력과 결합해&nbsp;<span style="font-weight: 700;">맞춤형 해결책</span>을 제공하는 데 강점을 보입니다. 예를 들어,&nbsp;<span style="font-weight: 700;">고객 지원</span>,&nbsp;<span style="font-weight: 700;">컨설팅</span>,&nbsp;<span style="font-weight: 700;">데이터 분석</span>&nbsp;등 많은 분야에서 RAG를 통해 효율적으로 업무를 수행할 수 있죠. 기업 입장에서는&nbsp;<span style="font-weight: 700;">시간과 비용을 절감</span>하고, 더 나은&nbsp;<span style="font-weight: 700;">의사 결정</span>을 할 수 있기 때문에 RAG 기술을 도입하고 있는 거예요.</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">RAG 기술에 대해 더 알아보고 싶다면,&nbsp;<span style="font-weight: 700;">YouTube 테디노트</span>에서 무료로 공개된&nbsp;<span style="font-weight: 700;">추천 시청 리스트</span>를 먼저 확인해 보세요! 기초부터 고급 개념까지 누구나 쉽게 따라 할 수 있는 다양한 영상 콘텐츠가 준비되어 있으니, 부담 없이 시작해 보실 수 있어요. &nbsp;</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">또한, 링크트리 페이지(<a href="http://linktr.ee/teddynote" target="_blank" style="box-sizing: initial; color: rgb(0, 120, 212); text-decoration-line: underline; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">linktr.ee/teddynote</a>) 에서&nbsp;<span style="font-weight: 700;">랭체인 한국어 튜토리얼 무료 전자책, 소스코드 등</span>&nbsp;다양한 정보들을 확인하실 수 있습니다.</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">더 깊이 있는 학습을 원하신다면, 패스트캠퍼스와 협업하여 제작한&nbsp;<span style="font-weight: 700;">RAG 비법노트 강의(<a href="http://bit.ly/rag-teddynote)**" target="_blank" style="box-sizing: initial; color: rgb(0, 120, 212); text-decoration-line: underline; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">bit.ly/rag-teddynote)</a>&nbsp;</span>를 추천드립니다!&nbsp; 이 강의에서는 500명의 설문을 바탕으로 개발자의 고민을 덜어줄 수 있는 깊이있는 내용을 다룹니다. **매월 라이브 세미나**로 최신 기술 트렌드와 Q&amp;A 세션도 함께 진행합니다.</div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;"><br style="box-sizing: initial; text-decoration-skip-ink: none;"></div><div dir="ltr" style="box-sizing: initial; letter-spacing: -0.3px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; direction: ltr;">혼자 고민하지 마시고,&nbsp;<span style="font-weight: 700;">테디노트 커뮤니티의 일원</span>이 되어 함께 성장해 보세요!&nbsp;</div></div></div></div></div></div>',
+        url: "https://www.youtube.com/c/@teddynote",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/83/TEDDYNOTE_LOGO_CIRCLE.png",
+        id: 83,
+      },
+    ],
+  },
+  {
+    id: 17,
+    name: "스타트업",
+    visible: true,
+    order: 5,
+    sponsor: [
+      {
+        name: "사이오닉에이아이 주식회사",
+        desc: '<p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">사이오닉에이아이 주식회사는 2023년 5월 개업 후 시드투자 55억 유치에 성공한 생성형 AI LLM SaaS 서비스인 STORM PLATFORM을 개발한 회사입니다.</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">Storm Platform은 모델 학습부터 서비스까지 프로세스를 자유롭게 구성할 수 있는 다양한 패키지를 제공하여 고객의 환경에 적합한 LLM(Large Language Model) 플랫폼을 빠르게 구축하고 쉽게 배포할 수 있도록 지원합니다.</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">고객은 학습 모델, VectorDB 등 기본 패키지와 기업의 도메인 지식에 특화된 맞춤형 패키지를 조합하여 필요한 LLM 환경을 빠르게 구축할 수 있습니다.\r\n\r\n또한 Platform 서비스의 내장 모듈로써 구현될 예정인 Storm Answer는 방대한 양의 기업 문서와 데이터를 활용하여 고객의 비즈니스를 심층적으로 이해하고 복잡한 질문에 정확한 답변을 제공하는 엔터프라이즈에 최적화된 생성형 AI입니다.</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">1000페이지 분량의 문서를 단 1분 만에 학습할 수 있으며, 높은 추론 능력과 복잡한 표가 필요한 경우에도 효과적으로 대응합니다.</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">고객이 비즈니스 환경에 적합한 답변을 생성할 수 있도록 다양한 모델과 옵션을 제공하며, 학습된 에이전트를 테스트하고 안정적으로 배포할 수 있도록 비즈니스에 필요한 기능을 지원합니다.</span></p>',
+        url: "https://sionic.ai",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/67/sionicai_png_02.png",
+        id: 67,
+      },
+    ],
+  },
+  {
+    id: 18,
+    name: "커뮤니티",
+    visible: true,
+    order: 6,
+    sponsor: [
+      {
+        name: "PyLadies Seoul",
+        desc: "<p>여성들을 지지하고 임파워링하는 파이썬 여성 사용자 그룹입니다.</p><p>We are a Python women users group dedicated to supporting and empowering women.</p>",
+        url: "https://tasty-shift-3a9.notion.site/PyLadies-Seoul-568bc798cbe9401d8bbd38eba5ad113e",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/61/pyladies_logo.png",
+        id: 61,
+      },
+      {
+        name: "Golang Korea",
+        desc: '<p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">Golang Korea는 한국의 Go 언어 개발자 커뮤니티입니다.\r\n\r\n약 7,800명의 구성원으로 이루어져있는 Golang Korea 커뮤니티는,\r\nGo 프로그래밍 언어에 대해서 지식을 공유하거나 이야기 할 수 있는 장을 만들어나가고 있으며, 연례 행사 GopherCon Korea를 주관합니다.\r\n\r\n---\r\n\r\nGolang Korea는 Go가 누구에게나 그리고 어디에서나 쉽게 사용되고 활용할 수 있는 생태계 마련을 위해 활동하고 있습니다.\r\n\r\nGo를 국내 다양한 곳에 알리기 위한 Go to Everywhere 캠페인을 통해 대전, 부산, 제주, 대구, 인천 송도 등에 행사를 진행하거나 Discord를 통해 물리적 제약 없이 Go를 소통하는 등 다양한 활동을 하고 있습니다.</span><br></p>',
+        url: "https://www.facebook.com/groups/363044070539745",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/62/Golang_Korea_LOGO.png",
+        id: 62,
+      },
+      {
+        name: "한국어 오픈소스 언어모델 커뮤니티",
+        desc: "Instruct.KR은 한국어 오픈소스 언어모델 커뮤니티로 약 500명의 AI/LLM 연구자들이 자발적으로 본인의 연구 성과를 공유하고 인사이트를 얻는 커뮤니티입니다.",
+        url: "https://instruct.kr",
+        logo_image: "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/70/instruct_.png",
+        id: 70,
+      },
+      {
+        name: "하비스트코딩클럽",
+        desc: "<p>하비스트코딩클럽은 20여 명의 취미 개발자로 시작해서 지금은 1,000명이 넘는 현직 개발자, 취미 개발자 그리고 IT 직군 종사자들이 함께 성장하는 프라이빗 커뮤니티입니다.</p><p>온라인 팟캐스트와 오프라인 모임을 통해 성장을 위한 네트워크를 만들어 가고 있어요.\r\n열정있는 사람들과 함께 성장하고 싶다면 하코 커뮤니티에 참여해 보세요.</p>",
+        url: "https://hococlub.netlify.app",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/72/hoco_logo_final.png",
+        id: 72,
+      },
+      {
+        name: "HelloPy",
+        desc: "<p>주니어를 위한 파이썬 커뮤니티입니다.</p><p>명함이 없어도 파이썬에 관심있는 모두를 환영합니다.</p><p>자유롭게 의견을 나누고, 평가받지 않는 발표의 장을 지향합니다.</p><p>같이 공부하고, 함께 성장해요!</p>",
+        url: "https://www.hello-py.com/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/73/HelloPy_logo.png",
+        id: 73,
+      },
+      {
+        name: "Vim.kr",
+        desc: '<p><span id="docs-internal-guid-1042c11a-7fff-51c0-9c06-87e7c6c81f26"><span style="font-size: 10.5pt; font-family: &quot;Malgun Gothic&quot;; color: rgb(34, 34, 34); font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;">vim.kr은 초보자부터 전문가까지 다양한 배경의 Vim 사용자들이 모여 서로 배우고 성장하는 한국어권 커뮤니티입니다. Vim에 관심있고, Vim을 사랑하는 사람들이 함께하는 따뜻한 공간을 지향합니다.</span></span><br></p>',
+        url: "https://vim.kr",
+        logo_image: "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/None/vim_kr.png",
+        id: 78,
+      },
+    ],
+  },
+  {
+    id: 19,
+    name: "출판사",
+    visible: true,
+    order: 7,
+    sponsor: [
+      {
+        name: "한빛미디어",
+        desc: "<p>한빛미디어(주)는 '책으로 여는 IT 세상'을 만들어 갑니다. IT 세상의 주역은 ‘우리’ 입니다.</p><p>한빛미디어(주)는 우리 시대의 주역들을 위한 프로그래밍, 컴퓨터공학, IT 에세이, 리얼타임(전자책)과 일반 사용자를 위한 OA, 그래픽 등 IT 활용서, 그리고 나와 내 아이를 위한 실용서 등 다양한 분야의 책으로 여러분과 함께 그리는 멋진 미래를 꿈꿉니다.</p>",
+        url: "https://www.hanbit.co.kr/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/65/%E1%84%92%E1%85%A1%E1%86%AB%E1%84%87%E1%85%B5%E1%86%BE%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.png",
+        id: 65,
+      },
+      {
+        name: "(주)인사이트",
+        desc: '<p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;"> 2002년부터 IT/컴퓨터/웹 기획/UX 디자인 관련 교양서, 전문서를 꾸준히 출간해 온 출판사입니다.</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;"> 인사이트에서는 IT 전문서를 주축으로 개발자의 성장을 위한 에세이, 메이커와 미디어 아티스트를 위한 메이킹 인사이트(MAKING INSIGHT) 시리즈, 창작 아이디어를 실현할 수 있는 도구인 레고(LEGO) 시리즈 등을 출간하고 있습니다. \r\n 하루가 다르게 바뀌는 IT 분야에서 책을 내지만, 세상의 변화를 뒤따라가기보다, 통찰(INSIGHT)을 키우는 책을 내고자 노력하고 있습니다. \r\n</span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;"><br></span></p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">전자책 </span><a href="https://ebook.insightbook.co.kr" target="_blank">https://ebook.insightbook.co.kr</a><a href="https://ebook.insightbook.co.kr" target="_blank"></a><font color="#000000" face="Arial"><span style="font-size: 13px; white-space-collapse: preserve;">&nbsp;</span></font></p><p>블로그 <a href="https://blog.insightbook.co.kr" target="_blank" style="">https://blog.insightbook.co.kr</a><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;"> </span></p><p>페이스북 <a href="https://facebook.com/insightbook" target="_blank" style="">https://facebook.com/insightbook</a><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;"> </span></p><p>트위터 @insightbook</p><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;">인스타그램 @insightbook.co.kr</span><br></p>',
+        url: "https://blog.insightbook.co.kr/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/68/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3_ci.png",
+        id: 68,
+      },
+      {
+        name: "골든래빗",
+        desc: "<div>더 나은 나를 만드는 시간, 가치가 성장하는 시간이 되는 책을 만듭니다.</div>",
+        url: "https://goldenrabbit.co.kr/",
+        logo_image: "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/69/Group_6.png",
+        id: 69,
+      },
+      {
+        name: "제이펍",
+        desc: '<p><span data-sheets-root="1" style="color: rgb(0, 0, 0); font-size: 10pt; font-family: Arial;">제이펍은 \'0과 1이 꿈꾸는 세상\'이란 모토로 대한민국의 IT 개발자들이 필요한 책들을 펴냅니다.<br><br>제때, 그리고 정확하고 읽기 편한 책을 만들기 위해 최선을 다하고 있으며, 외국의 우수한 도서를 국내에 소개하는 것 은 물론 양질의 콘텐츠를 소유한 국내 개발자와 함께 저서 출간에도 심혈을 기울이고 있습니다.<br><br>IT 개발자분들께서 언제나 믿고 읽을 수 있는 책을 출간하는 데 앞으로도 최선을 다하겠습니다.</span><br></p>',
+        url: "https://jpub.tistory.com/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/79/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%91%E1%85%A5%E1%86%B8_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9_1.png",
+        id: 79,
+      },
+    ],
+  },
+  {
+    id: 20,
+    name: "기술 후원",
+    visible: false,
+    order: 8,
+    sponsor: [
+      {
+        name: "NHN Dooray",
+        desc: '<p style="margin-bottom: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">NHN Dooray는 올인원 협업도구 두레이 서비스를 만드는 기업으로 올해 10살을 맞이한 계속 성장 중인 기업입니다.</span></p><p style="margin-bottom: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">프로젝트(협업), 메일, 메신저, 드라이브, 위키 등의 서비스를 제공하고 있으며, 파이콘과는 2017년부터 인연을 맺어 계속 후원 중에 있습니다.</span></p><p style="margin-bottom: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 13.3px; line-height: normal; font-family: Arial; -webkit-text-stroke-color: rgb(0, 0, 0);"><span style="font-size: 13.33px; font-kerning: none;">24년 8월, Dooray AI가 정식 출시되어 파이콘에서도 소개를 드리고 사용해보실 수 있는 기회도 제공하는 이벤트도 준비하고자 합니다. 많은 관심 부탁드립니다. :)</span></p>',
+        url: "https://dooray.com/main/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/77/NHN_DOORAY_Black_1.png",
+        id: 77,
+      },
+    ],
+  },
+  {
+    id: 21,
+    name: "장소 후원",
+    visible: false,
+    order: 9,
+    sponsor: [
+      {
+        name: "모두의연구소",
+        desc: '<p style="box-sizing: initial; margin-bottom: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">실무형 고급 인재를 양성하는 커뮤니티 기반의 성장형 연구 및 교육 플랫폼, 모두의연구소입니다.</p><p style="box-sizing: initial; margin-bottom: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">모두의연구소는 최첨단 기술(Cutting-Edge Technology) 관련 커뮤니티를 기반으로, 실무 중심의 프로젝트 기반 교육으로 AI 학습자가 취업자, 창업자, 연구자가 될 수 있는 교육 및 연구 서비스를 운영하고 있습니다. 커뮤니티 - 교육 - 연구 - 커리어로 연결되는 선순환 고리를 통해 전례 없는 변화의 시대 개인과 기업의 경쟁력을 갖출 수 있는 성장형 교육을 완성해 갑니다.</p><p style="box-sizing: initial; margin-bottom: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">모두의연구소에는 커뮤니티를 통한 관심 분야 사람들과의 네트워킹, 트렌디한 주제와의 만남, 함께 학습하는 즐거움이 있습니다. 체험 교육 및 연구를 통해 자신만의 길을 찾는 훈련으로 각 분야의 전문가가 됩니다. 또한 커리어 관련 서포트를 통해 사회적으로 인정받고 경제 활동이 가능한 성장으로 이끕니다.</p><p style="box-sizing: initial; margin-bottom: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">모두의연구소에서 여러분만의 성취와 즐거움을 찾아가시길 기대합니다.</p><ul style="box-sizing: initial; margin: 1.12em 0px 1.12em 40px; padding: 0px; border: 0px; vertical-align: baseline; list-style-position: initial; list-style-image: initial; text-decoration-skip-ink: none; unicode-bidi: embed; line-height: 1.5; margin-block-start: 1em; color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;"><li style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">모두의연구소 홈페이지:&nbsp;<a href="https://modulabs.co.kr/" target="_blank" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-line: underline; color: rgb(0, 120, 212); cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">https://modulabs.co.kr/</a></li><li style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">AI혁신학교 아이펠 코어/리서치 모집 중:&nbsp;<a href="https://bit.ly/pycon_aiffel" target="_blank" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-line: underline; color: rgb(0, 120, 212); cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">https://bit.ly/pycon_aiffel</a></li><li style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-skip-ink: none; line-height: 1.5;">오름캠프 Django 백엔드 과정 사전 모집 중:&nbsp;<a href="https://bit.ly/4eOEeK0" target="_blank" style="box-sizing: initial; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; text-decoration-line: underline; color: rgb(0, 120, 212); cursor: pointer; text-decoration-skip-ink: none; line-height: inherit;">https://bit.ly/4eOEeK0</a></li></ul>',
+        url: "https://modulabs.co.kr/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/74/logo-signature-4x.png",
+        id: 74,
+      },
+    ],
+  },
+  {
+    id: 22,
+    name: "미디어 후원",
+    visible: false,
+    order: 10,
+    sponsor: [
+      {
+        name: "요즘IT",
+        desc: '<p><span style="color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">요즘IT는 IT업계 현업 실무 전문가들이 경험과 지식, 인사이트를 나누는 콘텐츠 플랫폼입니다.</span></p><p><span style="color: rgb(34, 34, 34); font-family: -apple-system, &quot;system-ui&quot;, &quot;Malgun Gothic&quot;, Meiryo, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; letter-spacing: -0.3px;">좋은 콘텐츠 제공자, 신뢰할 만한 콘텐츠, 독자를 연결해 IT업계 생태계가 하나의 학습하는 조직으로서 선순환 성장하는 데 기여하고자 합니다.</span><br></p>',
+        url: "https://www.wishket.com/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/82/%E1%84%8B%E1%85%AD%E1%84%8C%E1%85%B3%E1%86%B7IT_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.png",
+        id: 82,
+      },
+      {
+        name: "인프런",
+        desc: "<p><span style=\"color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space-collapse: preserve;\">IT 기술 정보 플랫폼 '인프런'은 현재 3,000여개가 넘는 IT 분야 학습 콘텐츠를 보유하고\r\n4,000명 이상의 지식공유자, 120만 명 이상의 학습자가 함께 지식 생태계의 선순환을 만들고 있습니다.\r\n인프런에서 미래의 동료들과 함께 배우고 나누고 성장하세요!</span><br></p>",
+        url: "https://www.inflearn.com/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/None/eng-green-%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%8B%E1%85%AD%E1%86%BC.png",
+        id: 84,
+      },
+    ],
+  },
+  {
+    id: 23,
+    name: "Special",
+    visible: false,
+    order: 11,
+    sponsor: [
+      {
+        name: "정보통신산업진흥원",
+        desc: "<p>정보통신산업진흥원<br></p>",
+        url: "https://www.nipa.kr/",
+        logo_image: "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/85/nipa-lg.png",
+        id: 85,
+      },
+      {
+        name: "경기관광공사",
+        desc: "<p>경기관광공사<br></p>",
+        url: "https://ggtour.or.kr/gto/",
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/86/%E1%84%80%E1%85%A1%E1%84%85%E1%85%A9_%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9.png",
+        id: 86,
+      },
+      {
+        name: "수원 컨벤션센터",
+        desc: "<p>수원 컨벤션센터<br></p>",
+        url: null,
+        logo_image:
+          "https://pyconkr-api-v2-static.s3.amazonaws.com/sponsor/logo/None/%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC.png",
+        id: 87,
+      },
+    ],
+  },
+];

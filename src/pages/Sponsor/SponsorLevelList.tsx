@@ -74,7 +74,7 @@ const SponsorLevelList = () => {
                       return (
                         <td
                           dangerouslySetInnerHTML={{
-                            __html: getBenefitDescription(benefitAboutLevel),
+                            __html: benefitAboutLevel != null ? getBenefitDescription(benefitAboutLevel) ?? "" : "",
                           }}
                         ></td>
                       );
@@ -197,7 +197,7 @@ const SponsorRatingTable = styled.div`
   }
 
   & > table {
-    background: tansparent;
+    background: transparent;
     border-collapse: collapse;
     border-style: hidden;
 
